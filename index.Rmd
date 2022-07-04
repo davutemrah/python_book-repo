@@ -1,5 +1,5 @@
 --- 
-title: "Python Scracth Book"
+title: "Python Scratch Book"
 author: "DEA"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -14,7 +14,9 @@ description: "This is a minimal example of using the bookdown package to write a
 
 # Acknowledgement
 
+This is notebook. I have collected these notes, codes and best practices that I find useful to remind myself on python programming language.
 
+All these content are free to share and use.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
