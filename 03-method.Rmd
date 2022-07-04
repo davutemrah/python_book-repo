@@ -1,0 +1,22 @@
+```{r include = FALSE}
+library(reticulate)
+
+if(!knitr:::is_html_output())
+{
+  options("width"=56)
+  knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
+  knitr::opts_chunk$set(fig.pos = 'H')
+}
+```
+
+# RANDOM
+
+
+```{python, eval=F}
+i = int(input("sayi gir = "))
+
+for x in range(i+1) :
+  y = x*5
+  print(x,"x",5,"=",y)
+```
+
