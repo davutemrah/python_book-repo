@@ -1,4 +1,5 @@
-book_filename: "bookdown-demo"
+#book_filename: "bookdown-demo"
+book_filename: "my_python_book"
 language:
   ui:
     chapter_name: "Chapter "

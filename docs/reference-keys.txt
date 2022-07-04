@@ -1,4 +1,4 @@
-prerequisites
+acknowledgement
 intro
 types-of-objects-in-python
 expressions-mathematical-operations
