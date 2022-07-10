@@ -23,7 +23,7 @@
 <meta name="author" content="DEA" />
 
 
-<meta name="date" content="2022-07-04" />
+<meta name="date" content="2022-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,6 +143,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#indices"><i class="fa fa-check"></i><b>2.3.1</b> Indices</a></li>
 <li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#slicing"><i class="fa fa-check"></i><b>2.3.2</b> Slicing</a></li>
 <li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#concatenate"><i class="fa fa-check"></i><b>2.3.3</b> Concatenate</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#escape"><i class="fa fa-check"></i><b>2.3.4</b> Escape</a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro.html"><a href="intro.html#immutable"><i class="fa fa-check"></i><b>2.3.5</b> Immutable</a></li>
+<li class="chapter" data-level="2.3.6" data-path="intro.html"><a href="intro.html#loop-thru-strings"><i class="fa fa-check"></i><b>2.3.6</b> loop thru strings</a></li>
+<li class="chapter" data-level="2.3.7" data-path="intro.html"><a href="intro.html#innot-in"><i class="fa fa-check"></i><b>2.3.7</b> in/not in</a></li>
+<li class="chapter" data-level="2.3.8" data-path="intro.html"><a href="intro.html#useful-methods-used-with-strings"><i class="fa fa-check"></i><b>2.3.8</b> Useful Methods used with strings</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#data-types"><i class="fa fa-check"></i><b>2.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#tuples"><i class="fa fa-check"></i><b>2.4.1</b> 1. tuples</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#lists"><i class="fa fa-check"></i><b>2.4.2</b> 2. lists</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>3</b> Pandas Library</a>
@@ -280,7 +290,7 @@ In R <strong>indices</strong> start with 1</p>
 <div id="slicing" class="section level3 hasAnchor" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Slicing<a href="intro.html#slicing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Full version</strong></p>
-<p>object[from : to : increment]</p>
+<p><strong>syntax:</strong> <code>string_object[from : to : increment]</code></p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="intro.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Object:&quot;</span>, myname)</span></code></pre></div>
 <pre><code>## Object: Davut Emrah Ayan</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="intro.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;From 0 index to 5th index, by 1, is&quot;</span>, myname[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">1</span>])</span></code></pre></div>
@@ -316,7 +326,175 @@ In R <strong>indices</strong> start with 1</p>
 <p><strong>Multiplication with strings</strong></p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="intro.html#cb62-1" aria-hidden="true" tabindex="-1"></a>myname[<span class="dv">0</span>:<span class="dv">6</span>] <span class="op">*</span> <span class="dv">3</span></span></code></pre></div>
 <pre><code>## &#39;Davut Davut Davut &#39;</code></pre>
-<p><strong>Strings are Immutable</strong></p>
+</div>
+<div id="escape" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Escape<a href="intro.html#escape" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>\n</code> : new line
+<code>\t</code> : tab space</p>
+<p>Backward slash ’' is used to escape characters</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="intro.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># new line</span></span>
+<span id="cb64-2"><a href="intro.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Life </span><span class="ch">\n</span><span class="st">Is </span><span class="ch">\n</span><span class="st">Good!&quot;</span>)</span></code></pre></div>
+<pre><code>## Life 
+## Is 
+## Good!</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="intro.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tab space</span></span>
+<span id="cb66-2"><a href="intro.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Life</span><span class="ch">\t</span><span class="st">Is</span><span class="ch">\t</span><span class="st">Good!&quot;</span>)</span></code></pre></div>
+<pre><code>## Life Is  Good!</code></pre>
+<p><strong>raw string</strong></p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="intro.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb68-2"><a href="intro.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="vs">r&quot;Life is good!&quot;</span></span>
+<span id="cb68-3"><a href="intro.html#cb68-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## Life is good!</code></pre>
+</div>
+<div id="immutable" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Immutable<a href="intro.html#immutable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>string objects are immutable, so you can change its any part by indexing</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="intro.html#cb70-1" aria-hidden="true" tabindex="-1"></a>any_string <span class="op">=</span> <span class="st">&quot;Life is good!&quot;</span></span>
+<span id="cb70-2"><a href="intro.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="intro.html#cb70-3" aria-hidden="true" tabindex="-1"></a>any_string[<span class="dv">5</span>:<span class="dv">7</span>] <span class="op">=</span> <span class="st">&quot;was&quot;</span></span>
+<span id="cb70-4"><a href="intro.html#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="intro.html#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="co"># TypeError: &#39;str&#39; object does not support item assignment</span></span></code></pre></div>
+</div>
+<div id="loop-thru-strings" class="section level3 hasAnchor" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> loop thru strings<a href="intro.html#loop-thru-strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="intro.html#cb71-1" aria-hidden="true" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life is good!&quot;</span></span>
+<span id="cb71-2"><a href="intro.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="intro.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> my_txt:</span>
+<span id="cb71-4"><a href="intro.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+<pre><code>## l
+## i
+## f
+## e
+##  
+## i
+## s
+##  
+## g
+## o
+## o
+## d
+## !</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="intro.html#cb73-1" aria-hidden="true" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life is good!&quot;</span></span>
+<span id="cb73-2"><a href="intro.html#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-3"><a href="intro.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(my_txt)):</span>
+<span id="cb73-4"><a href="intro.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+<pre><code>## 0
+## 1
+## 2
+## 3
+## 4
+## 5
+## 6
+## 7
+## 8
+## 9
+## 10
+## 11
+## 12</code></pre>
+</div>
+<div id="innot-in" class="section level3 hasAnchor" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> in/not in<a href="intro.html#innot-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>check if a phrase is present in a string</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="intro.html#cb75-1" aria-hidden="true" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life is good!&quot;</span></span>
+<span id="cb75-2"><a href="intro.html#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="intro.html#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt)</span></code></pre></div>
+<pre><code>## True</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="intro.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt:</span>
+<span id="cb77-2"><a href="intro.html#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(my_txt)</span></code></pre></div>
+<pre><code>## life is good!</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="intro.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;bad&quot;</span> <span class="kw">not</span> <span class="kw">in</span> my_txt:</span>
+<span id="cb79-2"><a href="intro.html#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;bad&#39; is not in the text&quot;</span>)</span></code></pre></div>
+<pre><code>## &#39;bad&#39; is not in the text</code></pre>
+</div>
+<div id="useful-methods-used-with-strings" class="section level3 hasAnchor" number="2.3.8">
+<h3><span class="header-section-number">2.3.8</span> Useful Methods used with strings<a href="intro.html#useful-methods-used-with-strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>uppercase/lowercase</strong></p>
+<p><code>upper()</code> : strings to uppercase
+<code>lower()</code>
+<code>capitalize()</code></p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="intro.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;Ohh! my life!&quot;</span>.upper()</span></code></pre></div>
+<pre><code>## &#39;OHH! MY LIFE!&#39;</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="intro.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;OHH! MY LIFE!&quot;</span>.lower()</span></code></pre></div>
+<pre><code>## &#39;ohh! my life!&#39;</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="intro.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;star&quot;</span>.capitalize()</span></code></pre></div>
+<pre><code>## &#39;Star&#39;</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="intro.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;is it lowercase&quot;</span>.islower()</span></code></pre></div>
+<pre><code>## True</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="intro.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;IS IT UPPERCASE&quot;</span>.isupper()</span></code></pre></div>
+<pre><code>## True</code></pre>
+<p><strong>replace method</strong></p>
+<p><code>replace()</code>: to replace part of a string
+<strong>syntax:</strong> <code>string.replace(oldvalue, newvalue, count)</code></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="intro.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#example</span></span>
+<span id="cb91-2"><a href="intro.html#cb91-2" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb91-3"><a href="intro.html#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="st">select all_columns </span></span>
+<span id="cb91-4"><a href="intro.html#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="st">from my_table&#39;&#39;&#39;</span></span>
+<span id="cb91-5"><a href="intro.html#cb91-5" aria-hidden="true" tabindex="-1"></a>new_query <span class="op">=</span> query.replace(<span class="st">&quot;my_table&quot;</span>, <span class="st">&quot;new_table_name&quot;</span>)</span>
+<span id="cb91-6"><a href="intro.html#cb91-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_query)</span></code></pre></div>
+<pre><code>## 
+## select all_columns 
+## from new_table_name</code></pre>
+<p><strong>strip method</strong></p>
+<p><code>strip()</code> method removes leading or trailing white-space</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="intro.html#cb93-1" aria-hidden="true" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;   my text   &quot;</span></span>
+<span id="cb93-2"><a href="intro.html#cb93-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-3"><a href="intro.html#cb93-3" aria-hidden="true" tabindex="-1"></a>raw_text.strip()</span></code></pre></div>
+<pre><code>## &#39;my text&#39;</code></pre>
+<p><strong>split method</strong></p>
+<p><code>split()</code> method breaks a string by specified character.</p>
+<p><code>split()</code> method returns list type.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="intro.html#cb95-1" aria-hidden="true" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;banana, apple, cherry&quot;</span></span>
+<span id="cb95-2"><a href="intro.html#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="intro.html#cb95-3" aria-hidden="true" tabindex="-1"></a>alist <span class="op">=</span> raw_text.split(<span class="st">&quot;,&quot;</span>)</span>
+<span id="cb95-4"><a href="intro.html#cb95-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="intro.html#cb95-5" aria-hidden="true" tabindex="-1"></a>alist</span></code></pre></div>
+<pre><code>## [&#39;banana&#39;, &#39; apple&#39;, &#39; cherry&#39;]</code></pre>
+<p>there are some whitespce in the splitted elements in the list</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="intro.html#cb97-1" aria-hidden="true" tabindex="-1"></a>alist[<span class="dv">1</span>].strip()</span></code></pre></div>
+<pre><code>## &#39;apple&#39;</code></pre>
+</div>
+</div>
+<div id="data-types" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Data Types<a href="intro.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>In Python, there are different data types: string, integer, and float.</p></li>
+<li><p>Different data types can be contained in a tuple.</p></li>
+</ul>
+<div id="tuples" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> 1. tuples<a href="intro.html#tuples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="intro.html#cb99-1" aria-hidden="true" tabindex="-1"></a>a_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="fl">2.5</span>, <span class="st">&quot;string&quot;</span>, [<span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb99-2"><a href="intro.html#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="intro.html#cb99-3" aria-hidden="true" tabindex="-1"></a>a_tuple</span></code></pre></div>
+<pre><code>## (1, 2.5, &#39;string&#39;, [3, 4])</code></pre>
+<p><strong>concatenate tuples</strong></p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="intro.html#cb101-1" aria-hidden="true" tabindex="-1"></a>b_tuple <span class="op">=</span> (<span class="st">&quot;a&quot;</span>, <span class="st">&quot;ab&quot;</span>)</span>
+<span id="cb101-2"><a href="intro.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="intro.html#cb101-3" aria-hidden="true" tabindex="-1"></a>a_tuple <span class="op">+</span> b_tuple</span></code></pre></div>
+<pre><code>## (1, 2.5, &#39;string&#39;, [3, 4], &#39;a&#39;, &#39;ab&#39;)</code></pre>
+<p><strong>slicing</strong></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="intro.html#cb103-1" aria-hidden="true" tabindex="-1"></a>a_tuple[:<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## (1, 2.5)</code></pre>
+<p><strong>length</strong></p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="intro.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(a_tuple)</span></code></pre></div>
+<pre><code>## 4</code></pre>
+<p><strong>immutable</strong></p>
+<p>element of a tuple can not be changed</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="intro.html#cb107-1" aria-hidden="true" tabindex="-1"></a>a_tuple <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb107-2"><a href="intro.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-3"><a href="intro.html#cb107-3" aria-hidden="true" tabindex="-1"></a>a_tuple[<span class="dv">5</span>] <span class="op">=</span> <span class="st">&quot;a&quot;</span></span>
+<span id="cb107-4"><a href="intro.html#cb107-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-5"><a href="intro.html#cb107-5" aria-hidden="true" tabindex="-1"></a><span class="co"># TypeError: &#39;tuple&#39; object does not support item assignment</span></span></code></pre></div>
+<p><strong>sorted function</strong></p>
+<p><code>sorted()</code> function: We can sort the tuple and assign a new name</p>
+<p><code>sorted()</code> function returns list type.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="intro.html#cb108-1" aria-hidden="true" tabindex="-1"></a>a_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">4</span>)</span>
+<span id="cb108-2"><a href="intro.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="intro.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="bu">sorted</span>(a_tuple))</span></code></pre></div>
+<pre><code>## &lt;class &#39;list&#39;&gt;</code></pre>
+<p><strong>Nesting</strong></p>
+</div>
+<div id="lists" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> 2. lists<a href="intro.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>

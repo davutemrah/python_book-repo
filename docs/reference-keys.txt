@@ -6,6 +6,14 @@ string-operations
 indices
 slicing
 concatenate
+escape
+immutable
+loop-thru-strings
+innot-in
+useful-methods-used-with-strings
+data-types
+tuples
+lists
 pandas-library
 read-data
 csv-file

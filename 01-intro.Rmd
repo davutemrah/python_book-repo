@@ -150,7 +150,7 @@ print(myname[-1], 'is the last element of myname object')
 
 **Full version**
 
-object[from : to : increment]
+**syntax:** `string_object[from : to : increment]`
 
 ```{python}
 print("Object:", myname)
@@ -183,7 +183,6 @@ it is character length or element length
 len(myname)
 ```
 
-
 ### Concatenate
 
 ```{python}
@@ -201,7 +200,208 @@ myname[0:5] + " is the best!"
 myname[0:6] * 3
 ```
 
-**Strings are Immutable**
+
+### Escape 
+
+`\n` : new line
+`\t` : tab space
+
+Backward slash '\' is used to escape characters
+
+```{python}
+# new line
+print("Life \nIs \nGood!")
+```
+
+```{python}
+# tab space
+print("Life\tIs\tGood!")
+```
+
+**raw string**
+```{python}
+print(
+  r"Life is good!"
+)
+```
+
+### Immutable
+
+string objects are immutable, so you can change its any part by indexing
+
+```{python, eval = F}
+any_string = "Life is good!"
+
+any_string[5:7] = "was"
+
+# TypeError: 'str' object does not support item assignment
+```
+
+### loop thru strings
+
+```{python}
+my_txt = "life is good!"
+
+for i in my_txt:
+  print(i)
+```
+
+```{python}
+my_txt = "life is good!"
+
+for i in range(len(my_txt)):
+  print(i)
+```
+
+### in/not in 
+
+check if a phrase is present in a string
+
+```{python}
+my_txt = "life is good!"
+
+print("good" in my_txt)
+```
+
+```{python}
+if "good" in my_txt:
+  print(my_txt)
+```
+
+
+```{python}
+if "bad" not in my_txt:
+  print("'bad' is not in the text")
+```
+
+
+### Useful Methods used with strings
+
+**uppercase/lowercase**
+
+`upper()` : strings to uppercase
+`lower()`
+`capitalize()`
+```{python}
+"Ohh! my life!".upper()
+"OHH! MY LIFE!".lower()
+"star".capitalize()
+```
+
+```{python}
+"is it lowercase".islower()
+"IS IT UPPERCASE".isupper()
+```
+
+**replace method**
+
+`replace()`: to replace part of a string
+**syntax:** `string.replace(oldvalue, newvalue, count)`
+```{python}
+#example
+query = '''
+select all_columns 
+from my_table'''
+new_query = query.replace("my_table", "new_table_name")
+print(new_query)
+```
+
+**strip method**
+
+`strip()` method removes leading or trailing white-space 
+
+```{python}
+raw_text = "   my text   "
+
+raw_text.strip()
+```
+
+**split method**
+
+`split()` method breaks a string by specified character. 
+
+`split()` method returns list type.
+
+```{python}
+raw_text = "banana, apple, cherry"
+
+alist = raw_text.split(",")
+
+alist
+```
+
+there are some whitespce in the splitted elements in the list
+
+```{python}
+alist[1].strip()
+```
+
+## Data Types
+
+- In Python, there are different data types: string, integer, and float. 
+
+- Different data types can be contained in a tuple.
+
+### 1. tuples
+
+```{python}
+a_tuple = (1, 2.5, "string", [3, 4])
+
+a_tuple
+```
+
+**concatenate tuples**
+
+```{python}
+b_tuple = ("a", "ab")
+
+a_tuple + b_tuple
+```
+
+**slicing**
+
+```{python}
+a_tuple[:2]
+```
+
+**length**
+
+```{python}
+len(a_tuple)
+```
+
+**immutable**
+
+element of a tuple can not be changed 
+
+```{python, eval=F}
+a_tuple = (1,2,3,4,5)
+
+a_tuple[5] = "a"
+
+# TypeError: 'tuple' object does not support item assignment
+```
+
+**sorted function**
+
+`sorted()` function: We can sort the tuple and assign a new name
+
+`sorted()` function returns list type.
+
+```{python}
+a_tuple = (1, 5, 2, 7, 4)
+
+type(sorted(a_tuple))
+```
+
+**Nesting**
+
+
+
+
+
+### 2. lists
+
 
 
 

@@ -23,7 +23,7 @@
 <meta name="author" content="DEA" />
 
 
-<meta name="date" content="2022-07-04" />
+<meta name="date" content="2022-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,6 +143,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#indices"><i class="fa fa-check"></i><b>2.3.1</b> Indices</a></li>
 <li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#slicing"><i class="fa fa-check"></i><b>2.3.2</b> Slicing</a></li>
 <li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#concatenate"><i class="fa fa-check"></i><b>2.3.3</b> Concatenate</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#escape"><i class="fa fa-check"></i><b>2.3.4</b> Escape</a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro.html"><a href="intro.html#immutable"><i class="fa fa-check"></i><b>2.3.5</b> Immutable</a></li>
+<li class="chapter" data-level="2.3.6" data-path="intro.html"><a href="intro.html#loop-thru-strings"><i class="fa fa-check"></i><b>2.3.6</b> loop thru strings</a></li>
+<li class="chapter" data-level="2.3.7" data-path="intro.html"><a href="intro.html#innot-in"><i class="fa fa-check"></i><b>2.3.7</b> in/not in</a></li>
+<li class="chapter" data-level="2.3.8" data-path="intro.html"><a href="intro.html#useful-methods-used-with-strings"><i class="fa fa-check"></i><b>2.3.8</b> Useful Methods used with strings</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#data-types"><i class="fa fa-check"></i><b>2.4</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#tuples"><i class="fa fa-check"></i><b>2.4.1</b> 1. tuples</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#lists"><i class="fa fa-check"></i><b>2.4.2</b> 2. lists</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>3</b> Pandas Library</a>
@@ -187,22 +197,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 on rstudio terminal or mac terminal or jupyter notebook</p>
 <div id="read-data" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> read data<a href="pandas-library.html#read-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="pandas-library.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb64-2"><a href="pandas-library.html#cb64-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="pandas-library.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb110-2"><a href="pandas-library.html#cb110-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
 <div id="csv-file" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> csv file<a href="pandas-library.html#csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>IBM sample data:</strong> I could not run with “https” because I did not have a certificate installed. So, I go on with “http” and it worked.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="pandas-library.html#cb65-1" aria-hidden="true" tabindex="-1"></a>data_link <span class="op">=</span> <span class="st">&quot;http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv&quot;</span></span>
-<span id="cb65-2"><a href="pandas-library.html#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-3"><a href="pandas-library.html#cb65-3" aria-hidden="true" tabindex="-1"></a>recipes <span class="op">=</span> pd.read_csv(data_link)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="pandas-library.html#cb111-1" aria-hidden="true" tabindex="-1"></a>data_link <span class="op">=</span> <span class="st">&quot;http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv&quot;</span></span>
+<span id="cb111-2"><a href="pandas-library.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-3"><a href="pandas-library.html#cb111-3" aria-hidden="true" tabindex="-1"></a>recipes <span class="op">=</span> pd.read_csv(data_link)</span></code></pre></div>
 </div>
 </div>
 <div id="explore-data" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Explore Data<a href="pandas-library.html#explore-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="pandas-library.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#recipes.head()</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="pandas-library.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co">#recipes.head()</span></span></code></pre></div>
 <div id="get-the-dimensions-of-the-dataframe." class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Get the dimensions of the dataframe.<a href="pandas-library.html#get-the-dimensions-of-the-dataframe." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="pandas-library.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#recipes.shape</span></span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="pandas-library.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co">#recipes.shape</span></span></code></pre></div>
 
 </div>
 </div>

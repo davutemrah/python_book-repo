@@ -5,4 +5,12 @@ h2:string-operations String Operations
 h3:indices Indices
 h3:slicing Slicing
 h3:concatenate Concatenate
+h3:escape Escape
+h3:immutable Immutable
+h3:loop-thru-strings loop thru strings
+h3:innot-in in/not in
+h3:useful-methods-used-with-strings Useful Methods used with strings
+h2:data-types Data Types
+h3:tuples 1. tuples
+h3:lists 2. lists
 
