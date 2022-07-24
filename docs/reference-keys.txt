@@ -13,8 +13,14 @@ innot-in
 useful-methods-used-with-strings
 data-types
 tuples
+tuple-methods
 lists
 pandas-library
+import-pandas-library
+data-creation
+columns
+column-names
+rename
 read-data
 csv-file
 explore-data

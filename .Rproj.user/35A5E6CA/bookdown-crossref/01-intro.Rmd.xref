@@ -12,5 +12,6 @@ h3:innot-in in/not in
 h3:useful-methods-used-with-strings Useful Methods used with strings
 h2:data-types Data Types
 h3:tuples 1. tuples
+h4:tuple-methods tuple methods
 h3:lists 2. lists
 

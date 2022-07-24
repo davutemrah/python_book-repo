@@ -344,10 +344,22 @@ alist[1].strip()
 
 ### 1. tuples
 
+`Tuples` are an ordered sequences of items, just like `lists.` The main difference between `tuples` and `lists` is that `tuples` cannot be changed (immutable) unlike `lists` which can (mutable).   
+
+`tuples` are collection of different type of objects.
+
+-- empty tuples
 ```{python}
+a = ()
+b = tuple()
+```
+
+
+```{python}
+## 1. way
 a_tuple = (1, 2.5, "string", [3, 4])
 
-a_tuple
+b = (1,)
 ```
 
 **concatenate tuples**
@@ -364,11 +376,6 @@ a_tuple + b_tuple
 a_tuple[:2]
 ```
 
-**length**
-
-```{python}
-len(a_tuple)
-```
 
 **immutable**
 
@@ -396,14 +403,53 @@ type(sorted(a_tuple))
 
 **Nesting**
 
+we can create nested tuples.
 
+```{python}
+nested = (1, 2, ("a", "b", "c"), ("ayan", (4, 5)))
 
+nested[2]
+```
+
+#### tuple methods
+
+**index method**   
+The index method returns the first index at which a value occurs.
+
+```{python}
+a = ("a", "b", "c", "d")
+
+a.index("b")
+```
+
+**count method**   
+The count method returns the number of times a value occurs in a tuple.
+
+```{python}
+a = ("a", "b", "c", "d", "a", "b", "c", "d")
+
+a.count("b")
+```
+
+**loop thru a tuple**
+
+```{python}
+a = ("a", "b", "c", "d", "a", "b", "c", "d")
+
+for item in a:
+   print(item)
+```
 
 
 ### 2. lists
 
+A list is a sequenced collection of different objects such as integers, strings, and even other lists as well. The address of each element within a list is called an index. An index is used to access and refer to items within a list.
 
+Lists can contain strings, floats, and integers. We can nest other lists, and we can also nest tuples and other data structures. The same indexing conventions apply for nesting:
 
+list are like tuples, ordered sequences.
+
+But lists are mutable.
 
 
 
