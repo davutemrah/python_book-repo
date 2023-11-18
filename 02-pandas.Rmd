@@ -1,9 +1,9 @@
 # Pandas Library
 
-run `pip3 install pandas` 
-on rstudio terminal or mac terminal or jupyter notebook
+run `pip3 install pandas` or
+run `!pip install pandas` on rstudio terminal or mac terminal or jupyter notebook
 
-## import pandas library
+
 
 ```{python lib1}
 import pandas as pd 
@@ -11,9 +11,10 @@ pd.set_option('display.max_columns', None)
 ```
 
 
+
 ## data creation
 
-Sometimes you may need to create an empty data frame or not empty data frame
+Sometimes you may need to create an data frame
 
 ```{python}
 ## empty data frame
@@ -28,6 +29,7 @@ df2
 
 Is df2 empty?
 
+There is column name but it is still empty.
 ```{python}
 df2.empty
 ```
@@ -35,7 +37,8 @@ df2.empty
 How to create a sample data frame?
 
 ```{python}
-df3 = pd.DataFrame({'var1': [1,2,3,4], 'var2': ['a', 'b', 'c', 'd']})
+df3 = pd.DataFrame({'var1': [1,2,3,4], 
+                    'var2': ['a', 'b', 'c', 'd']})
 df3
 ```
 
@@ -106,7 +109,7 @@ df
 **Method 1: Rename Specific Columns**
 
 ```{python}
-df.rename(columns = {'PYTHON':'Python'}, inplace = True)
+df.rename(columns = {'PYTHON':'Python'}, inplace = False)
 
 ### list column names
 list(df)
@@ -188,6 +191,24 @@ list(df)
 data_link = "http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv"
 
 recipes = pd.read_csv(data_link)
+```
+
+
+### xlsx file
+
+pandas.read_excel(io = path,
+                  sheet_name = 0,
+                  header = 0,
+                  names = None,
+                  index_col = None,
+                  usecols = None)
+                  
+This returns dataframe object.
+```{python}
+df = pd.read_excel(io = "./data/segmentation.xlsx",
+                  sheet_name = "sheet")
+                  
+df.head(n=5)
 ```
 
 

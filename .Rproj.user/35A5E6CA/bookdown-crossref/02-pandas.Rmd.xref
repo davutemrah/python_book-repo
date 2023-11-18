@@ -1,11 +1,11 @@
 h1:pandas-library Pandas Library
-h2:import-pandas-library import pandas library
 h2:data-creation data creation
 h3:columns columns
 h4:column-names column names
 h4:rename rename
 h2:read-data read data
 h3:csv-file csv file
+h3:xlsx-file xlsx file
 h2:explore-data Explore Data
 h3:get-the-dimensions-of-the-dataframe. Get the dimensions of the dataframe.
 
