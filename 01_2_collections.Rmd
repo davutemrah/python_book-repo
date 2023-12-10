@@ -1,0 +1,547 @@
+## Collections
+
+   - `list`: Ordered collection of items, e.g., `my_list = [1, 2, 3]`.
+   - `tuple`: Immutable ordered collection of items, e.g., `my_tuple = (1, 2, 3)`.
+   - `set`: Unordered collection of unique items, e.g., `my_set = {1, 2, 3}`.
+   - `dict`: Key-value pairs, e.g., `my_dict = {'a': 1, 'b': 2}`.
+
+
+### Properties
+
+In Python, collections are built-in data types that can be used to group multiple elements together. Here are some common properties of Python collections:
+
+1. **Mutable vs. Immutable:**
+
+   - **Mutable Collections:** Lists (`list`), Sets (`set`), and Dictionaries (`dict`) are mutable. You can modify their contents after creation.
+   
+   - **Immutable Collections:** Tuples (`tuple`) and Strings (`str`) are immutable. Once created, their contents cannot be changed.
+
+2. **Ordering:**
+
+   - **Ordered Collections:** Lists and Tuples maintain the order of elements. Elements are stored in the order they were added.
+   
+   - **Unordered Collections:** Sets and Dictionaries do not guarantee any specific order. The order of elements may not be the same as the order of insertion.
+
+3. **Indexing and Slicing:**
+
+   - **Indexing:** Lists, Tuples, and Strings support indexing. Elements can be accessed using indices (0-based).
+   
+     ```python
+     my_list = [1, 2, 3, 4]
+     print(my_list[0])  # Output: 1
+     ```
+
+   - **Slicing:** Lists, Tuples, and Strings support slicing to create sub-collections.
+     ```python
+     my_string = "Hello, World!"
+     print(my_string[0:5])  # Output: Hello
+     ```
+
+4. **Uniqueness:**
+
+   - **Unique Elements:** Sets only contain unique elements. If you try to add an element that already exists, it won't be added again.
+   ```python
+   my_set = {1, 2, 3, 1}
+   print(my_set)  # Output: {1, 2, 3}
+   ```
+
+5. **Key-Value Pairs (Dictionaries):**
+
+   - **Associative Data:** Dictionaries consist of key-value pairs, allowing you to associate values with unique keys.
+   ```python
+   my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
+   print(my_dict['age'])  # Output: 30
+   ```
+
+6. **Heterogeneity:**
+
+   - **Mixed Types:** Lists, Tuples, and Sets can contain elements of different data types.
+   ```python
+   my_list = [1, 'apple', 3.14]
+   ```
+
+7. **Size and Length:**
+
+   - **Size:** Lists, Tuples, and Strings have a fixed size once created. Elements can be added or removed, but the overall size remains constant.
+   
+   - **Dynamic Size:** Sets and Dictionaries can dynamically grow or shrink in size.
+
+8. **Common Operations:**
+   - **Adding Elements:** `append()`, `extend()`, `add()`
+   - **Removing Elements:** `remove()`, `pop()`, `discard()`, `clear()`
+   - **Checking Membership:** `in` keyword
+   - **Length:** `len()`
+
+Understanding these properties helps you choose the right collection for a particular use case and use collections effectively in your Python programs.
+
+#### Extra: Imuutable
+
+Yes, in Python, strings are immutable objects. This means that once a string is created, you cannot change its content. Any operation that appears to modify a string actually creates a new string. This immutability has several implications:
+
+1. **No In-Place Modifications:**
+   - You cannot modify a string directly by changing a character at a specific index, like you can with a list.
+
+    ```python
+    my_string = "Hello"
+    # The following will result in an error
+    my_string[0] = 'J'
+    ```
+
+2. **Creating New Strings:**
+   - Operations like concatenation or slicing create new strings rather than modifying the original.
+
+    ```python
+    original_string = "Hello"
+    new_string = original_string + ", World!"
+    ```
+
+3. **Hashing:**
+   - Because strings are immutable, they can be used as keys in dictionaries and elements in sets. Their hash value remains constant.
+
+    ```python
+    my_set = {"apple", "banana", "cherry"}
+    ```
+
+4. **Memory Efficiency:**
+   - Python can optimize memory usage by reusing the same string in memory if it already exists, thanks to immutability.
+
+    ```python
+    a = "Hello"
+    b = "Hello"
+    # Both a and b refer to the same string object in memory
+    ```
+
+Understanding the immutability of strings is important when working with them in Python to avoid unexpected behavior and to write efficient and correct code. If you need to modify a string, you typically create a new string with the desired changes.
+
+
+### 1. lists
+
+A list is a sequenced collection of different objects such as integers, strings, and even other lists as well. The address of each element within a list is called an index. An index is used to access and refer to items within a list.
+
+Lists can contain strings, floats, and integers. We can nest other lists, and we can also nest tuples and other data structures. The same indexing conventions apply for nesting:
+
+list are like tuples, ordered sequences.
+
+But lists are mutable.
+
+A list is a built-in data type used to store an ordered collection of items. Lists are mutable, which means you can modify their contents by adding, removing, or changing elements. Lists are defined using square brackets `[]`. 
+
+Here's an overview of lists and some example methods:
+
+#### Creating Lists:
+
+```{python}
+x = []    ## empty list
+
+print(x)
+```
+
+
+```{python}
+my_list = [1, 2, 3, 'apple', 'banana', 'cherry']
+
+print(my_list)
+```
+
+#### Common List Methods:
+
+0. **Accessing**
+
+```{python}
+# Accessing by index
+first_element = my_list[0]  # Result: 1
+
+# Slicing
+subset = my_list[1:4]  # Result: [2, 3, 'apple', 'banana']
+```
+
+
+1. **Append (`append()`):**
+   - Adds an element to the end of the list.
+
+```{python}
+my_list.append("XXXX")
+
+print(my_list)
+```
+
+2. **Extend (`extend()`):**
+   - Extends the list by appending elements from another iterable.
+
+```{python}
+another_list = [5, 6, 7]
+   
+my_list.extend(another_list)
+   
+print(my_list)
+```
+
+3. **Insert (`insert()`):**
+   - Inserts an element at a specified position.   
+   - this is not replacing !!!
+
+```{python}
+my_list.insert(2, 'orange')
+
+print(my_list)
+```
+
+4. **Remove (`remove()`):**
+   - Removes the first occurrence of a specified value.
+
+```{python} 
+my_list.remove('banana')
+
+print(my_list)
+```
+
+5. **Pop (`pop()`):**
+
+   - Removes and returns the element at the specified index. If no index is provided, it removes the last element.
+
+
+```{python}
+popped_element = my_list.pop(2)
+
+print(popped_element)
+```
+  
+6. **Index (`index()`):**
+   - Returns the index of the first occurrence of a specified value.
+
+```{python}
+index_of_apple = my_list.index('apple')
+
+print(index_of_apple)
+```
+
+7. **Count (`count()`):**
+   - Returns the number of occurrences of a specified value.
+
+```{python}
+count_of_cherry = my_list.count('cherry')
+print(count_of_cherry)
+```
+
+8. **Sort (`sort()`):**
+
+   - Sorts the list in ascending order. Optionally, you can specify `reverse=True` for descending order.
+
+
+```{python}
+# Convert all elements to strings before sorting
+st_list = [str(x) for x in my_list]
+
+st_list.sort()
+
+print(st_list)
+```
+
+```{python}
+# Convert all elements to strings before sorting
+sorted_list = sorted(map(str, my_list))
+
+print(sorted_list)
+```
+
+9. **Reverse (`reverse()`):**
+   
+   - Reverses the order of the elements in the list.
+
+```{python}
+my_list.reverse()
+
+print(my_list)
+```
+
+10. **Concatenate lists**
+
+```{python}
+a_list = [1, 2, 3]
+b_list = ["x", "y", "z"]
+
+
+print(a_list + b_list)
+```
+
+**loop thru a list**
+
+```{python}
+a = ["a", "b", "c"]
+
+for item in a:
+   print(item.upper())
+```
+
+### 2. tuples
+
+`Tuples` are an ordered sequences of items, just like `lists.` The main difference between `tuples` and `lists` is that `tuples` cannot be changed (immutable) unlike `lists` which can (mutable).   
+
+`tuples` are collection of different type of objects.
+
+0. **Empty tuples**
+
+```{python}
+a = ()
+b = tuple()
+```
+
+1. **Create tuples**
+```{python}
+## 1. way
+a_tuple = (1, 2.5, "string", [3, 4])
+
+b = (1,)
+
+print(b)
+```
+
+3. **Concatenate tuples**
+
+```{python}
+b_tuple = ("a", "ab")
+
+print(a_tuple + b_tuple)
+```
+
+
+4. **Immutable**
+
+element of a tuple can not be changed 
+
+```{python, eval=F}
+a_tuple = (1,2,3,4,5)
+
+a_tuple[5] = "a"
+
+# TypeError: 'tuple' object does not support item assignment
+```
+
+5. **sorted function**
+
+`sorted()` function: We can sort the tuple and assign a new name
+
+`sorted()` function returns list type.
+
+```{python}
+a_tuple = (1, 5, 2, 7, 4)
+
+x = sorted(a_tuple)
+
+print(x)
+```
+
+6. **Nesting**
+
+we can create nested tuples.
+
+```{python}
+nested = (1, 2, ("a", "b", "c"), ("ayan", (4, 5)))
+
+nested[2]
+```
+
+#### tuple methods
+
+7. **index method**   
+The index method returns the first index at which a value occurs.
+
+```{python}
+a = ("a", "b", "c", "d")
+
+a.index("c")
+```
+
+8. **count method**   
+The count method returns the number of times a value occurs in a tuple.
+
+```{python}
+a = ("a", "b", "c", "d", "a", "b", "c", "b")
+
+a.count("b")
+```
+
+9. **loop thru a tuple**
+
+```{python}
+a = ("a", "b", "c", "d", "a", "b", "c", "d")
+
+for item in a:
+   print(item)
+```
+
+
+### 3. Sets
+
+Sets in Python are `unordered` collections of `unique` elements. 
+
+Unlike lists, sets do not have a specific order, and each element in a set must be `unique`. Here are some common operations and methods associated with sets:
+
+0. **Creating Sets**
+
+```python
+my_set = {1, 2, 3, 4, 5}
+```
+
+1. **Adding Elements**
+
+```python
+my_set.add(6)  # Adds the element 6 to the set
+```
+
+2. **Removing Elements**
+
+```python
+my_set.remove(3)  # Removes the element 3 from the set
+```
+
+3. **Set Operations**
+
+```python
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+
+# Union
+union_set = set1.union(set2)  # Result: {1, 2, 3, 4, 5, 6, 7}
+
+# Intersection
+intersection_set = set1.intersection(set2)  # Result: {3, 4, 5}
+
+# Difference
+difference_set = set1.difference(set2)  # Result: {1, 2}
+
+# Symmetric Difference
+symmetric_difference_set = set1.symmetric_difference(set2)  # Result: {1, 2, 6, 7}
+```
+
+#### Set Methods
+
+```python
+# Discard an element (if it exists)
+my_set.discard(4)
+
+# Clear all elements
+my_set.clear()
+
+# Copying a set
+copy_of_set = my_set.copy()
+```
+
+5. **Other Operations**
+
+```python
+# Checking Membership
+is_present = 5 in my_set  # Result: True
+
+# Length of a Set
+length_of_set = len(my_set)
+```
+
+Sets are useful when you need to work with unique elements, perform set operations, or check for membership efficiently. They do not support indexing or slicing, as they are unordered. Additionally, sets are mutable, meaning you can add and remove elements, but individual elements must be immutable (e.g., numbers, strings).
+
+### Dictionary
+
+Dictionaries in Python are collections of key-value pairs, where each key must be unique. Dictionaries are versatile and used for mapping values to unique keys. Here are common operations and methods associated with dictionaries:
+
+0. **Creating Dictionaries**
+
+```{python}
+my_dict = {'name': 'John', 
+           'age': 30, 
+           'city': 'New York'}
+
+print(my_dict)
+```
+
+1. **Accessing Values**
+
+```{python}
+# Accessing by key
+p0 = my_dict['name']  # Result: 'John'
+
+print(p0)
+```
+
+
+```{python}
+# Using the get() method
+p1 = my_dict.get('name')  # Result: 30
+
+print(p1)
+```
+
+2. **Modifying Dictionaries**
+
+```python
+# Updating a value
+my_dict['age'] = 31
+
+# Adding a new key-value pair
+my_dict['gender'] = 'Male'
+```
+
+3. **Removing Items**
+
+```python
+# Removing a key-value pair
+del my_dict['city']
+```
+
+```{python}
+my_dict = {'name': 'John', 
+           'age': 30, 
+           'gender': 'Male'}
+           
+# Using the pop() method
+gender = my_dict.pop('gender')  # Removes the 'gender' key and returns its value
+
+print(gender)
+```
+
+#### Dictionary Methods:
+
+```{python}
+# Getting all keys
+keys = my_dict.keys()  # Result: ['name', 'age']
+
+print(keys)
+```
+
+```{python}
+# Getting all values
+values = my_dict.values()  # Result: ['John', 31]
+
+print(values)
+```
+
+```{python}
+# Getting all key-value pairs as tuples
+items = my_dict.items()  # Result: [('name', 'John'), ('age', 31)]
+
+print(items)
+```
+
+### Iterating Over a Dictionary:
+
+```{python}
+for key in my_dict:
+    print(key, my_dict[key])
+```
+
+### Other Operations:
+
+```{python}
+# Checking Membership (in terms of keys)
+is_present = 'age' in my_dict  # Result: True
+
+# Length of a Dictionary
+length_of_dict = len(my_dict)
+```
+
+Dictionaries are widely used in Python for tasks that involve mapping keys to values, such as representing data structures, configuration settings, and more. They are mutable, meaning you can modify their contents by adding, updating, or removing key-value pairs. The keys must be immutable (e.g., strings, numbers), but the values can be of any type.
+
+
+
+
+
+

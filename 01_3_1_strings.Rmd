@@ -1,0 +1,203 @@
+### Strings
+
+A string is a sequence of characters, and it is one of the basic data types used to represent text. 
+
+Strings are enclosed in either single quotes (`'`) or double quotes (`"`), and you can use either as long as the opening and closing quotes match. Here are some key characteristics and operations related to strings in Python:
+
+0. **Creating Strings**
+
+```python
+# Using single quotes
+single_quoted_string = 'Hello, Python!'
+
+# Using double quotes
+double_quoted_string = "Hello, Python!"
+
+# Triple-quoted strings for multiline strings
+multiline_string = '''This is a
+multiline string.'''
+```
+
+1. **String Concatenation**
+
+```{python}
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+
+print(full_name)
+```
+
+2. **String Indexing and Slicing**
+
+```{python}
+my_string = "Python"
+
+# Indexing (0-based)
+first_char = my_string[0]  # Result: 'P'
+
+print(first_char)
+```
+
+**syntax:** `string_object[from : to : increment]`
+
+```{python}
+# Slicing
+substring = my_string[1:4:1]  # Result: 'yth'
+substring = my_string[1:4]  # Result: 'yth'
+
+print(substring)
+```
+
+```{python}
+print(my_string[::2])
+```
+
+#### String Methods:
+
+```python
+# Length of a string
+length = len(my_string)  # Result: 6
+
+# Converting to uppercase and lowercase
+uppercase_string = my_string.upper()
+lowercase_string = my_string.lower()
+
+# Finding a substring
+index_of_th = my_string.find("th")  # Result: 2
+
+# Replacing a substring
+new_string = my_string.replace("on", "er")  # Result: 'Pyther'
+```
+
+
+`upper()` : strings to uppercase
+`lower()` : strings to lowercase
+`capitalize()` : strings to uppercase 1st letter
+
+```{python}
+"Ohh! my life!".upper()
+"OHH! MY LIFE!".lower()
+"star".capitalize()
+```
+
+```{python}
+"is it lowercase".islower()
+"IS IT UPPERCASE".isupper()
+```
+
+**replace method**
+
+`replace()`: to replace part of a string
+**syntax:** `string.replace(oldvalue, newvalue, count)`
+
+```{python}
+query = '''
+select all_columns 
+from my_table
+'''
+new_query = query.replace("my_table", "new_table_name")
+
+print(new_query)
+```
+
+**strip method**
+
+`strip()` method removes leading or trailing white-space 
+
+```{python}
+raw_text = "   my text   "
+
+raw_text.strip()
+```
+
+**split method**
+
+`split()` method breaks a string by specified character. 
+
+`split()` method returns list type.
+
+```{python}
+raw_text = "banana, apple, cherry"
+
+alist = raw_text.split(",")
+
+alist
+```
+
+there are some whitespce in the splitted elements in the list
+
+```{python}
+alist[1].strip()
+```
+
+
+#### String Formatting:
+
+```python
+name = "Alice"
+age = 25
+formatted_string = f"My name is {name} and I am {age} years old."
+# Result: 'My name is Alice and I am 25 years old.'
+```
+
+#### Escape Characters:
+
+```{python}
+escaped_string = "This is a line.\nThis is a new line.\tThis is a tab."
+
+print(escaped_string)
+```
+
+#### Raw Strings:
+
+```{python}
+raw_string = r"This is a raw string \n\t No escape characters here."
+
+print(raw_string)
+```
+
+#### Membership and Operations:
+
+```python
+# Checking membership
+contains_py = 'py' in my_string  # Result: True
+
+# String repetition
+repeated_string = my_string * 3  # Result: 'PythonPythonPython'
+```
+
+Strings in Python are immutable, meaning once a string is created, you cannot modify its contents. Any operation that appears to modify a string actually creates a new string. Understanding these operations and methods is crucial for working effectively with strings in Python.
+
+
+
+#### loop thru strings
+
+```{python}
+my_txt = "life"
+
+for i in my_txt:
+  print(i.upper())
+```
+
+
+#### in/not in 
+
+check if a phrase is present in a string
+
+```{python}
+my_txt = "life is good!"
+
+print("good" in my_txt)
+```
+
+```{python}
+if "good" in my_txt:
+  print(my_txt)
+```
+
+
+```{python}
+if "bad" not in my_txt:
+  print("'bad' is not in the text")
+```

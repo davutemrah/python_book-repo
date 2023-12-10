@@ -1,0 +1,225 @@
+
+## Data Types
+
+In Python, data types are classifications that specify which type of value a variable can hold. Here are some of the basic and commonly used data types in Python:
+
+1. **Numeric Types:**
+   - **int:** Integer type, e.g., `x = 5`.
+   - **float:** Floating-point type, e.g., `y = 3.14`.
+   - **complex:** Complex number type, e.g., `z = 2 + 3j`.
+
+2. **Text Type:**
+   - **str:** String type, e.g., `s = "Hello, World!"`.
+
+3. **Sequence Types:**
+   - **list:** Ordered collection of items, e.g., `my_list = [1, 2, 3]`.
+   - **tuple:** Immutable ordered collection of items, e.g., `my_tuple = (1, 2, 3)`.
+
+4. **Set Types:**
+   - **set:** Unordered collection of unique items, e.g., `my_set = {1, 2, 3}`.
+   - **frozenset:** Immutable version of a set.
+
+5. **Mapping Type:**
+   - **dict:** Dictionary, a collection of key-value pairs, e.g., `my_dict = {'a': 1, 'b': 2}`.
+
+6. **Boolean Type:**
+   - **bool:** Boolean, representing `True` or `False`.
+
+7. **None Type:**
+   - **NoneType (`None`):** A special type representing the absence of a value or a null value.
+
+8. **Binary Types:**
+   - **bytes:** Immutable sequence of bytes, e.g., `b = b'hello'`.
+   - **bytearray:** Mutable sequence of bytes.
+   - **memoryview:** A view object that exposes an array's buffer interface.
+
+These data types are the building blocks for creating variables, structures, and performing various operations in Python. You can use the `type()` function to check the type of a variable or value. For example:
+
+```python
+x = 5
+print(type(x))  # Output: <class 'int'>
+
+y = 3.14
+print(type(y))  # Output: <class 'float'>
+
+s = "Hello, World!"
+print(type(s))  # Output: <class 'str'>
+```
+
+Understanding and working with these data types is fundamental to writing Python code. Keep in mind that Python is dynamically typed, meaning you don't need to explicitly declare the data type of a variable; it is determined at runtime.
+
+
+### Numeric Types
+
+#### Mathematical Operations
+
+Python supports a variety of mathematical operations, which can be performed on numerical data types. Here are some common mathematical operations in Python:
+
+#### Arithmetic Operations:
+
+1. **Addition (`+`):**
+   ```python
+   result = 5 + 3  # result is 8
+   ```
+
+2. **Subtraction (`-`):**
+   ```python
+   result = 5 - 3  # result is 2
+   ```
+
+3. **Multiplication (`*`):**
+   ```python
+   result = 5 * 3  # result is 15
+   ```
+
+4. **Division (`/`):**
+   ```python
+   result = 6 / 3  # result is 2.0 (float)
+   ```
+
+5. **Floor Division (`//`):**
+   ```python
+   result = 7 // 3  # result is 2 (integer division)
+   ```
+
+6. **Modulus (`%`):**
+   ```python
+   result = 7 % 3  # result is 1 (remainder after division)
+   ```
+
+7. **Exponentiation (`**`):**
+   ```python
+   result = 2 ** 3  # result is 8 (2 to the power of 3)
+   ```
+
+#### Comparison Operations:
+
+8. **Equal to (`==`):**
+  ```python
+result = (5 == 3)  # result is False
+  ```
+
+9. **Not equal to (`!=`):**
+   ```python
+   result = (5 != 3)  # result is True
+   ```
+
+10. **Greater than (`>`):**
+    ```python
+    result = (5 > 3)  # result is True
+    ```
+
+11. **Less than (`<`):**
+    ```python
+    result = (5 < 3)  # result is False
+    ```
+
+12. **Greater than or equal to (`>=`):**
+    ```python
+    result = (5 >= 3)  # result is True
+    ```
+
+13. **Less than or equal to (`<=`):**
+    ```python
+    result = (5 <= 3)  # result is False
+    ```
+
+### Other Mathematical Functions:
+
+14. **Absolute Value (`abs()`):**
+    ```python
+    result = abs(-5)  # result is 5
+    ```
+
+15. **Round (`round()`):**
+    ```python
+    result = round(3.14159, 2)  # result is 3.14 (rounded to 2 decimal places)
+    ```
+
+16. **Minimum (`min()`)/Maximum (`max()`):**
+    ```python
+    minimum = min(1, 2, 3)  # minimum is 1
+    maximum = max(1, 2, 3)  # maximum is 3
+    ```
+
+These are just a few examples, and Python provides a rich set of mathematical functions and operations through the `math` module as well. To use it, you can import the `math` module and access functions like `math.sqrt()`, `math.sin()`, `math.cos()`, etc.
+
+```{python}
+import math
+
+# Square root
+result = math.sqrt(16)  # result is 4.0
+
+# Trigonometric functions (input in radians)
+sin_result = math.sin(math.radians(30))  # result is 0.5 (sin of 30 degrees)
+cos_result = math.cos(math.radians(60))  # result is 0.5 (cos of 60 degrees)
+tan_result = math.tan(math.radians(45))  # result is 1.0 (tan of 45 degrees)
+
+# Logarithmic functions
+log_result = math.log(100, 10)  # result is 2.0 (log base 10 of 100)
+
+# Exponential function
+exp_result = math.exp(2)  # result is approximately 7.389
+
+# Constants
+pi_value = math.pi  # value of pi (3.141592653589793)
+euler_number = math.e  # Euler's number (2.718281828459045)
+
+# Other functions
+factorial_result = math.factorial(5)  # result is 120 (5!)
+```
+
+
+
+### Converting data types
+
+**numeric to string**
+
+```{python numst}
+a = 5.5
+
+b = str(a)
+```
+
+**string to numeric**
+
+```{python stnum}
+
+float("1.1")
+```
+
+it does not convert directly to integer here
+
+```{python, eval=F}
+
+int("1.123")
+```
+
+but it works when transforming to float then integer.
+
+```{python, eval=F}
+int(float("10.123"))
+```
+
+**boolean to numeric**
+
+`True` becomes 1
+
+```{python bool1}
+bl = True
+
+int(bl)
+```
+
+**numeric to boolean**
+
+0 becomes `False`
+
+all other numbers are `True`
+
+```{python bool2}
+bool(-100)
+bool(0)
+```
+
+
