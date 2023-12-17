@@ -20,6 +20,7 @@ dictionary-methods
 iterating-over-a-dictionary
 other-operations
 data-types
+numeric-types
 mathematical-operations
 arithmetic-operations
 comparison-operations
@@ -33,6 +34,9 @@ raw-strings
 membership-and-operations
 loop-thru-strings
 innot-in
+control-statements
+looping
+looping-extra
 pandas-library
 data-creation
 columns

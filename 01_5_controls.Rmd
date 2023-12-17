@@ -1,0 +1,77 @@
+## Control Statements
+
+
+### Looping
+
+
+### Looping Extra
+
+1) `for`-`else`
+
+```{python}
+for i in range(5):
+    break
+else:
+    print('else runs cus break didnt run')
+```
+
+
+In a for-else block,
+if break runs in the for loop, else doesn’t run
+if break doesn’t run in the for loop, else will run
+
+2) `break` vs `continue`
+
+break stops the entire loop immediately
+when L='C', break happens, and the entire loop stops.
+
+```{python}
+LETTERS = ['A', 'B', 'C', 'D', 'E']
+
+for L in LETTERS:
+  if L == 'C':
+    break
+  print(L)
+```
+
+`continue` skips to the next iteration, without stopping the entire loop
+
+```{python}
+LETTERS = ['A', 'B', 'C', 'D', 'E']
+
+for L in LETTERS:
+  if L == 'C':
+    continue
+  print(L)
+```
+
+when `L='C'`, `continue` executes, and the iteration for `L='C'` is skipped. 
+
+Instead we skip over to the next iteration immediately, where `L='D'`
+
+Note that `continue` doesn’t stop the entire loop like `break`
+
+3) enumerate & zip
+
+`enumerate()` allows us to generate both index and element at the same time when iterating through a list (or similar iterable).
+
+```{python}
+LETTERS = ['A', 'B', 'C', 'D', 'E']
+
+for i,L in enumerate(LETTERS):
+    print(i, L)
+```
+
+`zip()` allows us to iterate through 2 or more `lists` (or `iterables`) at once.
+
+```{python}
+names = ['Adam', 'Eve', 'Joe']
+ages = [25,35,18]
+
+for name, age in zip(names, ages):
+    print(name, age)
+```
+
+
+
+

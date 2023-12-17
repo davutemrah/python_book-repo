@@ -23,7 +23,7 @@
 <meta name="author" content="Davut Ayan" />
 
 
-<meta name="date" content="2023-11-29" />
+<meta name="date" content="2023-12-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,10 +160,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#data-types"><i class="fa fa-check"></i><b>1.3</b> Data Types</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#mathematical-operations"><i class="fa fa-check"></i><b>1.3.1</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#numeric-types"><i class="fa fa-check"></i><b>1.3.1</b> Numeric Types</a></li>
 <li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#other-mathematical-functions"><i class="fa fa-check"></i><b>1.3.2</b> Other Mathematical Functions:</a></li>
 <li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#converting-data-types"><i class="fa fa-check"></i><b>1.3.3</b> Converting data types</a></li>
 <li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#strings"><i class="fa fa-check"></i><b>1.3.4</b> Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#control-statements"><i class="fa fa-check"></i><b>1.4</b> Control Statements</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#looping"><i class="fa fa-check"></i><b>1.4.1</b> Looping</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#looping-extra"><i class="fa fa-check"></i><b>1.4.2</b> Looping Extra</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>2</b> Pandas Library</a>
@@ -217,30 +222,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 2</span> Pandas Library<a href="pandas-library.html#pandas-library" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>run <code>pip3 install pandas</code> or
 run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupyter notebook</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="pandas-library.html#cb163-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb163-2"><a href="pandas-library.html#cb163-2" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb167-1"><a href="pandas-library.html#cb167-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb167-2"><a href="pandas-library.html#cb167-2" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
 <div id="data-creation" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> data creation<a href="pandas-library.html#data-creation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sometimes you may need to create an data frame</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb164-1"><a href="pandas-library.html#cb164-1" tabindex="-1"></a><span class="co">## empty data frame</span></span>
-<span id="cb164-2"><a href="pandas-library.html#cb164-2" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb164-3"><a href="pandas-library.html#cb164-3" tabindex="-1"></a>df1</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb168-1"><a href="pandas-library.html#cb168-1" tabindex="-1"></a><span class="co">## empty data frame</span></span>
+<span id="cb168-2"><a href="pandas-library.html#cb168-2" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb168-3"><a href="pandas-library.html#cb168-3" tabindex="-1"></a>df1</span></code></pre></div>
 <pre><code>## Empty DataFrame
 ## Columns: []
 ## Index: []</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb166-1"><a href="pandas-library.html#cb166-1" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span> : []})</span>
-<span id="cb166-2"><a href="pandas-library.html#cb166-2" tabindex="-1"></a>df2</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb170-1"><a href="pandas-library.html#cb170-1" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span> : []})</span>
+<span id="cb170-2"><a href="pandas-library.html#cb170-2" tabindex="-1"></a>df2</span></code></pre></div>
 <pre><code>## Empty DataFrame
 ## Columns: [A]
 ## Index: []</code></pre>
 <p>Is df2 empty?</p>
 <p>There is column name but it is still empty.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb168-1"><a href="pandas-library.html#cb168-1" tabindex="-1"></a>df2.empty</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb172-1"><a href="pandas-library.html#cb172-1" tabindex="-1"></a>df2.empty</span></code></pre></div>
 <pre><code>## True</code></pre>
 <p>How to create a sample data frame?</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb170-1"><a href="pandas-library.html#cb170-1" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;var1&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], </span>
-<span id="cb170-2"><a href="pandas-library.html#cb170-2" tabindex="-1"></a>                    <span class="st">&#39;var2&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]})</span>
-<span id="cb170-3"><a href="pandas-library.html#cb170-3" tabindex="-1"></a>df3</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb174-1"><a href="pandas-library.html#cb174-1" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;var1&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], </span>
+<span id="cb174-2"><a href="pandas-library.html#cb174-2" tabindex="-1"></a>                    <span class="st">&#39;var2&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]})</span>
+<span id="cb174-3"><a href="pandas-library.html#cb174-3" tabindex="-1"></a>df3</span></code></pre></div>
 <pre><code>##    var1 var2
 ## 0     1    a
 ## 1     2    b
@@ -252,36 +257,36 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 <h4><span class="header-section-number">2.1.1.1</span> column names<a href="pandas-library.html#column-names" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>How to get the column names?</p>
 <p>–&gt; Column names are stored in <code>columns</code> attribute.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb172-1"><a href="pandas-library.html#cb172-1" tabindex="-1"></a>my_cols <span class="op">=</span> df3.columns</span>
-<span id="cb172-2"><a href="pandas-library.html#cb172-2" tabindex="-1"></a>my_cols</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="pandas-library.html#cb176-1" tabindex="-1"></a>my_cols <span class="op">=</span> df3.columns</span>
+<span id="cb176-2"><a href="pandas-library.html#cb176-2" tabindex="-1"></a>my_cols</span></code></pre></div>
 <pre><code>## Index([&#39;var1&#39;, &#39;var2&#39;], dtype=&#39;object&#39;)</code></pre>
 <ul>
 <li>iterating the columns</li>
 </ul>
-<div class="sourceCode" id="cb174"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb174-1"><a href="pandas-library.html#cb174-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> df3.columns:</span>
-<span id="cb174-2"><a href="pandas-library.html#cb174-2" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb178-1"><a href="pandas-library.html#cb178-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> df3.columns:</span>
+<span id="cb178-2"><a href="pandas-library.html#cb178-2" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
 <pre><code>## var1
 ## var2</code></pre>
 <ul>
 <li>we can put them in a list</li>
 </ul>
-<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="pandas-library.html#cb176-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb180-1"><a href="pandas-library.html#cb180-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns)</span></code></pre></div>
 <pre><code>## [&#39;var1&#39;, &#39;var2&#39;]</code></pre>
 <ul>
 <li>calling <code>keys()</code> function: output is similar to columns attributes</li>
 </ul>
-<div class="sourceCode" id="cb178"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb178-1"><a href="pandas-library.html#cb178-1" tabindex="-1"></a>df3.keys()</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb182-1"><a href="pandas-library.html#cb182-1" tabindex="-1"></a>df3.keys()</span></code></pre></div>
 <pre><code>## Index([&#39;var1&#39;, &#39;var2&#39;], dtype=&#39;object&#39;)</code></pre>
 <ul>
 <li><code>column.values</code> method returns an array of index.</li>
 </ul>
-<div class="sourceCode" id="cb180"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb180-1"><a href="pandas-library.html#cb180-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns.values)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb184-1"><a href="pandas-library.html#cb184-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns.values)</span></code></pre></div>
 <pre><code>## [&#39;var1&#39;, &#39;var2&#39;]</code></pre>
 <p>Using <code>tolist()</code> method with values with given the list of columns.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb182-1"><a href="pandas-library.html#cb182-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns.values.tolist())</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb186-1"><a href="pandas-library.html#cb186-1" tabindex="-1"></a><span class="bu">list</span>(df3.columns.values.tolist())</span></code></pre></div>
 <pre><code>## [&#39;var1&#39;, &#39;var2&#39;]</code></pre>
 <p>Using <code>sorted()</code> method : <code>sorted()</code> method will return the list of columns sorted in alphabetical order.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb184-1"><a href="pandas-library.html#cb184-1" tabindex="-1"></a><span class="bu">sorted</span>(df3)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb188-1"><a href="pandas-library.html#cb188-1" tabindex="-1"></a><span class="bu">sorted</span>(df3)</span></code></pre></div>
 <pre><code>## [&#39;var1&#39;, &#39;var2&#39;]</code></pre>
 </div>
 <div id="rename" class="section level4 hasAnchor" number="2.1.1.2">
@@ -289,39 +294,39 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 <p>Renaming column names is a standard procedure most of the time. We may need to standardize column names, mostly make them clean.</p>
 <p>There is a nice link <a href="https://www.statology.org/pandas-rename-columns/">here.</a></p>
 <p>Lets create a sample data frame</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb186-1"><a href="pandas-library.html#cb186-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A?la&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
-<span id="cb186-2"><a href="pandas-library.html#cb186-2" tabindex="-1"></a>                    <span class="st">&#39;PYTHON&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>],</span>
-<span id="cb186-3"><a href="pandas-library.html#cb186-3" tabindex="-1"></a>                    <span class="st">&#39;col 3&#39;</span>: [<span class="st">&#39;1&#39;</span>,<span class="st">&#39;1&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;b&#39;</span>]})</span>
-<span id="cb186-4"><a href="pandas-library.html#cb186-4" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb190-1"><a href="pandas-library.html#cb190-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A?la&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
+<span id="cb190-2"><a href="pandas-library.html#cb190-2" tabindex="-1"></a>                    <span class="st">&#39;PYTHON&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>],</span>
+<span id="cb190-3"><a href="pandas-library.html#cb190-3" tabindex="-1"></a>                    <span class="st">&#39;col 3&#39;</span>: [<span class="st">&#39;1&#39;</span>,<span class="st">&#39;1&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;b&#39;</span>]})</span>
+<span id="cb190-4"><a href="pandas-library.html#cb190-4" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>##    A?la PYTHON col 3
 ## 0     1      a     1
 ## 1     2      a     1
 ## 2     3      a     b
 ## 3     4      a     b</code></pre>
 <p><strong>Method 1: Rename Specific Columns</strong></p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb188-1"><a href="pandas-library.html#cb188-1" tabindex="-1"></a>df.rename(columns <span class="op">=</span> {<span class="st">&#39;PYTHON&#39;</span>:<span class="st">&#39;Python&#39;</span>}, inplace <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb192-1"><a href="pandas-library.html#cb192-1" tabindex="-1"></a>df.rename(columns <span class="op">=</span> {<span class="st">&#39;PYTHON&#39;</span>:<span class="st">&#39;Python&#39;</span>}, inplace <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div>
 <pre><code>##    A?la Python col 3
 ## 0     1      a     1
 ## 1     2      a     1
 ## 2     3      a     b
 ## 3     4      a     b</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb190-1"><a href="pandas-library.html#cb190-1" tabindex="-1"></a><span class="co">### list column names</span></span>
-<span id="cb190-2"><a href="pandas-library.html#cb190-2" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb194-1"><a href="pandas-library.html#cb194-1" tabindex="-1"></a><span class="co">### list column names</span></span>
+<span id="cb194-2"><a href="pandas-library.html#cb194-2" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
 <pre><code>## [&#39;A?la&#39;, &#39;PYTHON&#39;, &#39;col 3&#39;]</code></pre>
 <p><strong>Method 2: Rename All Columns</strong></p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb192-1"><a href="pandas-library.html#cb192-1" tabindex="-1"></a>new_names <span class="op">=</span> [<span class="st">&#39;new_name1&#39;</span>, <span class="st">&#39;new_name2&#39;</span>,<span class="st">&#39;new_name3&#39;</span>]</span>
-<span id="cb192-2"><a href="pandas-library.html#cb192-2" tabindex="-1"></a>df.columns <span class="op">=</span> new_names</span>
-<span id="cb192-3"><a href="pandas-library.html#cb192-3" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb196-1"><a href="pandas-library.html#cb196-1" tabindex="-1"></a>new_names <span class="op">=</span> [<span class="st">&#39;new_name1&#39;</span>, <span class="st">&#39;new_name2&#39;</span>,<span class="st">&#39;new_name3&#39;</span>]</span>
+<span id="cb196-2"><a href="pandas-library.html#cb196-2" tabindex="-1"></a>df.columns <span class="op">=</span> new_names</span>
+<span id="cb196-3"><a href="pandas-library.html#cb196-3" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
 <pre><code>## [&#39;new_name1&#39;, &#39;new_name2&#39;, &#39;new_name3&#39;]</code></pre>
 <p><strong>Method 3: Replace Specific Characters in Columns</strong></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb194-1"><a href="pandas-library.html#cb194-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
-<span id="cb194-2"><a href="pandas-library.html#cb194-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR1$$$&#39;</span>, <span class="st">&#39;var2&#39;</span>,<span class="st">&#39;Var3###&#39;</span>]</span>
-<span id="cb194-3"><a href="pandas-library.html#cb194-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span>
-<span id="cb194-4"><a href="pandas-library.html#cb194-4" tabindex="-1"></a></span>
-<span id="cb194-5"><a href="pandas-library.html#cb194-5" tabindex="-1"></a><span class="co">### removing bad characters</span></span>
-<span id="cb194-6"><a href="pandas-library.html#cb194-6" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb194-7"><a href="pandas-library.html#cb194-7" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb194-8"><a href="pandas-library.html#cb194-8" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb198-1"><a href="pandas-library.html#cb198-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
+<span id="cb198-2"><a href="pandas-library.html#cb198-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR1$$$&#39;</span>, <span class="st">&#39;var2&#39;</span>,<span class="st">&#39;Var3###&#39;</span>]</span>
+<span id="cb198-3"><a href="pandas-library.html#cb198-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span>
+<span id="cb198-4"><a href="pandas-library.html#cb198-4" tabindex="-1"></a></span>
+<span id="cb198-5"><a href="pandas-library.html#cb198-5" tabindex="-1"></a><span class="co">### removing bad characters</span></span>
+<span id="cb198-6"><a href="pandas-library.html#cb198-6" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb198-7"><a href="pandas-library.html#cb198-7" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb198-8"><a href="pandas-library.html#cb198-8" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
 <pre><code>## [&#39;VAR1&#39;, &#39;var2&#39;, &#39;Var3&#39;]</code></pre>
 <p><strong>clean column names</strong></p>
 <p>Generally we expect clean columns to be:
@@ -330,34 +335,34 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 3. no space
 4. no special character
 5. probably lowercase</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb196-1"><a href="pandas-library.html#cb196-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
-<span id="cb196-2"><a href="pandas-library.html#cb196-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR  $1&#39;</span>, <span class="st">&#39;var #2&#39;</span>,<span class="st">&#39;Var ? 3 &#39;</span>]</span>
-<span id="cb196-3"><a href="pandas-library.html#cb196-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span>
-<span id="cb196-4"><a href="pandas-library.html#cb196-4" tabindex="-1"></a></span>
-<span id="cb196-5"><a href="pandas-library.html#cb196-5" tabindex="-1"></a><span class="co">## Column names: remove white spaces and convert to lower case</span></span>
-<span id="cb196-6"><a href="pandas-library.html#cb196-6" tabindex="-1"></a>df.columns<span class="op">=</span> df.columns.<span class="bu">str</span>.strip()</span>
-<span id="cb196-7"><a href="pandas-library.html#cb196-7" tabindex="-1"></a></span>
-<span id="cb196-8"><a href="pandas-library.html#cb196-8" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
-<span id="cb196-9"><a href="pandas-library.html#cb196-9" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.lower()</span>
-<span id="cb196-10"><a href="pandas-library.html#cb196-10" tabindex="-1"></a></span>
-<span id="cb196-11"><a href="pandas-library.html#cb196-11" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
-<span id="cb196-12"><a href="pandas-library.html#cb196-12" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> <span class="bu">str</span>.lower)</span>
-<span id="cb196-13"><a href="pandas-library.html#cb196-13" tabindex="-1"></a></span>
-<span id="cb196-14"><a href="pandas-library.html#cb196-14" tabindex="-1"></a><span class="co">## removing bad characters</span></span>
-<span id="cb196-15"><a href="pandas-library.html#cb196-15" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb196-16"><a href="pandas-library.html#cb196-16" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb196-17"><a href="pandas-library.html#cb196-17" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;?&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb196-18"><a href="pandas-library.html#cb196-18" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb196-19"><a href="pandas-library.html#cb196-19" tabindex="-1"></a></span>
-<span id="cb196-20"><a href="pandas-library.html#cb196-20" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb200-1"><a href="pandas-library.html#cb200-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
+<span id="cb200-2"><a href="pandas-library.html#cb200-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR  $1&#39;</span>, <span class="st">&#39;var #2&#39;</span>,<span class="st">&#39;Var ? 3 &#39;</span>]</span>
+<span id="cb200-3"><a href="pandas-library.html#cb200-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span>
+<span id="cb200-4"><a href="pandas-library.html#cb200-4" tabindex="-1"></a></span>
+<span id="cb200-5"><a href="pandas-library.html#cb200-5" tabindex="-1"></a><span class="co">## Column names: remove white spaces and convert to lower case</span></span>
+<span id="cb200-6"><a href="pandas-library.html#cb200-6" tabindex="-1"></a>df.columns<span class="op">=</span> df.columns.<span class="bu">str</span>.strip()</span>
+<span id="cb200-7"><a href="pandas-library.html#cb200-7" tabindex="-1"></a></span>
+<span id="cb200-8"><a href="pandas-library.html#cb200-8" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
+<span id="cb200-9"><a href="pandas-library.html#cb200-9" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.lower()</span>
+<span id="cb200-10"><a href="pandas-library.html#cb200-10" tabindex="-1"></a></span>
+<span id="cb200-11"><a href="pandas-library.html#cb200-11" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
+<span id="cb200-12"><a href="pandas-library.html#cb200-12" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> <span class="bu">str</span>.lower)</span>
+<span id="cb200-13"><a href="pandas-library.html#cb200-13" tabindex="-1"></a></span>
+<span id="cb200-14"><a href="pandas-library.html#cb200-14" tabindex="-1"></a><span class="co">## removing bad characters</span></span>
+<span id="cb200-15"><a href="pandas-library.html#cb200-15" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb200-16"><a href="pandas-library.html#cb200-16" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb200-17"><a href="pandas-library.html#cb200-17" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;?&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb200-18"><a href="pandas-library.html#cb200-18" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb200-19"><a href="pandas-library.html#cb200-19" tabindex="-1"></a></span>
+<span id="cb200-20"><a href="pandas-library.html#cb200-20" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
 <pre><code>## [&#39;var1&#39;, &#39;var2&#39;, &#39;var3&#39;]</code></pre>
 <ul>
 <li>sometimes we need them to be uppercase</li>
 </ul>
-<div class="sourceCode" id="cb198"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb198-1"><a href="pandas-library.html#cb198-1" tabindex="-1"></a><span class="co">## Column names: convert to upper case</span></span>
-<span id="cb198-2"><a href="pandas-library.html#cb198-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.upper()</span>
-<span id="cb198-3"><a href="pandas-library.html#cb198-3" tabindex="-1"></a></span>
-<span id="cb198-4"><a href="pandas-library.html#cb198-4" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb202-1"><a href="pandas-library.html#cb202-1" tabindex="-1"></a><span class="co">## Column names: convert to upper case</span></span>
+<span id="cb202-2"><a href="pandas-library.html#cb202-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.upper()</span>
+<span id="cb202-3"><a href="pandas-library.html#cb202-3" tabindex="-1"></a></span>
+<span id="cb202-4"><a href="pandas-library.html#cb202-4" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
 <pre><code>## [&#39;VAR1&#39;, &#39;VAR2&#39;, &#39;VAR3&#39;]</code></pre>
 </div>
 </div>
@@ -367,9 +372,9 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 <div id="csv-file" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> csv file<a href="pandas-library.html#csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>IBM sample data:</strong> I could not run with “https” because I did not have a certificate installed. So, I go on with “http” and it worked.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb200-1"><a href="pandas-library.html#cb200-1" tabindex="-1"></a>data_link <span class="op">=</span> <span class="st">&quot;http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv&quot;</span></span>
-<span id="cb200-2"><a href="pandas-library.html#cb200-2" tabindex="-1"></a></span>
-<span id="cb200-3"><a href="pandas-library.html#cb200-3" tabindex="-1"></a>recipes <span class="op">=</span> pd.read_csv(data_link)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb204-1"><a href="pandas-library.html#cb204-1" tabindex="-1"></a>data_link <span class="op">=</span> <span class="st">&quot;http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv&quot;</span></span>
+<span id="cb204-2"><a href="pandas-library.html#cb204-2" tabindex="-1"></a></span>
+<span id="cb204-3"><a href="pandas-library.html#cb204-3" tabindex="-1"></a>recipes <span class="op">=</span> pd.read_csv(data_link)</span></code></pre></div>
 </div>
 <div id="xlsx-file" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> xlsx file<a href="pandas-library.html#xlsx-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -380,10 +385,10 @@ names = None,
 index_col = None,
 usecols = None)</p>
 <p>This returns dataframe object.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb201-1"><a href="pandas-library.html#cb201-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">&quot;./data/segmentation.xlsx&quot;</span>,</span>
-<span id="cb201-2"><a href="pandas-library.html#cb201-2" tabindex="-1"></a>                  sheet_name <span class="op">=</span> <span class="st">&quot;sheet&quot;</span>)</span>
-<span id="cb201-3"><a href="pandas-library.html#cb201-3" tabindex="-1"></a>                  </span>
-<span id="cb201-4"><a href="pandas-library.html#cb201-4" tabindex="-1"></a>df.head(n<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb205-1"><a href="pandas-library.html#cb205-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">&quot;./data/segmentation.xlsx&quot;</span>,</span>
+<span id="cb205-2"><a href="pandas-library.html#cb205-2" tabindex="-1"></a>                  sheet_name <span class="op">=</span> <span class="st">&quot;sheet&quot;</span>)</span>
+<span id="cb205-3"><a href="pandas-library.html#cb205-3" tabindex="-1"></a>                  </span>
+<span id="cb205-4"><a href="pandas-library.html#cb205-4" tabindex="-1"></a>df.head(n<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##    respondent_id  variety_of_choice  electronics  furniture  \
 ## 0              1                  8            6          6   
 ## 1              2                  6            3          1   
@@ -401,10 +406,10 @@ usecols = None)</p>
 </div>
 <div id="explore-data" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Explore Data<a href="pandas-library.html#explore-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb203"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb203-1"><a href="pandas-library.html#cb203-1" tabindex="-1"></a><span class="co">#recipes.head()</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb207-1"><a href="pandas-library.html#cb207-1" tabindex="-1"></a><span class="co">#recipes.head()</span></span></code></pre></div>
 <div id="get-the-dimensions-of-the-dataframe." class="section level3 hasAnchor" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Get the dimensions of the dataframe.<a href="pandas-library.html#get-the-dimensions-of-the-dataframe." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb204"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb204-1"><a href="pandas-library.html#cb204-1" tabindex="-1"></a><span class="co">#recipes.shape</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="pandas-library.html#cb208-1" tabindex="-1"></a><span class="co">#recipes.shape</span></span></code></pre></div>
 
 </div>
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Davut Ayan" />
 
 
-<meta name="date" content="2023-11-29" />
+<meta name="date" content="2023-12-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,10 +160,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#data-types"><i class="fa fa-check"></i><b>1.3</b> Data Types</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#mathematical-operations"><i class="fa fa-check"></i><b>1.3.1</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#numeric-types"><i class="fa fa-check"></i><b>1.3.1</b> Numeric Types</a></li>
 <li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#other-mathematical-functions"><i class="fa fa-check"></i><b>1.3.2</b> Other Mathematical Functions:</a></li>
 <li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#converting-data-types"><i class="fa fa-check"></i><b>1.3.3</b> Converting data types</a></li>
 <li class="chapter" data-level="1.3.4" data-path="intro.html"><a href="intro.html#strings"><i class="fa fa-check"></i><b>1.3.4</b> Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#control-statements"><i class="fa fa-check"></i><b>1.4</b> Control Statements</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#looping"><i class="fa fa-check"></i><b>1.4.1</b> Looping</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#looping-extra"><i class="fa fa-check"></i><b>1.4.2</b> Looping Extra</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>2</b> Pandas Library</a>
@@ -860,46 +865,48 @@ The count method returns the number of times a value occurs in a tuple.</li>
 </ol>
 <p>These data types are the building blocks for creating variables, structures, and performing various operations in Python. You can use the <code>type()</code> function to check the type of a variable or value. For example:</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="intro.html#cb94-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb94-2"><a href="intro.html#cb94-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># Output: &lt;class &#39;int&#39;&gt;</span></span></code></pre></div>
-<pre><code>## &lt;class &#39;int&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="intro.html#cb96-1" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.14</span></span>
-<span id="cb96-2"><a href="intro.html#cb96-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(y))  <span class="co"># Output: &lt;class &#39;float&#39;&gt;</span></span></code></pre></div>
-<pre><code>## &lt;class &#39;float&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="intro.html#cb98-1" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span></span>
-<span id="cb98-2"><a href="intro.html#cb98-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(s))  <span class="co"># Output: &lt;class &#39;str&#39;&gt;</span></span></code></pre></div>
-<pre><code>## &lt;class &#39;str&#39;&gt;</code></pre>
+<span id="cb94-2"><a href="intro.html#cb94-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># Output: &lt;class &#39;int&#39;&gt;</span></span>
+<span id="cb94-3"><a href="intro.html#cb94-3" tabindex="-1"></a></span>
+<span id="cb94-4"><a href="intro.html#cb94-4" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb94-5"><a href="intro.html#cb94-5" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(y))  <span class="co"># Output: &lt;class &#39;float&#39;&gt;</span></span>
+<span id="cb94-6"><a href="intro.html#cb94-6" tabindex="-1"></a></span>
+<span id="cb94-7"><a href="intro.html#cb94-7" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;Hello, World!&quot;</span></span>
+<span id="cb94-8"><a href="intro.html#cb94-8" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(s))  <span class="co"># Output: &lt;class &#39;str&#39;&gt;</span></span></code></pre></div>
 <p>Understanding and working with these data types is fundamental to writing Python code. Keep in mind that Python is dynamically typed, meaning you don’t need to explicitly declare the data type of a variable; it is determined at runtime.</p>
-<div id="mathematical-operations" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Mathematical Operations<a href="intro.html#mathematical-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="numeric-types" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Numeric Types<a href="intro.html#numeric-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="mathematical-operations" class="section level4 hasAnchor" number="1.3.1.1">
+<h4><span class="header-section-number">1.3.1.1</span> Mathematical Operations<a href="intro.html#mathematical-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Python supports a variety of mathematical operations, which can be performed on numerical data types. Here are some common mathematical operations in Python:</p>
-<div id="arithmetic-operations" class="section level4 hasAnchor" number="1.3.1.1">
-<h4><span class="header-section-number">1.3.1.1</span> Arithmetic Operations:<a href="intro.html#arithmetic-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="arithmetic-operations" class="section level4 hasAnchor" number="1.3.1.2">
+<h4><span class="header-section-number">1.3.1.2</span> Arithmetic Operations:<a href="intro.html#arithmetic-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li><p><strong>Addition (<code>+</code>):</strong></p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="intro.html#cb100-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># result is 8</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="intro.html#cb95-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># result is 8</span></span></code></pre></div></li>
 <li><p><strong>Subtraction (<code>-</code>):</strong></p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="intro.html#cb101-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">-</span> <span class="dv">3</span>  <span class="co"># result is 2</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="intro.html#cb96-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">-</span> <span class="dv">3</span>  <span class="co"># result is 2</span></span></code></pre></div></li>
 <li><p><strong>Multiplication (<code>*</code>):</strong></p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="intro.html#cb102-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">3</span>  <span class="co"># result is 15</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="intro.html#cb97-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">3</span>  <span class="co"># result is 15</span></span></code></pre></div></li>
 <li><p><strong>Division (<code>/</code>):</strong></p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="intro.html#cb103-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">6</span> <span class="op">/</span> <span class="dv">3</span>  <span class="co"># result is 2.0 (float)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="intro.html#cb98-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">6</span> <span class="op">/</span> <span class="dv">3</span>  <span class="co"># result is 2.0 (float)</span></span></code></pre></div></li>
 <li><p><strong>Floor Division (<code>//</code>):</strong></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="intro.html#cb104-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span>  <span class="co"># result is 2 (integer division)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="intro.html#cb99-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span>  <span class="co"># result is 2 (integer division)</span></span></code></pre></div></li>
 <li><p><strong>Modulus (<code>%</code>):</strong></p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="intro.html#cb105-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">7</span> <span class="op">%</span> <span class="dv">3</span>  <span class="co"># result is 1 (remainder after division)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="intro.html#cb100-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">7</span> <span class="op">%</span> <span class="dv">3</span>  <span class="co"># result is 1 (remainder after division)</span></span></code></pre></div></li>
 <li><p><strong>Exponentiation (<code>**</code>):</strong></p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="intro.html#cb106-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span>  <span class="co"># result is 8 (2 to the power of 3)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="intro.html#cb101-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span>  <span class="co"># result is 8 (2 to the power of 3)</span></span></code></pre></div></li>
 </ol>
 </div>
-<div id="comparison-operations" class="section level4 hasAnchor" number="1.3.1.2">
-<h4><span class="header-section-number">1.3.1.2</span> Comparison Operations:<a href="intro.html#comparison-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="comparison-operations" class="section level4 hasAnchor" number="1.3.1.3">
+<h4><span class="header-section-number">1.3.1.3</span> Comparison Operations:<a href="intro.html#comparison-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol start="8" style="list-style-type: decimal">
 <li><strong>Equal to (<code>==</code>):</strong></li>
 </ol>
-<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="intro.html#cb107-1" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">5</span> <span class="op">==</span> <span class="dv">3</span>)  <span class="co"># result is False</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="intro.html#cb102-1" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">5</span> <span class="op">==</span> <span class="dv">3</span>)  <span class="co"># result is False</span></span></code></pre></div>
 <ol start="9" style="list-style-type: decimal">
 <li><p><strong>Not equal to (<code>!=</code>):</strong></p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="intro.html#cb108-1" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">5</span> <span class="op">!=</span> <span class="dv">3</span>)  <span class="co"># result is True</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="intro.html#cb103-1" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">5</span> <span class="op">!=</span> <span class="dv">3</span>)  <span class="co"># result is True</span></span></code></pre></div></li>
 <li><p><strong>Greater than (<code>&gt;</code>):</strong>
 <code>python     result = (5 &gt; 3)  # result is True</code></p></li>
 <li><p><strong>Less than (<code>&lt;</code>):</strong>
@@ -922,54 +929,54 @@ The count method returns the number of times a value occurs in a tuple.</li>
 <code>python     minimum = min(1, 2, 3)  # minimum is 1     maximum = max(1, 2, 3)  # maximum is 3</code></p></li>
 </ol>
 <p>These are just a few examples, and Python provides a rich set of mathematical functions and operations through the <code>math</code> module as well. To use it, you can import the <code>math</code> module and access functions like <code>math.sqrt()</code>, <code>math.sin()</code>, <code>math.cos()</code>, etc.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="intro.html#cb109-1" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb109-2"><a href="intro.html#cb109-2" tabindex="-1"></a></span>
-<span id="cb109-3"><a href="intro.html#cb109-3" tabindex="-1"></a><span class="co"># Square root</span></span>
-<span id="cb109-4"><a href="intro.html#cb109-4" tabindex="-1"></a>result <span class="op">=</span> math.sqrt(<span class="dv">16</span>)  <span class="co"># result is 4.0</span></span>
-<span id="cb109-5"><a href="intro.html#cb109-5" tabindex="-1"></a></span>
-<span id="cb109-6"><a href="intro.html#cb109-6" tabindex="-1"></a><span class="co"># Trigonometric functions (input in radians)</span></span>
-<span id="cb109-7"><a href="intro.html#cb109-7" tabindex="-1"></a>sin_result <span class="op">=</span> math.sin(math.radians(<span class="dv">30</span>))  <span class="co"># result is 0.5 (sin of 30 degrees)</span></span>
-<span id="cb109-8"><a href="intro.html#cb109-8" tabindex="-1"></a>cos_result <span class="op">=</span> math.cos(math.radians(<span class="dv">60</span>))  <span class="co"># result is 0.5 (cos of 60 degrees)</span></span>
-<span id="cb109-9"><a href="intro.html#cb109-9" tabindex="-1"></a>tan_result <span class="op">=</span> math.tan(math.radians(<span class="dv">45</span>))  <span class="co"># result is 1.0 (tan of 45 degrees)</span></span>
-<span id="cb109-10"><a href="intro.html#cb109-10" tabindex="-1"></a></span>
-<span id="cb109-11"><a href="intro.html#cb109-11" tabindex="-1"></a><span class="co"># Logarithmic functions</span></span>
-<span id="cb109-12"><a href="intro.html#cb109-12" tabindex="-1"></a>log_result <span class="op">=</span> math.log(<span class="dv">100</span>, <span class="dv">10</span>)  <span class="co"># result is 2.0 (log base 10 of 100)</span></span>
-<span id="cb109-13"><a href="intro.html#cb109-13" tabindex="-1"></a></span>
-<span id="cb109-14"><a href="intro.html#cb109-14" tabindex="-1"></a><span class="co"># Exponential function</span></span>
-<span id="cb109-15"><a href="intro.html#cb109-15" tabindex="-1"></a>exp_result <span class="op">=</span> math.exp(<span class="dv">2</span>)  <span class="co"># result is approximately 7.389</span></span>
-<span id="cb109-16"><a href="intro.html#cb109-16" tabindex="-1"></a></span>
-<span id="cb109-17"><a href="intro.html#cb109-17" tabindex="-1"></a><span class="co"># Constants</span></span>
-<span id="cb109-18"><a href="intro.html#cb109-18" tabindex="-1"></a>pi_value <span class="op">=</span> math.pi  <span class="co"># value of pi (3.141592653589793)</span></span>
-<span id="cb109-19"><a href="intro.html#cb109-19" tabindex="-1"></a>euler_number <span class="op">=</span> math.e  <span class="co"># Euler&#39;s number (2.718281828459045)</span></span>
-<span id="cb109-20"><a href="intro.html#cb109-20" tabindex="-1"></a></span>
-<span id="cb109-21"><a href="intro.html#cb109-21" tabindex="-1"></a><span class="co"># Other functions</span></span>
-<span id="cb109-22"><a href="intro.html#cb109-22" tabindex="-1"></a>factorial_result <span class="op">=</span> math.factorial(<span class="dv">5</span>)  <span class="co"># result is 120 (5!)</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="intro.html#cb104-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb104-2"><a href="intro.html#cb104-2" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="intro.html#cb104-3" tabindex="-1"></a><span class="co"># Square root</span></span>
+<span id="cb104-4"><a href="intro.html#cb104-4" tabindex="-1"></a>result <span class="op">=</span> math.sqrt(<span class="dv">16</span>)  <span class="co"># result is 4.0</span></span>
+<span id="cb104-5"><a href="intro.html#cb104-5" tabindex="-1"></a></span>
+<span id="cb104-6"><a href="intro.html#cb104-6" tabindex="-1"></a><span class="co"># Trigonometric functions (input in radians)</span></span>
+<span id="cb104-7"><a href="intro.html#cb104-7" tabindex="-1"></a>sin_result <span class="op">=</span> math.sin(math.radians(<span class="dv">30</span>))  <span class="co"># result is 0.5 (sin of 30 degrees)</span></span>
+<span id="cb104-8"><a href="intro.html#cb104-8" tabindex="-1"></a>cos_result <span class="op">=</span> math.cos(math.radians(<span class="dv">60</span>))  <span class="co"># result is 0.5 (cos of 60 degrees)</span></span>
+<span id="cb104-9"><a href="intro.html#cb104-9" tabindex="-1"></a>tan_result <span class="op">=</span> math.tan(math.radians(<span class="dv">45</span>))  <span class="co"># result is 1.0 (tan of 45 degrees)</span></span>
+<span id="cb104-10"><a href="intro.html#cb104-10" tabindex="-1"></a></span>
+<span id="cb104-11"><a href="intro.html#cb104-11" tabindex="-1"></a><span class="co"># Logarithmic functions</span></span>
+<span id="cb104-12"><a href="intro.html#cb104-12" tabindex="-1"></a>log_result <span class="op">=</span> math.log(<span class="dv">100</span>, <span class="dv">10</span>)  <span class="co"># result is 2.0 (log base 10 of 100)</span></span>
+<span id="cb104-13"><a href="intro.html#cb104-13" tabindex="-1"></a></span>
+<span id="cb104-14"><a href="intro.html#cb104-14" tabindex="-1"></a><span class="co"># Exponential function</span></span>
+<span id="cb104-15"><a href="intro.html#cb104-15" tabindex="-1"></a>exp_result <span class="op">=</span> math.exp(<span class="dv">2</span>)  <span class="co"># result is approximately 7.389</span></span>
+<span id="cb104-16"><a href="intro.html#cb104-16" tabindex="-1"></a></span>
+<span id="cb104-17"><a href="intro.html#cb104-17" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb104-18"><a href="intro.html#cb104-18" tabindex="-1"></a>pi_value <span class="op">=</span> math.pi  <span class="co"># value of pi (3.141592653589793)</span></span>
+<span id="cb104-19"><a href="intro.html#cb104-19" tabindex="-1"></a>euler_number <span class="op">=</span> math.e  <span class="co"># Euler&#39;s number (2.718281828459045)</span></span>
+<span id="cb104-20"><a href="intro.html#cb104-20" tabindex="-1"></a></span>
+<span id="cb104-21"><a href="intro.html#cb104-21" tabindex="-1"></a><span class="co"># Other functions</span></span>
+<span id="cb104-22"><a href="intro.html#cb104-22" tabindex="-1"></a>factorial_result <span class="op">=</span> math.factorial(<span class="dv">5</span>)  <span class="co"># result is 120 (5!)</span></span></code></pre></div>
 </div>
 <div id="converting-data-types" class="section level3 hasAnchor" number="1.3.3">
 <h3><span class="header-section-number">1.3.3</span> Converting data types<a href="intro.html#converting-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>numeric to string</strong></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="intro.html#cb110-1" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">5.5</span></span>
-<span id="cb110-2"><a href="intro.html#cb110-2" tabindex="-1"></a></span>
-<span id="cb110-3"><a href="intro.html#cb110-3" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">str</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="intro.html#cb105-1" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">5.5</span></span>
+<span id="cb105-2"><a href="intro.html#cb105-2" tabindex="-1"></a></span>
+<span id="cb105-3"><a href="intro.html#cb105-3" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">str</span>(a)</span></code></pre></div>
 <p><strong>string to numeric</strong></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="intro.html#cb111-1" tabindex="-1"></a><span class="bu">float</span>(<span class="st">&quot;1.1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="intro.html#cb106-1" tabindex="-1"></a><span class="bu">float</span>(<span class="st">&quot;1.1&quot;</span>)</span></code></pre></div>
 <pre><code>## 1.1</code></pre>
 <p>it does not convert directly to integer here</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="intro.html#cb113-1" tabindex="-1"></a><span class="bu">int</span>(<span class="st">&quot;1.123&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="intro.html#cb108-1" tabindex="-1"></a><span class="bu">int</span>(<span class="st">&quot;1.123&quot;</span>)</span></code></pre></div>
 <p>but it works when transforming to float then integer.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="intro.html#cb114-1" tabindex="-1"></a><span class="bu">int</span>(<span class="bu">float</span>(<span class="st">&quot;10.123&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="intro.html#cb109-1" tabindex="-1"></a><span class="bu">int</span>(<span class="bu">float</span>(<span class="st">&quot;10.123&quot;</span>))</span></code></pre></div>
 <p><strong>boolean to numeric</strong></p>
 <p><code>True</code> becomes 1</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="intro.html#cb115-1" tabindex="-1"></a>bl <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb115-2"><a href="intro.html#cb115-2" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="intro.html#cb115-3" tabindex="-1"></a><span class="bu">int</span>(bl)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="intro.html#cb110-1" tabindex="-1"></a>bl <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb110-2"><a href="intro.html#cb110-2" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="intro.html#cb110-3" tabindex="-1"></a><span class="bu">int</span>(bl)</span></code></pre></div>
 <pre><code>## 1</code></pre>
 <p><strong>numeric to boolean</strong></p>
 <p>0 becomes <code>False</code></p>
 <p>all other numbers are <code>True</code></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="intro.html#cb117-1" tabindex="-1"></a><span class="bu">bool</span>(<span class="op">-</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="intro.html#cb112-1" tabindex="-1"></a><span class="bu">bool</span>(<span class="op">-</span><span class="dv">100</span>)</span></code></pre></div>
 <pre><code>## True</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="intro.html#cb119-1" tabindex="-1"></a><span class="bu">bool</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="intro.html#cb114-1" tabindex="-1"></a><span class="bu">bool</span>(<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## False</code></pre>
 
 </div>
@@ -980,139 +987,139 @@ The count method returns the number of times a value occurs in a tuple.</li>
 <ol start="0" style="list-style-type: decimal">
 <li><strong>Creating Strings</strong></li>
 </ol>
-<div class="sourceCode" id="cb121"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb121-1"><a href="intro.html#cb121-1" tabindex="-1"></a><span class="co"># Using single quotes</span></span>
-<span id="cb121-2"><a href="intro.html#cb121-2" tabindex="-1"></a>single_quoted_string <span class="op">=</span> <span class="st">&#39;Hello, Python!&#39;</span></span>
-<span id="cb121-3"><a href="intro.html#cb121-3" tabindex="-1"></a></span>
-<span id="cb121-4"><a href="intro.html#cb121-4" tabindex="-1"></a><span class="co"># Using double quotes</span></span>
-<span id="cb121-5"><a href="intro.html#cb121-5" tabindex="-1"></a>double_quoted_string <span class="op">=</span> <span class="st">&quot;Hello, Python!&quot;</span></span>
-<span id="cb121-6"><a href="intro.html#cb121-6" tabindex="-1"></a></span>
-<span id="cb121-7"><a href="intro.html#cb121-7" tabindex="-1"></a><span class="co"># Triple-quoted strings for multiline strings</span></span>
-<span id="cb121-8"><a href="intro.html#cb121-8" tabindex="-1"></a>multiline_string <span class="op">=</span> <span class="st">&#39;&#39;&#39;This is a</span></span>
-<span id="cb121-9"><a href="intro.html#cb121-9" tabindex="-1"></a><span class="st">multiline string.&#39;&#39;&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="intro.html#cb116-1" tabindex="-1"></a><span class="co"># Using single quotes</span></span>
+<span id="cb116-2"><a href="intro.html#cb116-2" tabindex="-1"></a>single_quoted_string <span class="op">=</span> <span class="st">&#39;Hello, Python!&#39;</span></span>
+<span id="cb116-3"><a href="intro.html#cb116-3" tabindex="-1"></a></span>
+<span id="cb116-4"><a href="intro.html#cb116-4" tabindex="-1"></a><span class="co"># Using double quotes</span></span>
+<span id="cb116-5"><a href="intro.html#cb116-5" tabindex="-1"></a>double_quoted_string <span class="op">=</span> <span class="st">&quot;Hello, Python!&quot;</span></span>
+<span id="cb116-6"><a href="intro.html#cb116-6" tabindex="-1"></a></span>
+<span id="cb116-7"><a href="intro.html#cb116-7" tabindex="-1"></a><span class="co"># Triple-quoted strings for multiline strings</span></span>
+<span id="cb116-8"><a href="intro.html#cb116-8" tabindex="-1"></a>multiline_string <span class="op">=</span> <span class="st">&#39;&#39;&#39;This is a</span></span>
+<span id="cb116-9"><a href="intro.html#cb116-9" tabindex="-1"></a><span class="st">multiline string.&#39;&#39;&#39;</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><strong>String Concatenation</strong></li>
 </ol>
-<div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="intro.html#cb122-1" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">&quot;John&quot;</span></span>
-<span id="cb122-2"><a href="intro.html#cb122-2" tabindex="-1"></a>last_name <span class="op">=</span> <span class="st">&quot;Doe&quot;</span></span>
-<span id="cb122-3"><a href="intro.html#cb122-3" tabindex="-1"></a>full_name <span class="op">=</span> first_name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last_name</span>
-<span id="cb122-4"><a href="intro.html#cb122-4" tabindex="-1"></a></span>
-<span id="cb122-5"><a href="intro.html#cb122-5" tabindex="-1"></a><span class="bu">print</span>(full_name)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="intro.html#cb117-1" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">&quot;John&quot;</span></span>
+<span id="cb117-2"><a href="intro.html#cb117-2" tabindex="-1"></a>last_name <span class="op">=</span> <span class="st">&quot;Doe&quot;</span></span>
+<span id="cb117-3"><a href="intro.html#cb117-3" tabindex="-1"></a>full_name <span class="op">=</span> first_name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> last_name</span>
+<span id="cb117-4"><a href="intro.html#cb117-4" tabindex="-1"></a></span>
+<span id="cb117-5"><a href="intro.html#cb117-5" tabindex="-1"></a><span class="bu">print</span>(full_name)</span></code></pre></div>
 <pre><code>## John Doe</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>String Indexing and Slicing</strong></li>
 </ol>
-<div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a href="intro.html#cb124-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">&quot;Python&quot;</span></span>
-<span id="cb124-2"><a href="intro.html#cb124-2" tabindex="-1"></a></span>
-<span id="cb124-3"><a href="intro.html#cb124-3" tabindex="-1"></a><span class="co"># Indexing (0-based)</span></span>
-<span id="cb124-4"><a href="intro.html#cb124-4" tabindex="-1"></a>first_char <span class="op">=</span> my_string[<span class="dv">0</span>]  <span class="co"># Result: &#39;P&#39;</span></span>
-<span id="cb124-5"><a href="intro.html#cb124-5" tabindex="-1"></a></span>
-<span id="cb124-6"><a href="intro.html#cb124-6" tabindex="-1"></a><span class="bu">print</span>(first_char)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="intro.html#cb119-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">&quot;Python&quot;</span></span>
+<span id="cb119-2"><a href="intro.html#cb119-2" tabindex="-1"></a></span>
+<span id="cb119-3"><a href="intro.html#cb119-3" tabindex="-1"></a><span class="co"># Indexing (0-based)</span></span>
+<span id="cb119-4"><a href="intro.html#cb119-4" tabindex="-1"></a>first_char <span class="op">=</span> my_string[<span class="dv">0</span>]  <span class="co"># Result: &#39;P&#39;</span></span>
+<span id="cb119-5"><a href="intro.html#cb119-5" tabindex="-1"></a></span>
+<span id="cb119-6"><a href="intro.html#cb119-6" tabindex="-1"></a><span class="bu">print</span>(first_char)</span></code></pre></div>
 <pre><code>## P</code></pre>
 <p><strong>syntax:</strong> <code>string_object[from : to : increment]</code></p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="intro.html#cb126-1" tabindex="-1"></a><span class="co"># Slicing</span></span>
-<span id="cb126-2"><a href="intro.html#cb126-2" tabindex="-1"></a>substring <span class="op">=</span> my_string[<span class="dv">1</span>:<span class="dv">4</span>:<span class="dv">1</span>]  <span class="co"># Result: &#39;yth&#39;</span></span>
-<span id="cb126-3"><a href="intro.html#cb126-3" tabindex="-1"></a>substring <span class="op">=</span> my_string[<span class="dv">1</span>:<span class="dv">4</span>]  <span class="co"># Result: &#39;yth&#39;</span></span>
-<span id="cb126-4"><a href="intro.html#cb126-4" tabindex="-1"></a></span>
-<span id="cb126-5"><a href="intro.html#cb126-5" tabindex="-1"></a><span class="bu">print</span>(substring)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb121-1"><a href="intro.html#cb121-1" tabindex="-1"></a><span class="co"># Slicing</span></span>
+<span id="cb121-2"><a href="intro.html#cb121-2" tabindex="-1"></a>substring <span class="op">=</span> my_string[<span class="dv">1</span>:<span class="dv">4</span>:<span class="dv">1</span>]  <span class="co"># Result: &#39;yth&#39;</span></span>
+<span id="cb121-3"><a href="intro.html#cb121-3" tabindex="-1"></a>substring <span class="op">=</span> my_string[<span class="dv">1</span>:<span class="dv">4</span>]  <span class="co"># Result: &#39;yth&#39;</span></span>
+<span id="cb121-4"><a href="intro.html#cb121-4" tabindex="-1"></a></span>
+<span id="cb121-5"><a href="intro.html#cb121-5" tabindex="-1"></a><span class="bu">print</span>(substring)</span></code></pre></div>
 <pre><code>## yth</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="intro.html#cb128-1" tabindex="-1"></a><span class="bu">print</span>(my_string[::<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="intro.html#cb123-1" tabindex="-1"></a><span class="bu">print</span>(my_string[::<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## Pto</code></pre>
 <div id="string-methods" class="section level4 hasAnchor" number="1.3.4.1">
 <h4><span class="header-section-number">1.3.4.1</span> String Methods:<a href="intro.html#string-methods" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="intro.html#cb130-1" tabindex="-1"></a><span class="co"># Length of a string</span></span>
-<span id="cb130-2"><a href="intro.html#cb130-2" tabindex="-1"></a>length <span class="op">=</span> <span class="bu">len</span>(my_string)  <span class="co"># Result: 6</span></span>
-<span id="cb130-3"><a href="intro.html#cb130-3" tabindex="-1"></a></span>
-<span id="cb130-4"><a href="intro.html#cb130-4" tabindex="-1"></a><span class="co"># Converting to uppercase and lowercase</span></span>
-<span id="cb130-5"><a href="intro.html#cb130-5" tabindex="-1"></a>uppercase_string <span class="op">=</span> my_string.upper()</span>
-<span id="cb130-6"><a href="intro.html#cb130-6" tabindex="-1"></a>lowercase_string <span class="op">=</span> my_string.lower()</span>
-<span id="cb130-7"><a href="intro.html#cb130-7" tabindex="-1"></a></span>
-<span id="cb130-8"><a href="intro.html#cb130-8" tabindex="-1"></a><span class="co"># Finding a substring</span></span>
-<span id="cb130-9"><a href="intro.html#cb130-9" tabindex="-1"></a>index_of_th <span class="op">=</span> my_string.find(<span class="st">&quot;th&quot;</span>)  <span class="co"># Result: 2</span></span>
-<span id="cb130-10"><a href="intro.html#cb130-10" tabindex="-1"></a></span>
-<span id="cb130-11"><a href="intro.html#cb130-11" tabindex="-1"></a><span class="co"># Replacing a substring</span></span>
-<span id="cb130-12"><a href="intro.html#cb130-12" tabindex="-1"></a>new_string <span class="op">=</span> my_string.replace(<span class="st">&quot;on&quot;</span>, <span class="st">&quot;er&quot;</span>)  <span class="co"># Result: &#39;Pyther&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb125-1"><a href="intro.html#cb125-1" tabindex="-1"></a><span class="co"># Length of a string</span></span>
+<span id="cb125-2"><a href="intro.html#cb125-2" tabindex="-1"></a>length <span class="op">=</span> <span class="bu">len</span>(my_string)  <span class="co"># Result: 6</span></span>
+<span id="cb125-3"><a href="intro.html#cb125-3" tabindex="-1"></a></span>
+<span id="cb125-4"><a href="intro.html#cb125-4" tabindex="-1"></a><span class="co"># Converting to uppercase and lowercase</span></span>
+<span id="cb125-5"><a href="intro.html#cb125-5" tabindex="-1"></a>uppercase_string <span class="op">=</span> my_string.upper()</span>
+<span id="cb125-6"><a href="intro.html#cb125-6" tabindex="-1"></a>lowercase_string <span class="op">=</span> my_string.lower()</span>
+<span id="cb125-7"><a href="intro.html#cb125-7" tabindex="-1"></a></span>
+<span id="cb125-8"><a href="intro.html#cb125-8" tabindex="-1"></a><span class="co"># Finding a substring</span></span>
+<span id="cb125-9"><a href="intro.html#cb125-9" tabindex="-1"></a>index_of_th <span class="op">=</span> my_string.find(<span class="st">&quot;th&quot;</span>)  <span class="co"># Result: 2</span></span>
+<span id="cb125-10"><a href="intro.html#cb125-10" tabindex="-1"></a></span>
+<span id="cb125-11"><a href="intro.html#cb125-11" tabindex="-1"></a><span class="co"># Replacing a substring</span></span>
+<span id="cb125-12"><a href="intro.html#cb125-12" tabindex="-1"></a>new_string <span class="op">=</span> my_string.replace(<span class="st">&quot;on&quot;</span>, <span class="st">&quot;er&quot;</span>)  <span class="co"># Result: &#39;Pyther&#39;</span></span></code></pre></div>
 <p><code>upper()</code> : strings to uppercase
 <code>lower()</code> : strings to lowercase
 <code>capitalize()</code> : strings to uppercase 1st letter</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="intro.html#cb131-1" tabindex="-1"></a><span class="co">&quot;Ohh! my life!&quot;</span>.upper()</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="intro.html#cb126-1" tabindex="-1"></a><span class="co">&quot;Ohh! my life!&quot;</span>.upper()</span></code></pre></div>
 <pre><code>## &#39;OHH! MY LIFE!&#39;</code></pre>
-<div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="intro.html#cb133-1" tabindex="-1"></a><span class="co">&quot;OHH! MY LIFE!&quot;</span>.lower()</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="intro.html#cb128-1" tabindex="-1"></a><span class="co">&quot;OHH! MY LIFE!&quot;</span>.lower()</span></code></pre></div>
 <pre><code>## &#39;ohh! my life!&#39;</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="intro.html#cb135-1" tabindex="-1"></a><span class="co">&quot;star&quot;</span>.capitalize()</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="intro.html#cb130-1" tabindex="-1"></a><span class="co">&quot;star&quot;</span>.capitalize()</span></code></pre></div>
 <pre><code>## &#39;Star&#39;</code></pre>
-<div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="intro.html#cb137-1" tabindex="-1"></a><span class="co">&quot;is it lowercase&quot;</span>.islower()</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="intro.html#cb132-1" tabindex="-1"></a><span class="co">&quot;is it lowercase&quot;</span>.islower()</span></code></pre></div>
 <pre><code>## True</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a href="intro.html#cb139-1" tabindex="-1"></a><span class="co">&quot;IS IT UPPERCASE&quot;</span>.isupper()</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="intro.html#cb134-1" tabindex="-1"></a><span class="co">&quot;IS IT UPPERCASE&quot;</span>.isupper()</span></code></pre></div>
 <pre><code>## True</code></pre>
 <p><strong>replace method</strong></p>
 <p><code>replace()</code>: to replace part of a string
 <strong>syntax:</strong> <code>string.replace(oldvalue, newvalue, count)</code></p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb141-1"><a href="intro.html#cb141-1" tabindex="-1"></a>query <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb141-2"><a href="intro.html#cb141-2" tabindex="-1"></a><span class="st">select all_columns </span></span>
-<span id="cb141-3"><a href="intro.html#cb141-3" tabindex="-1"></a><span class="st">from my_table</span></span>
-<span id="cb141-4"><a href="intro.html#cb141-4" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb141-5"><a href="intro.html#cb141-5" tabindex="-1"></a>new_query <span class="op">=</span> query.replace(<span class="st">&quot;my_table&quot;</span>, <span class="st">&quot;new_table_name&quot;</span>)</span>
-<span id="cb141-6"><a href="intro.html#cb141-6" tabindex="-1"></a></span>
-<span id="cb141-7"><a href="intro.html#cb141-7" tabindex="-1"></a><span class="bu">print</span>(new_query)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="intro.html#cb136-1" tabindex="-1"></a>query <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb136-2"><a href="intro.html#cb136-2" tabindex="-1"></a><span class="st">select all_columns </span></span>
+<span id="cb136-3"><a href="intro.html#cb136-3" tabindex="-1"></a><span class="st">from my_table</span></span>
+<span id="cb136-4"><a href="intro.html#cb136-4" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb136-5"><a href="intro.html#cb136-5" tabindex="-1"></a>new_query <span class="op">=</span> query.replace(<span class="st">&quot;my_table&quot;</span>, <span class="st">&quot;new_table_name&quot;</span>)</span>
+<span id="cb136-6"><a href="intro.html#cb136-6" tabindex="-1"></a></span>
+<span id="cb136-7"><a href="intro.html#cb136-7" tabindex="-1"></a><span class="bu">print</span>(new_query)</span></code></pre></div>
 <pre><code>## 
 ## select all_columns 
 ## from new_table_name</code></pre>
 <p><strong>strip method</strong></p>
 <p><code>strip()</code> method removes leading or trailing white-space</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb143-1"><a href="intro.html#cb143-1" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;   my text   &quot;</span></span>
-<span id="cb143-2"><a href="intro.html#cb143-2" tabindex="-1"></a></span>
-<span id="cb143-3"><a href="intro.html#cb143-3" tabindex="-1"></a>raw_text.strip()</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="intro.html#cb138-1" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;   my text   &quot;</span></span>
+<span id="cb138-2"><a href="intro.html#cb138-2" tabindex="-1"></a></span>
+<span id="cb138-3"><a href="intro.html#cb138-3" tabindex="-1"></a>raw_text.strip()</span></code></pre></div>
 <pre><code>## &#39;my text&#39;</code></pre>
 <p><strong>split method</strong></p>
 <p><code>split()</code> method breaks a string by specified character.</p>
 <p><code>split()</code> method returns list type.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb145-1"><a href="intro.html#cb145-1" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;banana, apple, cherry&quot;</span></span>
-<span id="cb145-2"><a href="intro.html#cb145-2" tabindex="-1"></a></span>
-<span id="cb145-3"><a href="intro.html#cb145-3" tabindex="-1"></a>alist <span class="op">=</span> raw_text.split(<span class="st">&quot;,&quot;</span>)</span>
-<span id="cb145-4"><a href="intro.html#cb145-4" tabindex="-1"></a></span>
-<span id="cb145-5"><a href="intro.html#cb145-5" tabindex="-1"></a>alist</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb140-1"><a href="intro.html#cb140-1" tabindex="-1"></a>raw_text <span class="op">=</span> <span class="st">&quot;banana, apple, cherry&quot;</span></span>
+<span id="cb140-2"><a href="intro.html#cb140-2" tabindex="-1"></a></span>
+<span id="cb140-3"><a href="intro.html#cb140-3" tabindex="-1"></a>alist <span class="op">=</span> raw_text.split(<span class="st">&quot;,&quot;</span>)</span>
+<span id="cb140-4"><a href="intro.html#cb140-4" tabindex="-1"></a></span>
+<span id="cb140-5"><a href="intro.html#cb140-5" tabindex="-1"></a>alist</span></code></pre></div>
 <pre><code>## [&#39;banana&#39;, &#39; apple&#39;, &#39; cherry&#39;]</code></pre>
 <p>there are some whitespce in the splitted elements in the list</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="intro.html#cb147-1" tabindex="-1"></a>alist[<span class="dv">1</span>].strip()</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb142-1"><a href="intro.html#cb142-1" tabindex="-1"></a>alist[<span class="dv">1</span>].strip()</span></code></pre></div>
 <pre><code>## &#39;apple&#39;</code></pre>
 </div>
 <div id="string-formatting" class="section level4 hasAnchor" number="1.3.4.2">
 <h4><span class="header-section-number">1.3.4.2</span> String Formatting:<a href="intro.html#string-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb149"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb149-1"><a href="intro.html#cb149-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
-<span id="cb149-2"><a href="intro.html#cb149-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb149-3"><a href="intro.html#cb149-3" tabindex="-1"></a>formatted_string <span class="op">=</span> <span class="ss">f&quot;My name is </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> and I am </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old.&quot;</span></span>
-<span id="cb149-4"><a href="intro.html#cb149-4" tabindex="-1"></a><span class="co"># Result: &#39;My name is Alice and I am 25 years old.&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb144-1"><a href="intro.html#cb144-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
+<span id="cb144-2"><a href="intro.html#cb144-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb144-3"><a href="intro.html#cb144-3" tabindex="-1"></a>formatted_string <span class="op">=</span> <span class="ss">f&quot;My name is </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> and I am </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old.&quot;</span></span>
+<span id="cb144-4"><a href="intro.html#cb144-4" tabindex="-1"></a><span class="co"># Result: &#39;My name is Alice and I am 25 years old.&#39;</span></span></code></pre></div>
 </div>
 <div id="escape-characters" class="section level4 hasAnchor" number="1.3.4.3">
 <h4><span class="header-section-number">1.3.4.3</span> Escape Characters:<a href="intro.html#escape-characters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb150"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb150-1"><a href="intro.html#cb150-1" tabindex="-1"></a>escaped_string <span class="op">=</span> <span class="st">&quot;This is a line.</span><span class="ch">\n</span><span class="st">This is a new line.</span><span class="ch">\t</span><span class="st">This is a tab.&quot;</span></span>
-<span id="cb150-2"><a href="intro.html#cb150-2" tabindex="-1"></a></span>
-<span id="cb150-3"><a href="intro.html#cb150-3" tabindex="-1"></a><span class="bu">print</span>(escaped_string)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb145-1"><a href="intro.html#cb145-1" tabindex="-1"></a>escaped_string <span class="op">=</span> <span class="st">&quot;This is a line.</span><span class="ch">\n</span><span class="st">This is a new line.</span><span class="ch">\t</span><span class="st">This is a tab.&quot;</span></span>
+<span id="cb145-2"><a href="intro.html#cb145-2" tabindex="-1"></a></span>
+<span id="cb145-3"><a href="intro.html#cb145-3" tabindex="-1"></a><span class="bu">print</span>(escaped_string)</span></code></pre></div>
 <pre><code>## This is a line.
 ## This is a new line.  This is a tab.</code></pre>
 </div>
 <div id="raw-strings" class="section level4 hasAnchor" number="1.3.4.4">
 <h4><span class="header-section-number">1.3.4.4</span> Raw Strings:<a href="intro.html#raw-strings" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb152"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb152-1"><a href="intro.html#cb152-1" tabindex="-1"></a>raw_string <span class="op">=</span> <span class="vs">r&quot;This is a raw string \n\t No escape characters here.&quot;</span></span>
-<span id="cb152-2"><a href="intro.html#cb152-2" tabindex="-1"></a></span>
-<span id="cb152-3"><a href="intro.html#cb152-3" tabindex="-1"></a><span class="bu">print</span>(raw_string)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="intro.html#cb147-1" tabindex="-1"></a>raw_string <span class="op">=</span> <span class="vs">r&quot;This is a raw string \n\t No escape characters here.&quot;</span></span>
+<span id="cb147-2"><a href="intro.html#cb147-2" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="intro.html#cb147-3" tabindex="-1"></a><span class="bu">print</span>(raw_string)</span></code></pre></div>
 <pre><code>## This is a raw string \n\t No escape characters here.</code></pre>
 </div>
 <div id="membership-and-operations" class="section level4 hasAnchor" number="1.3.4.5">
 <h4><span class="header-section-number">1.3.4.5</span> Membership and Operations:<a href="intro.html#membership-and-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb154"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb154-1"><a href="intro.html#cb154-1" tabindex="-1"></a><span class="co"># Checking membership</span></span>
-<span id="cb154-2"><a href="intro.html#cb154-2" tabindex="-1"></a>contains_py <span class="op">=</span> <span class="st">&#39;py&#39;</span> <span class="kw">in</span> my_string  <span class="co"># Result: True</span></span>
-<span id="cb154-3"><a href="intro.html#cb154-3" tabindex="-1"></a></span>
-<span id="cb154-4"><a href="intro.html#cb154-4" tabindex="-1"></a><span class="co"># String repetition</span></span>
-<span id="cb154-5"><a href="intro.html#cb154-5" tabindex="-1"></a>repeated_string <span class="op">=</span> my_string <span class="op">*</span> <span class="dv">3</span>  <span class="co"># Result: &#39;PythonPythonPython&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb149-1"><a href="intro.html#cb149-1" tabindex="-1"></a><span class="co"># Checking membership</span></span>
+<span id="cb149-2"><a href="intro.html#cb149-2" tabindex="-1"></a>contains_py <span class="op">=</span> <span class="st">&#39;py&#39;</span> <span class="kw">in</span> my_string  <span class="co"># Result: True</span></span>
+<span id="cb149-3"><a href="intro.html#cb149-3" tabindex="-1"></a></span>
+<span id="cb149-4"><a href="intro.html#cb149-4" tabindex="-1"></a><span class="co"># String repetition</span></span>
+<span id="cb149-5"><a href="intro.html#cb149-5" tabindex="-1"></a>repeated_string <span class="op">=</span> my_string <span class="op">*</span> <span class="dv">3</span>  <span class="co"># Result: &#39;PythonPythonPython&#39;</span></span></code></pre></div>
 <p>Strings in Python are immutable, meaning once a string is created, you cannot modify its contents. Any operation that appears to modify a string actually creates a new string. Understanding these operations and methods is crucial for working effectively with strings in Python.</p>
 </div>
 <div id="loop-thru-strings" class="section level4 hasAnchor" number="1.3.4.6">
 <h4><span class="header-section-number">1.3.4.6</span> loop thru strings<a href="intro.html#loop-thru-strings" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb155"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb155-1"><a href="intro.html#cb155-1" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life&quot;</span></span>
-<span id="cb155-2"><a href="intro.html#cb155-2" tabindex="-1"></a></span>
-<span id="cb155-3"><a href="intro.html#cb155-3" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> my_txt:</span>
-<span id="cb155-4"><a href="intro.html#cb155-4" tabindex="-1"></a>  <span class="bu">print</span>(i.upper())</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb150-1"><a href="intro.html#cb150-1" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life&quot;</span></span>
+<span id="cb150-2"><a href="intro.html#cb150-2" tabindex="-1"></a></span>
+<span id="cb150-3"><a href="intro.html#cb150-3" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> my_txt:</span>
+<span id="cb150-4"><a href="intro.html#cb150-4" tabindex="-1"></a>  <span class="bu">print</span>(i.upper())</span></code></pre></div>
 <pre><code>## L
 ## I
 ## F
@@ -1121,18 +1128,87 @@ The count method returns the number of times a value occurs in a tuple.</li>
 <div id="innot-in" class="section level4 hasAnchor" number="1.3.4.7">
 <h4><span class="header-section-number">1.3.4.7</span> in/not in<a href="intro.html#innot-in" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>check if a phrase is present in a string</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="intro.html#cb157-1" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life is good!&quot;</span></span>
-<span id="cb157-2"><a href="intro.html#cb157-2" tabindex="-1"></a></span>
-<span id="cb157-3"><a href="intro.html#cb157-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb152-1"><a href="intro.html#cb152-1" tabindex="-1"></a>my_txt <span class="op">=</span> <span class="st">&quot;life is good!&quot;</span></span>
+<span id="cb152-2"><a href="intro.html#cb152-2" tabindex="-1"></a></span>
+<span id="cb152-3"><a href="intro.html#cb152-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt)</span></code></pre></div>
 <pre><code>## True</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="intro.html#cb159-1" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt:</span>
-<span id="cb159-2"><a href="intro.html#cb159-2" tabindex="-1"></a>  <span class="bu">print</span>(my_txt)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb154-1"><a href="intro.html#cb154-1" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;good&quot;</span> <span class="kw">in</span> my_txt:</span>
+<span id="cb154-2"><a href="intro.html#cb154-2" tabindex="-1"></a>  <span class="bu">print</span>(my_txt)</span></code></pre></div>
 <pre><code>## life is good!</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="intro.html#cb161-1" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;bad&quot;</span> <span class="kw">not</span> <span class="kw">in</span> my_txt:</span>
-<span id="cb161-2"><a href="intro.html#cb161-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;bad&#39; is not in the text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb156-1"><a href="intro.html#cb156-1" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;bad&quot;</span> <span class="kw">not</span> <span class="kw">in</span> my_txt:</span>
+<span id="cb156-2"><a href="intro.html#cb156-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;bad&#39; is not in the text&quot;</span>)</span></code></pre></div>
 <pre><code>## &#39;bad&#39; is not in the text</code></pre>
 
 </div>
+</div>
+</div>
+<div id="control-statements" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Control Statements<a href="intro.html#control-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="looping" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Looping<a href="intro.html#looping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="looping-extra" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Looping Extra<a href="intro.html#looping-extra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><code>for</code>-<code>else</code></li>
+</ol>
+<div class="sourceCode" id="cb158"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb158-1"><a href="intro.html#cb158-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb158-2"><a href="intro.html#cb158-2" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb158-3"><a href="intro.html#cb158-3" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb158-4"><a href="intro.html#cb158-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;else runs cus break didnt run&#39;</span>)</span></code></pre></div>
+<p>In a for-else block,
+if break runs in the for loop, else doesn’t run
+if break doesn’t run in the for loop, else will run</p>
+<ol start="2" style="list-style-type: decimal">
+<li><code>break</code> vs <code>continue</code></li>
+</ol>
+<p>break stops the entire loop immediately
+when L=‘C’, break happens, and the entire loop stops.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="intro.html#cb159-1" tabindex="-1"></a>LETTERS <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;E&#39;</span>]</span>
+<span id="cb159-2"><a href="intro.html#cb159-2" tabindex="-1"></a></span>
+<span id="cb159-3"><a href="intro.html#cb159-3" tabindex="-1"></a><span class="cf">for</span> L <span class="kw">in</span> LETTERS:</span>
+<span id="cb159-4"><a href="intro.html#cb159-4" tabindex="-1"></a>  <span class="cf">if</span> L <span class="op">==</span> <span class="st">&#39;C&#39;</span>:</span>
+<span id="cb159-5"><a href="intro.html#cb159-5" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb159-6"><a href="intro.html#cb159-6" tabindex="-1"></a>  <span class="bu">print</span>(L)</span></code></pre></div>
+<pre><code>## A
+## B</code></pre>
+<p><code>continue</code> skips to the next iteration, without stopping the entire loop</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="intro.html#cb161-1" tabindex="-1"></a>LETTERS <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;E&#39;</span>]</span>
+<span id="cb161-2"><a href="intro.html#cb161-2" tabindex="-1"></a></span>
+<span id="cb161-3"><a href="intro.html#cb161-3" tabindex="-1"></a><span class="cf">for</span> L <span class="kw">in</span> LETTERS:</span>
+<span id="cb161-4"><a href="intro.html#cb161-4" tabindex="-1"></a>  <span class="cf">if</span> L <span class="op">==</span> <span class="st">&#39;C&#39;</span>:</span>
+<span id="cb161-5"><a href="intro.html#cb161-5" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb161-6"><a href="intro.html#cb161-6" tabindex="-1"></a>  <span class="bu">print</span>(L)</span></code></pre></div>
+<pre><code>## A
+## B
+## D
+## E</code></pre>
+<p>when <code>L='C'</code>, <code>continue</code> executes, and the iteration for <code>L='C'</code> is skipped.</p>
+<p>Instead we skip over to the next iteration immediately, where <code>L='D'</code></p>
+<p>Note that <code>continue</code> doesn’t stop the entire loop like <code>break</code></p>
+<ol start="3" style="list-style-type: decimal">
+<li>enumerate &amp; zip</li>
+</ol>
+<p><code>enumerate()</code> allows us to generate both index and element at the same time when iterating through a list (or similar iterable).</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="intro.html#cb163-1" tabindex="-1"></a>LETTERS <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;E&#39;</span>]</span>
+<span id="cb163-2"><a href="intro.html#cb163-2" tabindex="-1"></a></span>
+<span id="cb163-3"><a href="intro.html#cb163-3" tabindex="-1"></a><span class="cf">for</span> i,L <span class="kw">in</span> <span class="bu">enumerate</span>(LETTERS):</span>
+<span id="cb163-4"><a href="intro.html#cb163-4" tabindex="-1"></a>    <span class="bu">print</span>(i, L)</span></code></pre></div>
+<pre><code>## 0 A
+## 1 B
+## 2 C
+## 3 D
+## 4 E</code></pre>
+<p><code>zip()</code> allows us to iterate through 2 or more <code>lists</code> (or <code>iterables</code>) at once.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb165-1"><a href="intro.html#cb165-1" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&#39;Adam&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Joe&#39;</span>]</span>
+<span id="cb165-2"><a href="intro.html#cb165-2" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">25</span>,<span class="dv">35</span>,<span class="dv">18</span>]</span>
+<span id="cb165-3"><a href="intro.html#cb165-3" tabindex="-1"></a></span>
+<span id="cb165-4"><a href="intro.html#cb165-4" tabindex="-1"></a><span class="cf">for</span> name, age <span class="kw">in</span> <span class="bu">zip</span>(names, ages):</span>
+<span id="cb165-5"><a href="intro.html#cb165-5" tabindex="-1"></a>    <span class="bu">print</span>(name, age)</span></code></pre></div>
+<pre><code>## Adam 25
+## Eve 35
+## Joe 18</code></pre>
+
 </div>
 </div>
 </div>
