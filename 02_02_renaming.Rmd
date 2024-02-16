@@ -1,0 +1,145 @@
+### rename/assign new column names
+
+Renaming or assigning new column names in pandas DataFrame is a common operation, and there are several ways to accomplish it. Here are some examples with explanations:
+
+
+#### Using the rename() method:
+
+The `rename()` method allows you to rename columns by specifying a dictionary where keys are the current column names and values are the new column names.
+
+```{python}
+df = df_csv.copy()
+df.rename(columns={'id': 'NEW_ID'}, inplace=True)
+df.columns.to_list()
+```
+
+Setting inplace=True will modify the DataFrame in place, otherwise a new DataFrame with the renamed columns will be returned.
+
+#### Direct assignment with dictionary:
+
+You can directly assign new column names to the columns attribute of the DataFrame using a dictionary.
+
+Note: you need to specify all the column names in the dictionary.
+
+```{python}
+df = df_csv[['name', 'state', 'id']].copy()
+df.columns = {'MY_NAME': 'name', 'MY_STATE': 'state', 'id':'id'}
+df.columns.to_list()
+```
+
+#### Using list assignment:
+
+You can directly assign a list of column names to the columns attribute of the DataFrame.
+
+Note: Make sure the length of the list matches the number of columns in the DataFrame.
+
+```{python}
+df = df_csv[['name', 'state']].copy()
+df.columns = ['MY_NAME', 'MY_STATE']
+df.columns.to_list()
+```
+
+#### Assigning new column names during DataFrame creation:
+
+You can provide the columns parameter when creating a DataFrame to specify the column names.
+
+```
+df = pd.DataFrame(data, columns=['column1', 'column2', 'column3'])
+```
+
+#### to uppercase all column names
+
+```{python}
+df = df_csv.copy()
+df.columns = [x.upper() for x in df.columns]
+df.columns.to_list()
+```
+
+
+
+
+#### rename
+
+Renaming column names is a standard procedure most of the time. We may need to standardize column names, mostly make them clean.
+  
+There is a nice link [here.](https://www.statology.org/pandas-rename-columns/)
+
+Lets create a sample data frame
+
+```{python}
+df = pd.DataFrame({'A?la': [1,2,3,4],
+                    'PYTHON': ['a', 'a', 'a', 'a'],
+                    'col 3': ['1','1','b','b']})
+df
+```
+
+**Method 1: Rename Specific Columns**
+
+```{python}
+df.rename(columns = {'PYTHON':'Python'}, inplace = False)
+
+### list column names
+list(df)
+```
+
+**Method 2: Rename All Columns**
+
+```{python}
+new_names = ['new_name1', 'new_name2','new_name3']
+df.columns = new_names
+list(df)
+```
+
+**Method 3: Replace Specific Characters in Columns**
+
+```{python}
+### set problematic names
+problem_names = ['VAR1$$$', 'var2','Var3###']
+df.columns = problem_names
+
+### removing bad characters
+df.columns = df.columns.str.replace('$', '', regex = True)
+df.columns = df.columns.str.replace('#', '', regex = True)
+list(df)
+```
+
+**clean column names**
+
+Generally we expect clean columns to be:
+  1. short
+  2. meaningful
+  3. no space
+  4. no special character
+  5. probably lowercase
+  
+```{python}
+### set problematic names
+problem_names = ['VAR  $1', 'var #2','Var ? 3 ']
+df.columns = problem_names
+
+## Column names: remove white spaces and convert to lower case
+df.columns= df.columns.str.strip()
+
+## Column names: convert to lower case
+df.columns = df.columns.str.lower()
+
+## Column names: convert to lower case
+df = df.rename(columns = str.lower)
+
+## removing bad characters
+df.columns = df.columns.str.replace('$', '', regex = True)
+df.columns = df.columns.str.replace('#', '', regex = True)
+df.columns = df.columns.str.replace('?', '', regex = True)
+df.columns = df.columns.str.replace(' ', '', regex = True)
+
+list(df)
+```
+
+- sometimes we need them to be uppercase
+
+```{python}
+## Column names: convert to upper case
+df.columns = df.columns.str.upper()
+
+list(df)
+```

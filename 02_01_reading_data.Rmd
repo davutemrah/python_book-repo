@@ -1,0 +1,32 @@
+## read data
+
+
+
+### csv file
+
+**IBM sample data:** I could not run with "https" because I did not have a certificate installed. So, I go on with "http" and it worked.
+
+```{python data1, eval=FALSE}
+data_link = "http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv"
+
+recipes = pd.read_csv(data_link)
+```
+
+
+### xlsx file
+
+pandas.read_excel(io = path,
+                  sheet_name = 0,
+                  header = 0,
+                  names = None,
+                  index_col = None,
+                  usecols = None)
+                  
+This returns dataframe object.
+```{python}
+df = pd.read_excel(io = "./data/segmentation.xlsx",
+                  sheet_name = "sheet")
+                  
+df.head(n=5)
+```
+

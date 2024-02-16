@@ -1,0 +1,216 @@
+# Pandas Library
+
+run `pip3 install pandas` or
+run `!pip install pandas` on rstudio terminal or mac terminal or jupyter notebook
+
+
+
+```{python lib1}
+import pandas as pd 
+pd.set_option('display.max_columns', None)
+```
+
+
+
+## Data Frames
+
+### Data frame creation
+
+Sometimes you may need to create an data frame
+
+```{python}
+## empty data frame
+df1 = pd.DataFrame()
+df1
+```
+
+```{python}
+df2 = pd.DataFrame({'A' : []})
+df2
+```
+
+Is df2 empty?
+
+There is column name but it is still empty.
+```{python}
+df2.empty
+```
+
+How to create a sample data frame?
+
+From a dictionary
+
+```{python}
+my_dict = {'Col_1': [1,2,3,4], 
+           'Col_2': ['a', 'b', 'c', 'd'],
+           'Col_3': 1984}
+           
+my_df = pd.DataFrame(my_dict)
+
+my_df[:5]
+```
+
+```{python}
+a_list = [1,2,3,4]
+b_list = ['a', 'b', 'c', 'd']
+##
+df3 = pd.DataFrame({'var1': a_list, 
+                    'var2': b_list})
+df3
+```
+
+
+### Read csv files
+
+```{python}
+df_csv = pd.read_csv('data/college.csv').iloc[:100, :5]
+df_csv[:5]
+```
+
+### Data attributes
+
+#### shape of data frame
+
+```{python}
+df_csv.shape
+```
+
+```{python}
+print("number of rows:", df_csv.shape[0],
+      "\nnumber of columns:", df_csv.shape[1])
+```
+
+#### Columns
+
+How to get the column names?  
+
+--> Column names are stored in `columns` attribute.
+
+```{python}
+df_csv.columns
+```
+
+```{python}
+list(df_csv.columns)
+```
+
+```{python}
+df_csv.columns.to_list()
+```
+
+
+```{python}
+for cols in df_csv.columns:
+  print(cols)
+```
+
+
+#### data types in dataframe
+
+```{python}
+df_csv.dtypes
+```
+
+```{python}
+[types for types in df_csv.dtypes]
+```
+
+#### index of the data frame
+
+```{python}
+df_csv[:5]
+```
+
+
+```{python}
+df_csv.index
+```
+
+```{python}
+for i in df_csv.index:
+  if i < 5:
+    print(i)
+```
+#### assign a new index
+
+
+```{python}
+df = df_csv.copy()
+df.index = df.state
+
+df[:5]
+```
+
+#### index to column
+
+```{python}
+df = df_csv.copy()
+df['index_column'] = df.index
+
+df[:5]
+```
+
+- calling `keys()` function: output is similar to columns attributes
+
+```{python}
+df_csv.keys()
+```
+
+- `column.values` method returns an array of index.
+
+```{python}
+list(df_csv.columns.values)
+```
+
+Using `tolist()` method with values with given the list of columns. 
+```{python}
+list(df_csv.columns.values.tolist())
+```
+
+Using `sorted()` method : `sorted()` method will return the list of columns sorted in alphabetical order. 
+
+```{python}
+sorted(df3)
+```
+
+
+### Create or add a new column
+
+You can create a new column in a pandas DataFrame based on the values of existing columns using various methods, such as assignment, the `apply()` function, or vectorized operations. 
+
+Here are some examples:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Explore Data
+
+```{python}
+#recipes.head()
+```
+
+
+
+
+
+
+
+

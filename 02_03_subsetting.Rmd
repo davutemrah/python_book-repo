@@ -1,0 +1,92 @@
+### Subsetting
+
+#### by columns
+
+```{python}
+selected_cols = ['id', 'name', 'city']
+
+df_csv[selected_cols]
+```
+
+
+
+#### Label based: df.loc[row_label, column_label]
+
+Selecting Rows and Columns by Labels: 
+
+You can use df.loc[] to select rows and columns of a DataFrame using labels. The syntax is df.loc[row_label, column_label]. 
+
+You can specify a single label or a list of labels for both rows and columns.
+
+row label is the index.
+
+```{python}
+# Select a single row and column
+df_csv.loc[1, 'name']
+```
+
+```{python}
+# Select multiple rows and columns
+df_csv.loc[[0, 2, 4], ['name', 'state']]
+```
+
+```{python}
+# Select rows from 'row_label_start' to 'row_label_end'
+df_csv.loc[0:4]
+
+## all same
+# df_csv.loc[0:4, ]
+# df_csv.loc[0:4, :]
+```
+
+```{python}
+# Select rows where a condition is True
+df_csv.loc[df_csv['id'] < 101000]
+```
+
+```{python}
+df = df_csv.copy()
+# Set a value for a specific row and column
+df.loc[10, 'name'] = 'My University'
+```
+
+#### Filtering Rows Based on a Single Condition:
+
+
+```{python}
+df = df_csv.copy()
+# Select rows where the 'column_name' equals a specific value
+df[df['name'] == 'Auburn University']
+```
+
+```{python}
+df[df.name == 'Auburn University']
+```
+
+#### Filtering Rows Based on Multiple Conditions (AND):
+
+```{python}
+# Select rows where 'column1' equals 'value1' and 'column2' equals 'value2'
+df[(df.city == 'Birmingham') & (df.state == 'AL')]
+```
+
+
+
+### copy
+
+When you use loc/iloc to create a subset of the DataFrame, you are also creating a view into the original DataFrame. Modifications to the subset will reflect in the original DataFrame, and vice versa.
+
+
+```
+subset = df.loc['row_label1':'row_label5', 'column_labelA':'column_labelB']
+
+subset = df.iloc[0:5, 1:3]  # Select rows 0 to 4 and columns 1 to 2
+
+```
+
+To create an independent copy of the DataFrame, you can use the copy() method. This ensures that modifications to the copied DataFrame do not affect the original DataFrame.
+
+```{python}
+copy_df = df.copy()
+```
+
