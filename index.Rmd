@@ -1,5 +1,5 @@
 --- 
-title: "Python Scratch Book"
+title: "Python For Data Science"
 author: "Davut Ayan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -14,7 +14,7 @@ description: "This is a minimal example of using the bookdown package to write a
 
 # Acknowledgement {-}
 
-This is a personal notebook open for public use. I have collected these notes, codes and best practices that I find useful to remind myself on python programming language.
+This is a personal notebook open for public use. I have collected these notes, codes and best practices that I find useful to teach myself on python programming language.
 
 All these content are free to use and share.
 
