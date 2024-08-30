@@ -1,0 +1,55 @@
+
+## Functions
+
+In Python, `return` and `print` are used for different purposes in functions:
+
+1. **`return`**:
+   - `return` is used to send a value back to the caller of the function.
+   - When a function is called, it can perform some operations and then use `return` to send a result back to where the function was called.
+   - The value returned by `return` can be stored in a variable, used in expressions, or passed to other functions.
+   - Once `return` is executed, the function terminates immediately.
+
+   Example:
+   ```python
+   def get_greeting():
+       return "Hello, World!"
+
+   greeting = get_greeting()
+   print(greeting)  # This will print: Hello, World!
+   ```
+
+2. **`print`**:
+   - `print` is used to output text to the console.
+   - It does not send any value back to the caller; it simply outputs the given string or other data types to the standard output (usually the console).
+   - The function continues executing after `print` unless it encounters a `return` or another statement that terminates the function.
+
+   Example:
+   ```python
+   def display_greeting():
+       print("Hello, World!")
+
+   display_greeting()  # This will print: Hello, World!
+   ```
+
+### Summary
+
+- Use `return` to send a value from the function to its caller.
+- Use `print` to display a value to the console.
+
+Here is a combined example to illustrate both:
+
+```python
+def get_and_display_greeting():
+    greeting = "Hello, World!"
+    print(greeting)  # This will print: Hello, World!
+    return greeting
+
+returned_value = get_and_display_greeting()
+print(f"The returned value is: {returned_value}")  # This will print: The returned value is: Hello, World!
+```
+
+In this example, `print` outputs the greeting to the console, and `return` sends the greeting back to where the function was called, which is then stored in `returned_value` and printed again.
+
+
+
+**Note:**Functions that do not have an explicit return expression will implicitly return the None object. The details of None will be covered in a later exercise. For the purposes of this exercise and explanation, None is a placeholder that represents nothing, or null:

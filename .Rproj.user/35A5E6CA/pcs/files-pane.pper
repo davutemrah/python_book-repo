@@ -1,13 +1,13 @@
 {
     "sortOrder": [
         {
-            "columnIndex": 3,
-            "ascending": false
-        },
-        {
             "columnIndex": 2,
             "ascending": true
+        },
+        {
+            "columnIndex": 3,
+            "ascending": false
         }
     ],
-    "path": "~/Desktop/GITHUB/1 PYTHON"
+    "path": "~/Desktop/GITHUB/1 PYTHON/__REPO"
 }

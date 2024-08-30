@@ -5,8 +5,9 @@ run `!pip install pandas` on rstudio terminal or mac terminal or jupyter noteboo
 
 
 
-```{python lib1}
+```python
 import pandas as pd 
+
 pd.set_option('display.max_columns', None)
 ```
 
@@ -16,11 +17,11 @@ pd.set_option('display.max_columns', None)
 
 ### Data frame creation
 
-Sometimes you may need to create an data frame
+Sometimes you may need to create a data frame
 
 ```{python}
 ## empty data frame
-df1 = pd.DataFrame()
+df1 = pd.DataFrame(dtype = 'float64')
 df1
 ```
 

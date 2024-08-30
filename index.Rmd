@@ -18,6 +18,11 @@ This is a personal notebook open for public use. I have collected these notes, c
 
 All these content are free to use and share.
 
+```{r setup}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+
 ```{r, include=FALSE}
 # when building book be careful!
 

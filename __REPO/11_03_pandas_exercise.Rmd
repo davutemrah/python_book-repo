@@ -1,0 +1,251 @@
+
+### Data Filtering and Selection:
+
+
+```{python, include=F}
+import pandas as pd
+import numpy as np
+```
+
+
+sample data
+
+```{python}
+data = {
+    'department': ['Sales', 'Sales', 'HR', 'HR', 'IT', 'IT', 'Finance', 'Finance'],
+    'employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'salary': [70000, 80000, 50000, 60000, 90000, 85000, 95000, 65000],
+}
+df = pd.DataFrame(data)
+df
+```
+
+
+#### filtering rows
+
+```{python}
+df[df['employee'] == 'Eve']
+```
+
+```{python}
+df[df['department'].isin(['HR', 'IT'])]
+```
+ 
+
+```{python}
+df[df['salary'] > 80000]
+```
+
+
+```{python}
+df[(df['salary'] > 70000) & (df['salary'] < 90000)]
+```
+
+
+```{python}
+df.groupby('department').filter(lambda x: x['salary'].sum() > 150000)
+```
+
+```{python}
+df.loc[0:3, :]
+```
+
+```{python}
+df.iloc[0:3, :]
+```
+
+
+#### filtering columns
+
+
+```{python}
+cols = ['employee', 'salary']
+
+df[cols]
+```
+
+
+```{python}
+df.loc[0:3, ['employee', 'salary']]
+```
+
+```{python}
+df.iloc[0:3, :]
+```
+ 
+### Aggregation and Grouping:
+
+
+```{python}
+df.groupby('department')['salary'].mean()
+```
+
+### Joining and Merging Data:
+
+```python
+merged_df = pd.merge(df1, df2, on='key')
+```
+
+
+
+### recoding
+
+
+**Sample Data**
+
+```{python}
+data = {
+    'employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'salary': [70000, 80000, 50000, 60000, 90000, 85000, 75000, 65000]
+}
+
+df = pd.DataFrame(data)
+
+df.head()
+```
+
+#### np.where() method
+
+```{python}
+# this condition creates a series of boolean
+condition = df['salary'] > 85000
+
+df['label'] = np.where(condition, 'high', 'low')
+
+df.head()
+```
+
+
+```{python}
+condition = df['employee'] == 'David'
+
+df['employee'] = np.where(condition, 'Davut', df['employee'])
+
+df.head()
+```
+
+#### multiple `np.where()`
+
+```{python}
+condition1 = df['salary'] <= 60000 
+condition2 = (df['salary'] > 60000) & (df['salary'] <= 80000)
+
+
+df['label'] = np.where(condition1, 'Low', 'High')
+df['label'] = np.where(condition2, 'Medium', df['label'])
+
+
+df.head()
+```
+
+
+```{python}
+# Use np.where for multiple conditions
+
+condition_1 = df['salary'] <= 60000
+condition_2 = df['salary'] <= 80000
+
+df['label2'] = np.where(condition_1, 'Low', 
+                                    np.where(condition_2, 'Medium', 'High') )
+
+print(df)
+
+```
+
+
+
+
+#### pd.cut() method
+
+```{python}
+# Define thresholds for 'low', 'medium', and 'high' earners
+
+bins = [0, 60000, 80000, float('inf')]
+labels = ['Low', 'Medium', 'High']
+
+# Use pd.cut to create a new column 'category'
+df['category'] = pd.cut(df['salary'], bins=bins, labels=labels)
+
+df.head()
+```
+
+#### Alternative to `np.where()`
+
+##### Using `pd.Series.apply` with a `Lambda` Function:
+
+if else condition
+
+```{python}
+df['high_low'] = df['salary'].apply(lambda x: 'high' if x > 85000 else 'low')
+```
+
+
+##### Using `DataFrame.assign` with `np.where`:
+
+```{python}
+df = df.assign(high_low2 = np.where(df['salary'] > 85000, 'high', 'low'))
+df.head()
+```
+
+##### Using DataFrame.loc:
+
+```{python}
+df['new_label'] = 'low'
+
+df.loc[df['salary'] > 85000, 'new_label'] = 'high'
+```
+
+
+
+#### np.select() method
+
+```{python}
+data = {
+    'employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'salary': [70000, 80000, 50000, 60000, 90000, 85000, 75000, 65000]
+}
+
+df = pd.DataFrame(data)
+```
+
+
+```{python}
+# Define conditions for categorizing salaries
+conditions = [
+    (df['salary'] <= 60000),
+    (df['salary'] > 60000) & (df['salary'] <= 80000),
+    (df['salary'] > 80000)
+]
+
+# Corresponding choices for each condition
+choices = ['Low', 'Medium', 'High']
+
+# Use np.select to create a new column 'earnings_category'
+df['category2'] = np.select(conditions, choices)
+
+df.head()
+```
+
+
+#### apply() method
+
+```{python}
+# Custom function to categorize salary
+def categorize_salary(salary):
+    if salary <= 60000:
+        return 'Low'
+    elif 60000 < salary <= 80000:
+        return 'Medium'
+    else:
+        return 'High'
+
+# Apply the custom function to create a new column 'earnings_category'
+df['category3'] = df['salary'].apply(categorize_salary)
+
+df.head()
+
+```
+
+
+
+

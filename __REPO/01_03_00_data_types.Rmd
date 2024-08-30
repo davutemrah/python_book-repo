@@ -144,6 +144,8 @@ result = (5 == 3)  # result is False
 
 These are just a few examples, and Python provides a rich set of mathematical functions and operations through the `math` module as well. To use it, you can import the `math` module and access functions like `math.sqrt()`, `math.sin()`, `math.cos()`, etc.
 
+
+
 ```{python}
 import math
 

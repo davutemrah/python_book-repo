@@ -1,0 +1,147 @@
+### Sample Solutions
+
+these are from [interviewquery](https://www.interviewquery.com/)
+
+#### Question
+
+```{python}
+import pandas as pd
+
+name_list = ["Tim Voss", "Nicole Johnson", "Elsa Williams", "John James", "Catherine Jones"]
+age_list = [19, 20, 21, 20, 23]
+color_list = ["red", "yellow", "green", "blue", "green"]
+grades = [91, 95, 82, 75, 93]
+
+
+students = {"name" : name_list,
+            "age" : age_list,
+            "favorite_color" : color_list,
+            "grade" : grades}
+
+students_df = pd.DataFrame(students)
+
+students_df
+```
+
+Write a function named `grades_colors` to select only the rows where the student’s favorite color is green or red and their grade is above 90.
+
+```{python}
+def grades_colors(df):
+  
+    df = df[(df['favorite_color'].isin(['green', 'red'])) & (df['grade'] > 90)]
+  
+    return df
+
+grades_colors(students_df)
+```
+
+**Alternative**
+
+```{python}
+
+students_df.query("favorite_color.isin(('green', 'red')) and grade > 90")
+
+```
+
+
+**Using query method**
+
+```{python}
+colors = ["green", "red"]
+
+students_df.query("favorite_color in @colors").query("grade > 90")
+```
+
+**Using loc**
+
+```{python}
+students_df.loc[(students_df['favorite_color'].isin(['green', 'red'])) &      
+                (students_df['grade'] > 90)
+                ]
+```
+
+
+**Alternative**
+
+```python
+color = students_df['favorite_color'].isin(['green', 'red'])
+grade = students_df['grade'] > 90
+
+students_df.loc[(grade) & (color)]
+```
+
+
+#### Question
+
+You are given a dataframe with a single column, 'var'.
+
+Calculated the t-value for the mean of ‘var’ against a null hypothesis that $\mu = \mu_0$
+
+Note: You do not have to calculate the p-value of the test or run the test.
+
+
+```{python}
+var_data = [2,3,4,5,6,7,8,8,10]
+
+df = pd.DataFrame({"var": var_data})
+
+mu_0 = 5
+
+def t_score(mu_0, df):
+  
+    n = df['var'].count()
+    
+    sample_mean = df['var'].mean()
+    
+    sample_std = df['var'].std()
+    
+    t = (sample_mean - mu_0) / (sample_std / pow(n, 1/2))
+    
+    return t
+
+t_score(mu_0, df)
+```
+
+
+
+### Question
+
+Given a dataframe with three columns: client_id, ranking, value
+
+Write a function to fill the NaN values in the value column with the previous non-NaN value from the same client_id ranked in ascending order.
+
+If there doesn’t exist a previous client_id then return the previous value.
+
+
+```{python}
+client_id = [1001, 1001, 1001, 1002, 1002, 1002, 1003, 1003]
+ranking = [1, 2, 3, 1, 2, 3, 1, 2]
+value = [1000, pd.NA, 1200, 1500, 1250, pd.NA, 1100, pd.NA]
+
+clients_df = pd.DataFrame({
+                  'client_id': client_id,
+                  'ranking': ranking,
+                  'value': value
+})
+
+
+def previous_nan_values(clients_df):
+  
+  clients_df = clients_df.sort_values(by=['client_id', 'ranking'])
+  
+  clients_df['value2'] = clients_df.groupby('client_id')['value'].ffill()
+  
+  return clients_df
+  
+previous_nan_values(clients_df)
+```
+
+
+
+
+
+
+
+
+
+

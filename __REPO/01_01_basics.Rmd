@@ -31,31 +31,23 @@ print(sys.version)
 
 In Python, the concepts of objects and data types are closely related. In fact, in Python, everything is an object. Understanding this relationship is key to working effectively with Python.
 
-## Basics: 
+## Basics 
 
-### Objects vs Data Types
 
-#### Objects in Python:
-
-- **Everything is an Object:** In Python, every value is an object, and every object has a type. This includes not only the fundamental data types (integers, floats, strings) but also more complex types like lists, dictionaries, and even functions.
-
-- **Object Identity:** Each object in Python has a unique identity, which can be obtained using the `id()` function. This identity is guaranteed to be unique and constant for the lifetime of the object.
-
-- **Object Attributes and Methods:** Objects in Python can have attributes (characteristics) and methods (functions associated with the object). For example, a string object has methods like `upper()` and attributes like `length`.
-
-#### Data Types in Python:
+### Data Types in Python
 
 - **Type of an Object:** The type of an object in Python represents the kind of data that the object can hold. For example, the types `int`, `float`, `str`, etc., represent different categories of data.
 
 - **Type Checking:** You can use the `type()` function to determine the type of an object. For example:
-  ```python
-  x = 5
-  print(type(x))  # Output: <class 'int'>
-  ```
+ 
+```python
+x = 5
+print(type(x))  # Output: <class 'int'>
+```
 
 - **Dynamic Typing:** Python is dynamically typed, which means you don't have to explicitly declare the type of a variable. The type is determined at runtime.
 
-#### Relationship:
+### Objects vs Data Types
 
 - Every value in Python is an object, and every object has a type. For example, `5` is an object of type `int`.
 
@@ -63,52 +55,58 @@ In Python, the concepts of objects and data types are closely related. In fact, 
 
 - You can think of data types as categories or blueprints for objects. They define the behavior and characteristics of objects.
 
-In summary, in Python, objects are instances of data types. The term "data type" refers to the category or class of the object, and objects are specific instances of these types. Understanding this distinction is fundamental to writing effective and readable Python code.
 
 ### Objects in Python
+
+- **Everything is an Object:** In Python, every value is an object, and every object has a type. This includes not only the fundamental data types (integers, floats, strings) but also more complex types like lists, dictionaries, and even functions.
+
+- **Object Identity:** Each object in Python has a unique identity, which can be obtained using the `id()` function. This identity is guaranteed to be unique and constant for the lifetime of the object.
+
+- **Object Attributes and Methods:** Objects in Python can have attributes (characteristics) and methods (functions associated with the object). For example, a string object has methods like `upper()` and attributes like `length`.
 
 In Python, everything is an object. Objects are instances of classes, and Python is an object-oriented programming language. Here are some common types of objects in Python:
 
 1. **Numbers:**
+
    - `int`: Integer type, e.g., `x = 5`.
    - `float`: Floating-point type, e.g., `y = 3.14`.
    - `complex`: Complex number type, e.g., `z = 2 + 3j`.
 
-```{python}
-x = 3.4
-
-print("Integer type", int(x))
-print("Float type", float(x))
-print("Complex type", complex(x))
-```
-
 2. **Strings:**
+
    - `str`: String type, e.g., `s = "Hello, World!"`.
 
 3. **Collections:**
+
    - `list`: Ordered collection of items, e.g., `my_list = [1, 2, 3]`.
    - `tuple`: Immutable ordered collection of items, e.g., `my_tuple = (1, 2, 3)`.
-   - `set`: Unordered collection of unique items, e.g., `my_set = {1, 2, 3}`.
+   - `set`: UNORDERED, MUTABLE collection of unique items, e.g., `my_set = {1, 2, 3}`.
    - `dict`: Key-value pairs, e.g., `my_dict = {'a': 1, 'b': 2}`.
+   
+   
+List vs Tuple: 
+- both ordered
+- tuple is IMMUTABLE
 
 4. **Boolean:**
    - `bool`: Boolean type, representing `True` or `False`.
 
-```{python}
+```python
+
 x = True
 y = False 
 
-print(type(x))
+print(type(x))      # <class 'bool'>
 ```
 
 
 5. **None:**
    - `None`: A special object representing the absence of a value or a null value.
 
-```{python}
+```python
 x = None
 
-print(type(x))
+print(type(x))     # <class 'NoneType'>
 ```
 
 6. **Functions:**

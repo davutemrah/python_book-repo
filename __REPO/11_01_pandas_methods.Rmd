@@ -1,0 +1,270 @@
+### sorting
+
+`sort_values` is a method in the pandas library used to sort the values in a DataFrame or Series.
+
+- **Purpose:** `sort_values` is used to sort a DataFrame or Series by one or more columns or by the values in the Series.
+
+- **Syntax:**
+
+  ```python
+  DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)
+  ```
+
+
+#### Examples:
+
+Sample dataframe
+
+```{python}
+import pandas as pd
+
+data = {
+   'NAME': ['David', 'Alice', 'Charlie',  'Bob',],
+   'AGE': [25, 30,  40, 35],
+   'SALARY': [50000, 600000, 55000, 700000]
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+
+1. **Sort by a Single Column:**
+
+
+```{python}
+# Sort by 'age' in ascending order (DEFAULT)
+sorted_df = df.sort_values(by='NAME')
+print(sorted_df)
+```
+
+
+2. **Sort by Multiple Columns:**
+
+```{python}
+ # Sort by 'age' in ascending order, then by 'salary' in descending order
+ 
+ sorted_df = df.sort_values(by=['AGE', 'SALARY'], ascending=[True, False])
+ 
+ print(sorted_df)
+```
+
+
+3. **Handling `NaN` Values:**
+
+```{python}
+data = {
+   'NAME': ['Alice', 'Bob', 'Charlie', 'David'],
+   'AGE': [25, 30, None, 40]
+}
+
+df = pd.DataFrame(data)
+
+# Sort by 'age' and place NaN values at the start
+
+sorted_df = df.sort_values(by='AGE', na_position='first')
+print(sorted_df)
+```
+
+
+#### Key Points:
+
+`axis`: Axis to be sorted along (0 for index, 1 for columns). Default is 0.
+
+`ignore_index`: If `True`, the resulting index will be labeled 0, 1, 2, …, n - 1. Default is `False.`
+
+`inplace`: If True, perform the operation in place and return None. Default is False.
+
+
+### groupby operation
+
+The `groupby` operation in pandas is a powerful tool for aggregating and transforming data. 
+It allows you to split your DataFrame into groups based on one or more columns, apply functions to each group, and then combine the results back into a DataFrame or Series. 
+
+```{python}
+import pandas as pd
+
+data = {
+    'department': ['Sales', 'Sales', 'HR', 'HR', 'IT', 'IT', 'Finance', 'Finance'],
+    'employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'salary': [70000, 80000, 50000, 60000, 90000, 85000, 75000, 65000],
+    'bonus': [5000, 7000, 4000, 6000, 9000, 8500, 7500, 6500]
+}
+
+df_company = pd.DataFrame(data)
+df_company
+```
+
+
+#### Group by a Single Column
+
+Suppose you want to find the average salary by department.
+
+Final object is a series with index is department.
+
+```{python}
+# Group by 'department' and calculate the mean salary
+grouped_df = df_company.groupby('department')['salary'].mean()
+
+print(grouped_df)
+```
+
+```{python}
+print(type(grouped_df))
+```
+
+```{python}
+# Convert the resulting Series into a DataFrame
+grouped_df = grouped_df.reset_index()
+
+# Rename the column for clarity
+grouped_df.columns = ['department', 'average_salary']
+
+grouped_df
+```
+
+
+
+#### Group by Multiple Columns:
+
+You can group by multiple columns. 
+
+For example, find the total compensation (salary + bonus) for each employee in each department.
+
+```{python}
+# Group by 'department' and 'employee', and calculate total compensation
+
+df_company['total_compensation'] = df_company['salary'] + df_company['bonus']
+
+grouped_df = df_company.groupby(['department', 'employee'])['total_compensation'].sum()
+
+print(grouped_df)
+```
+
+```{python}
+print(type(grouped_df))
+```
+
+
+#### Aggregation Functions:
+
+You can use multiple aggregation functions on the grouped data. 
+
+For example, find the sum and mean of the salary and bonus for each department.
+
+
+```{python}
+# Group by 'department' and calculate sum and mean of 'salary' and 'bonus'
+
+agg_df = df_company.groupby('department').agg({ 'salary': ['sum', 'mean'],
+                                                'bonus': ['sum', 'mean']
+                                              })
+
+print(agg_df)
+```
+
+```{python}
+print(type(agg_df))
+```
+
+#### groupby and unnested data
+
+
+```{python}
+agg_df = df_company.groupby('department').agg(
+              total_salary = pd.NamedAgg(column='salary', aggfunc='sum'),
+              avg_salary = pd.NamedAgg(column='salary', aggfunc='mean'),
+              total_bonus = pd.NamedAgg(column='bonus', aggfunc='sum'),
+              avg_bonus = pd.NamedAgg(column='bonus', aggfunc='mean')
+)
+
+print(agg_df)
+```
+
+
+```{python}
+agg_df = df_company.groupby('department').agg({
+                                            'salary': 'sum', 'bonus': 'sum'
+                                            }).rename(columns={
+                                              'salary': 'total_salary', 
+                                              'bonus': 'total_bonus'
+                                              })
+
+agg_df['avg_salary'] = df_company.groupby('department')['salary'].mean()
+agg_df['avg_bonus'] = df_company.groupby('department')['bonus'].mean()
+
+print(agg_df)
+
+```
+
+
+
+#### Transformation
+
+```{python}
+data = {
+    'department': ['Sales', 'Sales', 'HR', 'HR', 'IT', 'IT', 'Finance', 'Finance'],
+    'employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'salary': [70000, 80000, 50000, 60000, 90000, 85000, 95000, 65000],
+}
+df = pd.DataFrame(data)
+
+# Group by 'department' and calculate sum of 'salary' with transform
+
+df['total_salary'] = df.groupby('department')['salary'].transform('sum')
+
+print(df)
+```
+
+
+#### Example
+
+Lets perform a standardization operation on the salary column within each group defined by the department column
+
+```{python}
+# Group by 'department' and calculate sum of 'salary' with transform
+
+df2 = df.copy()
+
+df2['demeaned_salary'] = df2.groupby('department')['salary'].transform(lambda x: (x - x.mean()))
+
+print(df2)
+
+```
+
+#### Filtering Groups:
+
+You can filter out groups that meet a specific condition. 
+
+For example, keep only departments with a total salary of more than $150,000.
+
+```{python}
+# Group by 'department' and filter departments with total salary > 150,000
+
+filtered_df = df.groupby('department').filter(lambda x: x['salary'].sum() > 150000)
+
+print(filtered_df)
+```
+
+
+```{python}
+df2['total_salary'] = df.groupby('department')['salary'].transform('sum')
+
+df2 = df2[df2['total_salary'] > 150000]  
+
+df2
+```
+
+
+
+
+
+#### Examples
+
+```{python}
+df2 = df.copy()
+df2 = df2.groupby('department').agg({'salary': ['sum', 'mean', 'count', 'min', 'max']})
+
+df2
+```
+`

@@ -1,5 +1,5 @@
-#book_filename: "bookdown-demo"
 book_filename: "python_book_file"
+rmd_subdir: yes
 language:
   ui:
     chapter_name: "Chapter "
