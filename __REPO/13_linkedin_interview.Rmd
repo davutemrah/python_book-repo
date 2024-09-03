@@ -1,0 +1,211 @@
+## LinkedIN: sorting
+
+Given a sorted array A of doubles. 
+
+Compute a new sorted array B where each element is obtained by applying the following function f(x) (x is element in A)
+
+$f(x) = a*x^2 + b*x + c$
+
+
+Some values of a, b, c where a > 0
+
+Array A of sorted doubles x
+
+To solve this problem, you need to compute a new sorted array $B$ from a sorted array $A$ of doubles by applying a quadratic function $f(x) = ax^2 + bx + c$ to each element $x$ in $A$. 
+
+### Key Observations:
+
+1. **Quadratic Function Shape**: 
+
+The function $f(x) = ax^2 + bx + c$ is a parabola. 
+
+It can open upwards (if $a > 0$) or downwards (if $a < 0$).
+
+2. **Monotonic Behavior**: 
+
+Because  $A$ is already sorted, the quadratic function's behavior on $A$ depends on its vertex:
+
+- If $a > 0$, the smallest value will be at the vertex, and the values will increase as you move away from it.
+
+- If $a < 0$, the largest value will be at the vertex, and the values will decrease as you move away from it.
+   
+3. **Optimal Strategy**: 
+
+Two-pointer technique can help build the sorted array $B$ without having to sort again.
+
+### Approach:
+
+1. **Identify the direction of traversal**:
+   
+   - If  $a > 0$: The smallest values will be on the sides of the array $A$. Start filling $B$ from the end.
+   
+   - If $a < 0$: The largest values will be on the sides of the array $A$. Start filling $B$ from the beginning.
+   
+2. **Use Two Pointers**:
+   
+   - Initialize two pointers, `left` at the start of $A$ and `right` at the end.
+   
+   - Compute $f(x)$ for both `A[left]` and `A[right]`.
+   
+   - Compare the two values and place the appropriate one in $B$.
+
+### Python Code Implementation:
+
+```python
+def compute_sorted_array(A, a, b, c):
+    # Define the quadratic function
+    def f(x):
+        return a * x ** 2 + b * x + c
+
+    # Initialize pointers for the original sorted array A
+    left, right = 0, len(A) - 1
+    
+    # Initialize the result array B of the same size as A
+    B = [0] * len(A)
+    
+    # Index to fill in B (depends on whether a > 0 or a < 0)
+    index = len(A) - 1 if a > 0 else 0
+    
+    # Two pointer approach to fill B
+    while left <= right:
+        left_val = f(A[left])
+        right_val = f(A[right])
+        
+        if a > 0:  # Parabola opens upwards, fill B from the end
+            if left_val > right_val:
+                B[index] = left_val
+                left += 1
+            else:
+                B[index] = right_val
+                right -= 1
+            index -= 1
+        else:  # Parabola opens downwards, fill B from the beginning
+            if left_val < right_val:
+                B[index] = left_val
+                left += 1
+            else:
+                B[index] = right_val
+                right -= 1
+            index += 1
+    
+    return B
+
+# Example usage:
+A = [-4, -2, 0, 1, 3]
+a, b, c = 1, 2, 1
+B = compute_sorted_array(A, a, b, c)
+print(B)  # Output will be a sorted array B after applying f(x)
+```
+
+### Explanation:
+
+- The function `f(x)` calculates the quadratic value.
+
+- We use a two-pointer technique to determine whether to take from the left or right of $A$ based on the computed values.
+
+- Depending on the value of $a$, we either start filling $B$ from the end or from the beginning to maintain the sorted order.
+
+This approach runs in $O(n)$ time complexity since it only requires a single pass through the array $A$.
+
+
+
+### Question
+
+Given a sorted array A of doubles. 
+
+Compute a new sorted array B where each element is obtained by applying the following function f(x) (x is element in A)
+
+$f(x) = a*x^2 + b*x + c$
+
+Some values of a, b, c where a > 0
+
+Array A of sorted doubles x
+
+
+To compute a new sorted array $B$ from a sorted array $A$ of doubles, where each element of $B$ is the result of applying a quadratic function $f(x) = ax^2 + bx + c$ to the corresponding element in $A$, we can use the following approach. 
+
+Since $a > 0$, the quadratic function is a parabola that opens upwards, meaning it will have a minimum point (vertex). Depending on where this vertex lies relative to the values in array $A$, the sorted order of $B$ can differ.
+
+### Approach:
+
+1. **Identify the Vertex of the Parabola:**
+
+   - The function $f(x) = ax^2 + bx + c$has a vertex at $x = -\frac{b}{2a}$.
+  
+   - Determine where this vertex lies in relation to the values in the sorted array $A$.
+
+2. **Two-Pointer Technique:**
+   
+   - Since array $A$ is sorted, we know the order of elements in $A$. Depending on whether the function is increasing or decreasing, we can build the sorted array $B$ efficiently.
+   
+   - Initialize two pointers: `left` at the start of the array $A$ (smallest value) and `right` at the end of the array $A$ (largest value).
+   
+   - Create an array $B$ of the same size as $A$ to store the results. If the function values tend to grow larger on both sides, we start filling $B$ from the end to the beginning (since $a > 0$, it will form a U-shaped parabola).
+
+3. **Construct the Sorted Array $B$:**
+   
+   - Compare the values of $f(A[left])$ and $f(A[right])$.
+   
+   - If $f(A[left]) > f(A[right])$, place $f(A[left])$ in the current position of $B$ from the end, and move the `left` pointer to the right.
+   
+   - Otherwise, place $f(A[right])$ in the current position of $B$ from the end, and move the `right` pointer to the left.
+   - Repeat the process until the `left` pointer crosses the `right` pointer.
+
+### Pseudo-code:
+
+```python
+def computeSortedArray(A, a, b, c):
+    # Function to compute f(x) = ax^2 + bx + c
+    def f(x):
+        return a * x * x + b * x + c
+    
+    n = len(A)
+    B = [0] * n  # Initialize array B
+    left, right = 0, n - 1
+    index = n - 1  # Start filling B from the end
+    
+    # Two-pointer technique to fill B
+    while left <= right:
+        left_val = f(A[left])
+        right_val = f(A[right])
+        
+        if left_val > right_val:
+            B[index] = left_val
+            left += 1
+        else:
+            B[index] = right_val
+            right -= 1
+        
+        index -= 1
+    
+    return B
+```
+
+### Example:
+
+Given:
+
+- $A = [-3, -1, 0, 1, 2]$
+
+- $a = 1, b = 0, c = 0$  
+
+- Function: $f(x) = x^2$
+
+**Steps:**
+
+1. Calculate $f(x)$ for each element in $A$:
+   - $f(-3) = 9$
+   - $f(-1) = 1$
+   - $f(0) = 0$
+   - $f(1) = 1$
+   - $f(2) = 4$
+
+2. Resulting array in sorted order by filling from the highest index:
+   - $B = [0, 1, 1, 4, 9]$
+
+### Summary:
+
+- The approach efficiently computes the sorted transformed array $B$ in $O(n)$ time using the two-pointer technique.
+
+- This approach takes advantage of the fact that the input array $A$ is sorted and that the parabola opens upwards, simplifying the sorting process of the transformed values.
+

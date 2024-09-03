@@ -23,7 +23,7 @@
 <meta name="author" content="Davut Ayan" />
 
 
-<meta name="date" content="2024-08-30" />
+<meta name="date" content="2024-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="object-oriented-programming-for-data-scientists.html"/>
-
+<link rel="next" href="big-o-notation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -263,6 +263,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="python-exercises.html"><a href="python-exercises.html#even-fibonacci-numbers"><i class="fa fa-check"></i><b>6.2</b> Even Fibonacci numbers</a></li>
 <li class="chapter" data-level="6.3" data-path="python-exercises.html"><a href="python-exercises.html#largest-prime-factor"><i class="fa fa-check"></i><b>6.3</b> Largest prime factor</a></li>
 <li class="chapter" data-level="6.4" data-path="python-exercises.html"><a href="python-exercises.html#greatest-common-diviser"><i class="fa fa-check"></i><b>6.4</b> Greatest Common Diviser</a></li>
+<li class="chapter" data-level="6.5" data-path="python-exercises.html"><a href="python-exercises.html#linkedin-sorting"><i class="fa fa-check"></i><b>6.5</b> LinkedIN: sorting</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="python-exercises.html"><a href="python-exercises.html#key-observations"><i class="fa fa-check"></i><b>6.5.1</b> Key Observations:</a></li>
+<li class="chapter" data-level="6.5.2" data-path="python-exercises.html"><a href="python-exercises.html#approach"><i class="fa fa-check"></i><b>6.5.2</b> Approach:</a></li>
+<li class="chapter" data-level="6.5.3" data-path="python-exercises.html"><a href="python-exercises.html#python-code-implementation"><i class="fa fa-check"></i><b>6.5.3</b> Python Code Implementation:</a></li>
+<li class="chapter" data-level="6.5.4" data-path="python-exercises.html"><a href="python-exercises.html#explanation"><i class="fa fa-check"></i><b>6.5.4</b> Explanation:</a></li>
+<li class="chapter" data-level="6.5.5" data-path="python-exercises.html"><a href="python-exercises.html#question-3"><i class="fa fa-check"></i><b>6.5.5</b> Question</a></li>
+<li class="chapter" data-level="6.5.6" data-path="python-exercises.html"><a href="python-exercises.html#approach-1"><i class="fa fa-check"></i><b>6.5.6</b> Approach:</a></li>
+<li class="chapter" data-level="6.5.7" data-path="python-exercises.html"><a href="python-exercises.html#pseudo-code"><i class="fa fa-check"></i><b>6.5.7</b> Pseudo-code:</a></li>
+<li class="chapter" data-level="6.5.8" data-path="python-exercises.html"><a href="python-exercises.html#example-6"><i class="fa fa-check"></i><b>6.5.8</b> Example:</a></li>
+<li class="chapter" data-level="6.5.9" data-path="python-exercises.html"><a href="python-exercises.html#summary-4"><i class="fa fa-check"></i><b>6.5.9</b> Summary:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="big-o-notation.html"><a href="big-o-notation.html"><i class="fa fa-check"></i><b>7</b> Big O notation</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="big-o-notation.html"><a href="big-o-notation.html#common-big-o-notations"><i class="fa fa-check"></i><b>7.0.1</b> Common Big O Notations:</a></li>
+<li class="chapter" data-level="7.0.2" data-path="big-o-notation.html"><a href="big-o-notation.html#summary-table"><i class="fa fa-check"></i><b>7.0.2</b> Summary Table:</a></li>
+<li class="chapter" data-level="7.0.3" data-path="big-o-notation.html"><a href="big-o-notation.html#key-takeaways"><i class="fa fa-check"></i><b>7.0.3</b> Key Takeaways:</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://davutemrah.github.io/notebooks/" target="blank">Collections Home</a></li>
@@ -290,11 +308,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> Multiples of 3 - 5<a href="python-exercises.html#multiples-of-3---5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6, 9. The sum of these multiples is 23.</p>
 <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
-<div class="sourceCode" id="cb551"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb551-1"><a href="python-exercises.html#cb551-1" tabindex="-1"></a>a <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="cf">if</span> (x<span class="op">%</span><span class="dv">3</span><span class="op">==</span><span class="dv">0</span> <span class="kw">or</span> x<span class="op">%</span><span class="dv">5</span><span class="op">==</span><span class="dv">0</span>)]</span>
-<span id="cb551-2"><a href="python-exercises.html#cb551-2" tabindex="-1"></a><span class="bu">sum</span>(a)<span class="op">==</span><span class="dv">23</span></span></code></pre></div>
+<div class="sourceCode" id="cb553"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb553-1"><a href="python-exercises.html#cb553-1" tabindex="-1"></a>a <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="cf">if</span> (x<span class="op">%</span><span class="dv">3</span><span class="op">==</span><span class="dv">0</span> <span class="kw">or</span> x<span class="op">%</span><span class="dv">5</span><span class="op">==</span><span class="dv">0</span>)]</span>
+<span id="cb553-2"><a href="python-exercises.html#cb553-2" tabindex="-1"></a><span class="bu">sum</span>(a)<span class="op">==</span><span class="dv">23</span></span></code></pre></div>
 <pre><code>## True</code></pre>
-<div class="sourceCode" id="cb553"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb553-1"><a href="python-exercises.html#cb553-1" tabindex="-1"></a>b <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">1000</span>) <span class="cf">if</span> (x<span class="op">%</span><span class="dv">3</span><span class="op">==</span><span class="dv">0</span> <span class="kw">or</span> x<span class="op">%</span><span class="dv">5</span><span class="op">==</span><span class="dv">0</span>)]</span>
-<span id="cb553-2"><a href="python-exercises.html#cb553-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(b))</span></code></pre></div>
+<div class="sourceCode" id="cb555"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb555-1"><a href="python-exercises.html#cb555-1" tabindex="-1"></a>b <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">1000</span>) <span class="cf">if</span> (x<span class="op">%</span><span class="dv">3</span><span class="op">==</span><span class="dv">0</span> <span class="kw">or</span> x<span class="op">%</span><span class="dv">5</span><span class="op">==</span><span class="dv">0</span>)]</span>
+<span id="cb555-2"><a href="python-exercises.html#cb555-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(b))</span></code></pre></div>
 <pre><code>## 233168</code></pre>
 </div>
 <div id="even-fibonacci-numbers" class="section level2 hasAnchor" number="6.2">
@@ -302,45 +320,238 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be:</p>
 <p>1, 2, 3, 5, 8, 13…</p>
 <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
-<div class="sourceCode" id="cb555"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb555-1"><a href="python-exercises.html#cb555-1" tabindex="-1"></a>fib_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
-<span id="cb555-2"><a href="python-exercises.html#cb555-2" tabindex="-1"></a></span>
-<span id="cb555-3"><a href="python-exercises.html#cb555-3" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb555-4"><a href="python-exercises.html#cb555-4" tabindex="-1"></a>  </span>
-<span id="cb555-5"><a href="python-exercises.html#cb555-5" tabindex="-1"></a>  x <span class="op">=</span> fib_list[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> fib_list[<span class="op">-</span><span class="dv">2</span>]</span>
-<span id="cb555-6"><a href="python-exercises.html#cb555-6" tabindex="-1"></a>  </span>
-<span id="cb555-7"><a href="python-exercises.html#cb555-7" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">4000000</span>:</span>
-<span id="cb555-8"><a href="python-exercises.html#cb555-8" tabindex="-1"></a>    <span class="cf">break</span></span>
-<span id="cb555-9"><a href="python-exercises.html#cb555-9" tabindex="-1"></a>  </span>
-<span id="cb555-10"><a href="python-exercises.html#cb555-10" tabindex="-1"></a>  fib_list.append(x)</span>
-<span id="cb555-11"><a href="python-exercises.html#cb555-11" tabindex="-1"></a>  </span>
-<span id="cb555-12"><a href="python-exercises.html#cb555-12" tabindex="-1"></a>even_sum <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> fib_list <span class="cf">if</span> x<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>]</span>
-<span id="cb555-13"><a href="python-exercises.html#cb555-13" tabindex="-1"></a></span>
-<span id="cb555-14"><a href="python-exercises.html#cb555-14" tabindex="-1"></a><span class="bu">sum</span>(even_sum)</span></code></pre></div>
+<div class="sourceCode" id="cb557"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb557-1"><a href="python-exercises.html#cb557-1" tabindex="-1"></a>fib_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb557-2"><a href="python-exercises.html#cb557-2" tabindex="-1"></a></span>
+<span id="cb557-3"><a href="python-exercises.html#cb557-3" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb557-4"><a href="python-exercises.html#cb557-4" tabindex="-1"></a>  </span>
+<span id="cb557-5"><a href="python-exercises.html#cb557-5" tabindex="-1"></a>  x <span class="op">=</span> fib_list[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> fib_list[<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb557-6"><a href="python-exercises.html#cb557-6" tabindex="-1"></a>  </span>
+<span id="cb557-7"><a href="python-exercises.html#cb557-7" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">4000000</span>:</span>
+<span id="cb557-8"><a href="python-exercises.html#cb557-8" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb557-9"><a href="python-exercises.html#cb557-9" tabindex="-1"></a>  </span>
+<span id="cb557-10"><a href="python-exercises.html#cb557-10" tabindex="-1"></a>  fib_list.append(x)</span>
+<span id="cb557-11"><a href="python-exercises.html#cb557-11" tabindex="-1"></a>  </span>
+<span id="cb557-12"><a href="python-exercises.html#cb557-12" tabindex="-1"></a>even_sum <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> fib_list <span class="cf">if</span> x<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>]</span>
+<span id="cb557-13"><a href="python-exercises.html#cb557-13" tabindex="-1"></a></span>
+<span id="cb557-14"><a href="python-exercises.html#cb557-14" tabindex="-1"></a><span class="bu">sum</span>(even_sum)</span></code></pre></div>
 <pre><code>## 4613732</code></pre>
 </div>
 <div id="largest-prime-factor" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Largest prime factor<a href="python-exercises.html#largest-prime-factor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
 <p>What is the largest prime factor of the number 600851475143?</p>
-<div class="sourceCode" id="cb557"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb557-1"><a href="python-exercises.html#cb557-1" tabindex="-1"></a><span class="co"># primes = [1, 2]</span></span>
-<span id="cb557-2"><a href="python-exercises.html#cb557-2" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb557-3"><a href="python-exercises.html#cb557-3" tabindex="-1"></a><span class="co"># while True:</span></span>
-<span id="cb557-4"><a href="python-exercises.html#cb557-4" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb557-5"><a href="python-exercises.html#cb557-5" tabindex="-1"></a><span class="co">#   for x in range(2, 10):</span></span>
-<span id="cb557-6"><a href="python-exercises.html#cb557-6" tabindex="-1"></a><span class="co">#     </span></span>
-<span id="cb557-7"><a href="python-exercises.html#cb557-7" tabindex="-1"></a><span class="co">#     x%i==0</span></span></code></pre></div>
+<div class="sourceCode" id="cb559"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb559-1"><a href="python-exercises.html#cb559-1" tabindex="-1"></a><span class="co"># primes = [1, 2]</span></span>
+<span id="cb559-2"><a href="python-exercises.html#cb559-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb559-3"><a href="python-exercises.html#cb559-3" tabindex="-1"></a><span class="co"># while True:</span></span>
+<span id="cb559-4"><a href="python-exercises.html#cb559-4" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb559-5"><a href="python-exercises.html#cb559-5" tabindex="-1"></a><span class="co">#   for x in range(2, 10):</span></span>
+<span id="cb559-6"><a href="python-exercises.html#cb559-6" tabindex="-1"></a><span class="co">#     </span></span>
+<span id="cb559-7"><a href="python-exercises.html#cb559-7" tabindex="-1"></a><span class="co">#     x%i==0</span></span></code></pre></div>
 </div>
 <div id="greatest-common-diviser" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Greatest Common Diviser<a href="python-exercises.html#greatest-common-diviser" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb558"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb558-1"><a href="python-exercises.html#cb558-1" tabindex="-1"></a><span class="kw">def</span> gcd(a, b):</span>
-<span id="cb558-2"><a href="python-exercises.html#cb558-2" tabindex="-1"></a>    <span class="cf">while</span> b <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb558-3"><a href="python-exercises.html#cb558-3" tabindex="-1"></a>        a, b <span class="op">=</span> b, a <span class="op">%</span> b</span>
-<span id="cb558-4"><a href="python-exercises.html#cb558-4" tabindex="-1"></a>    <span class="cf">return</span> a</span>
-<span id="cb558-5"><a href="python-exercises.html#cb558-5" tabindex="-1"></a></span>
-<span id="cb558-6"><a href="python-exercises.html#cb558-6" tabindex="-1"></a><span class="co"># Example usage:</span></span>
-<span id="cb558-7"><a href="python-exercises.html#cb558-7" tabindex="-1"></a><span class="bu">print</span>(gcd(<span class="dv">55</span>, <span class="dv">60</span>))  <span class="co"># Output: 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb560"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb560-1"><a href="python-exercises.html#cb560-1" tabindex="-1"></a><span class="kw">def</span> gcd(a, b):</span>
+<span id="cb560-2"><a href="python-exercises.html#cb560-2" tabindex="-1"></a>    <span class="cf">while</span> b <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb560-3"><a href="python-exercises.html#cb560-3" tabindex="-1"></a>        a, b <span class="op">=</span> b, a <span class="op">%</span> b</span>
+<span id="cb560-4"><a href="python-exercises.html#cb560-4" tabindex="-1"></a>    <span class="cf">return</span> a</span>
+<span id="cb560-5"><a href="python-exercises.html#cb560-5" tabindex="-1"></a></span>
+<span id="cb560-6"><a href="python-exercises.html#cb560-6" tabindex="-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb560-7"><a href="python-exercises.html#cb560-7" tabindex="-1"></a><span class="bu">print</span>(gcd(<span class="dv">55</span>, <span class="dv">60</span>))  <span class="co"># Output: 12</span></span></code></pre></div>
 <pre><code>## 5</code></pre>
 
+</div>
+<div id="linkedin-sorting" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> LinkedIN: sorting<a href="python-exercises.html#linkedin-sorting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Given a sorted array A of doubles.</p>
+<p>Compute a new sorted array B where each element is obtained by applying the following function f(x) (x is element in A)</p>
+<p><span class="math inline">\(f(x) = a*x^2 + b*x + c\)</span></p>
+<p>Some values of a, b, c where a &gt; 0</p>
+<p>Array A of sorted doubles x</p>
+<p>To solve this problem, you need to compute a new sorted array <span class="math inline">\(B\)</span> from a sorted array <span class="math inline">\(A\)</span> of doubles by applying a quadratic function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span> to each element <span class="math inline">\(x\)</span> in <span class="math inline">\(A\)</span>.</p>
+<div id="key-observations" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Key Observations:<a href="python-exercises.html#key-observations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Quadratic Function Shape</strong>:</li>
+</ol>
+<p>The function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span> is a parabola.</p>
+<p>It can open upwards (if <span class="math inline">\(a &gt; 0\)</span>) or downwards (if <span class="math inline">\(a &lt; 0\)</span>).</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Monotonic Behavior</strong>:</li>
+</ol>
+<p>Because <span class="math inline">\(A\)</span> is already sorted, the quadratic function’s behavior on <span class="math inline">\(A\)</span> depends on its vertex:</p>
+<ul>
+<li><p>If <span class="math inline">\(a &gt; 0\)</span>, the smallest value will be at the vertex, and the values will increase as you move away from it.</p></li>
+<li><p>If <span class="math inline">\(a &lt; 0\)</span>, the largest value will be at the vertex, and the values will decrease as you move away from it.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Optimal Strategy</strong>:</li>
+</ol>
+<p>Two-pointer technique can help build the sorted array <span class="math inline">\(B\)</span> without having to sort again.</p>
+</div>
+<div id="approach" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Approach:<a href="python-exercises.html#approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Identify the direction of traversal</strong>:</p>
+<ul>
+<li><p>If <span class="math inline">\(a &gt; 0\)</span>: The smallest values will be on the sides of the array <span class="math inline">\(A\)</span>. Start filling <span class="math inline">\(B\)</span> from the end.</p></li>
+<li><p>If <span class="math inline">\(a &lt; 0\)</span>: The largest values will be on the sides of the array <span class="math inline">\(A\)</span>. Start filling <span class="math inline">\(B\)</span> from the beginning.</p></li>
+</ul></li>
+<li><p><strong>Use Two Pointers</strong>:</p>
+<ul>
+<li><p>Initialize two pointers, <code>left</code> at the start of <span class="math inline">\(A\)</span> and <code>right</code> at the end.</p></li>
+<li><p>Compute <span class="math inline">\(f(x)\)</span> for both <code>A[left]</code> and <code>A[right]</code>.</p></li>
+<li><p>Compare the two values and place the appropriate one in <span class="math inline">\(B\)</span>.</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="python-code-implementation" class="section level3 hasAnchor" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> Python Code Implementation:<a href="python-exercises.html#python-code-implementation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb562"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb562-1"><a href="python-exercises.html#cb562-1" tabindex="-1"></a><span class="kw">def</span> compute_sorted_array(A, a, b, c):</span>
+<span id="cb562-2"><a href="python-exercises.html#cb562-2" tabindex="-1"></a>    <span class="co"># Define the quadratic function</span></span>
+<span id="cb562-3"><a href="python-exercises.html#cb562-3" tabindex="-1"></a>    <span class="kw">def</span> f(x):</span>
+<span id="cb562-4"><a href="python-exercises.html#cb562-4" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">*</span> x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> b <span class="op">*</span> x <span class="op">+</span> c</span>
+<span id="cb562-5"><a href="python-exercises.html#cb562-5" tabindex="-1"></a></span>
+<span id="cb562-6"><a href="python-exercises.html#cb562-6" tabindex="-1"></a>    <span class="co"># Initialize pointers for the original sorted array A</span></span>
+<span id="cb562-7"><a href="python-exercises.html#cb562-7" tabindex="-1"></a>    left, right <span class="op">=</span> <span class="dv">0</span>, <span class="bu">len</span>(A) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb562-8"><a href="python-exercises.html#cb562-8" tabindex="-1"></a>    </span>
+<span id="cb562-9"><a href="python-exercises.html#cb562-9" tabindex="-1"></a>    <span class="co"># Initialize the result array B of the same size as A</span></span>
+<span id="cb562-10"><a href="python-exercises.html#cb562-10" tabindex="-1"></a>    B <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="bu">len</span>(A)</span>
+<span id="cb562-11"><a href="python-exercises.html#cb562-11" tabindex="-1"></a>    </span>
+<span id="cb562-12"><a href="python-exercises.html#cb562-12" tabindex="-1"></a>    <span class="co"># Index to fill in B (depends on whether a &gt; 0 or a &lt; 0)</span></span>
+<span id="cb562-13"><a href="python-exercises.html#cb562-13" tabindex="-1"></a>    index <span class="op">=</span> <span class="bu">len</span>(A) <span class="op">-</span> <span class="dv">1</span> <span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb562-14"><a href="python-exercises.html#cb562-14" tabindex="-1"></a>    </span>
+<span id="cb562-15"><a href="python-exercises.html#cb562-15" tabindex="-1"></a>    <span class="co"># Two pointer approach to fill B</span></span>
+<span id="cb562-16"><a href="python-exercises.html#cb562-16" tabindex="-1"></a>    <span class="cf">while</span> left <span class="op">&lt;=</span> right:</span>
+<span id="cb562-17"><a href="python-exercises.html#cb562-17" tabindex="-1"></a>        left_val <span class="op">=</span> f(A[left])</span>
+<span id="cb562-18"><a href="python-exercises.html#cb562-18" tabindex="-1"></a>        right_val <span class="op">=</span> f(A[right])</span>
+<span id="cb562-19"><a href="python-exercises.html#cb562-19" tabindex="-1"></a>        </span>
+<span id="cb562-20"><a href="python-exercises.html#cb562-20" tabindex="-1"></a>        <span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:  <span class="co"># Parabola opens upwards, fill B from the end</span></span>
+<span id="cb562-21"><a href="python-exercises.html#cb562-21" tabindex="-1"></a>            <span class="cf">if</span> left_val <span class="op">&gt;</span> right_val:</span>
+<span id="cb562-22"><a href="python-exercises.html#cb562-22" tabindex="-1"></a>                B[index] <span class="op">=</span> left_val</span>
+<span id="cb562-23"><a href="python-exercises.html#cb562-23" tabindex="-1"></a>                left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb562-24"><a href="python-exercises.html#cb562-24" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb562-25"><a href="python-exercises.html#cb562-25" tabindex="-1"></a>                B[index] <span class="op">=</span> right_val</span>
+<span id="cb562-26"><a href="python-exercises.html#cb562-26" tabindex="-1"></a>                right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb562-27"><a href="python-exercises.html#cb562-27" tabindex="-1"></a>            index <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb562-28"><a href="python-exercises.html#cb562-28" tabindex="-1"></a>        <span class="cf">else</span>:  <span class="co"># Parabola opens downwards, fill B from the beginning</span></span>
+<span id="cb562-29"><a href="python-exercises.html#cb562-29" tabindex="-1"></a>            <span class="cf">if</span> left_val <span class="op">&lt;</span> right_val:</span>
+<span id="cb562-30"><a href="python-exercises.html#cb562-30" tabindex="-1"></a>                B[index] <span class="op">=</span> left_val</span>
+<span id="cb562-31"><a href="python-exercises.html#cb562-31" tabindex="-1"></a>                left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb562-32"><a href="python-exercises.html#cb562-32" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb562-33"><a href="python-exercises.html#cb562-33" tabindex="-1"></a>                B[index] <span class="op">=</span> right_val</span>
+<span id="cb562-34"><a href="python-exercises.html#cb562-34" tabindex="-1"></a>                right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb562-35"><a href="python-exercises.html#cb562-35" tabindex="-1"></a>            index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb562-36"><a href="python-exercises.html#cb562-36" tabindex="-1"></a>    </span>
+<span id="cb562-37"><a href="python-exercises.html#cb562-37" tabindex="-1"></a>    <span class="cf">return</span> B</span>
+<span id="cb562-38"><a href="python-exercises.html#cb562-38" tabindex="-1"></a></span>
+<span id="cb562-39"><a href="python-exercises.html#cb562-39" tabindex="-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb562-40"><a href="python-exercises.html#cb562-40" tabindex="-1"></a>A <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb562-41"><a href="python-exercises.html#cb562-41" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span></span>
+<span id="cb562-42"><a href="python-exercises.html#cb562-42" tabindex="-1"></a>B <span class="op">=</span> compute_sorted_array(A, a, b, c)</span>
+<span id="cb562-43"><a href="python-exercises.html#cb562-43" tabindex="-1"></a><span class="bu">print</span>(B)  <span class="co"># Output will be a sorted array B after applying f(x)</span></span></code></pre></div>
+</div>
+<div id="explanation" class="section level3 hasAnchor" number="6.5.4">
+<h3><span class="header-section-number">6.5.4</span> Explanation:<a href="python-exercises.html#explanation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>The function <code>f(x)</code> calculates the quadratic value.</p></li>
+<li><p>We use a two-pointer technique to determine whether to take from the left or right of <span class="math inline">\(A\)</span> based on the computed values.</p></li>
+<li><p>Depending on the value of <span class="math inline">\(a\)</span>, we either start filling <span class="math inline">\(B\)</span> from the end or from the beginning to maintain the sorted order.</p></li>
+</ul>
+<p>This approach runs in <span class="math inline">\(O(n)\)</span> time complexity since it only requires a single pass through the array <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="question-3" class="section level3 hasAnchor" number="6.5.5">
+<h3><span class="header-section-number">6.5.5</span> Question<a href="python-exercises.html#question-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a sorted array A of doubles.</p>
+<p>Compute a new sorted array B where each element is obtained by applying the following function f(x) (x is element in A)</p>
+<p><span class="math inline">\(f(x) = a*x^2 + b*x + c\)</span></p>
+<p>Some values of a, b, c where a &gt; 0</p>
+<p>Array A of sorted doubles x</p>
+<p>To compute a new sorted array <span class="math inline">\(B\)</span> from a sorted array <span class="math inline">\(A\)</span> of doubles, where each element of <span class="math inline">\(B\)</span> is the result of applying a quadratic function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span> to the corresponding element in <span class="math inline">\(A\)</span>, we can use the following approach.</p>
+<p>Since <span class="math inline">\(a &gt; 0\)</span>, the quadratic function is a parabola that opens upwards, meaning it will have a minimum point (vertex). Depending on where this vertex lies relative to the values in array <span class="math inline">\(A\)</span>, the sorted order of <span class="math inline">\(B\)</span> can differ.</p>
+</div>
+<div id="approach-1" class="section level3 hasAnchor" number="6.5.6">
+<h3><span class="header-section-number">6.5.6</span> Approach:<a href="python-exercises.html#approach-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Identify the Vertex of the Parabola:</strong></p>
+<ul>
+<li><p>The function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span>has a vertex at <span class="math inline">\(x = -\frac{b}{2a}\)</span>.</p></li>
+<li><p>Determine where this vertex lies in relation to the values in the sorted array <span class="math inline">\(A\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Two-Pointer Technique:</strong></p>
+<ul>
+<li><p>Since array <span class="math inline">\(A\)</span> is sorted, we know the order of elements in <span class="math inline">\(A\)</span>. Depending on whether the function is increasing or decreasing, we can build the sorted array <span class="math inline">\(B\)</span> efficiently.</p></li>
+<li><p>Initialize two pointers: <code>left</code> at the start of the array <span class="math inline">\(A\)</span> (smallest value) and <code>right</code> at the end of the array <span class="math inline">\(A\)</span> (largest value).</p></li>
+<li><p>Create an array <span class="math inline">\(B\)</span> of the same size as <span class="math inline">\(A\)</span> to store the results. If the function values tend to grow larger on both sides, we start filling <span class="math inline">\(B\)</span> from the end to the beginning (since <span class="math inline">\(a &gt; 0\)</span>, it will form a U-shaped parabola).</p></li>
+</ul></li>
+<li><p><strong>Construct the Sorted Array <span class="math inline">\(B\)</span>:</strong></p>
+<ul>
+<li><p>Compare the values of <span class="math inline">\(f(A[left])\)</span> and <span class="math inline">\(f(A[right])\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f(A[left]) &gt; f(A[right])\)</span>, place <span class="math inline">\(f(A[left])\)</span> in the current position of <span class="math inline">\(B\)</span> from the end, and move the <code>left</code> pointer to the right.</p></li>
+<li><p>Otherwise, place <span class="math inline">\(f(A[right])\)</span> in the current position of <span class="math inline">\(B\)</span> from the end, and move the <code>right</code> pointer to the left.</p></li>
+<li><p>Repeat the process until the <code>left</code> pointer crosses the <code>right</code> pointer.</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="pseudo-code" class="section level3 hasAnchor" number="6.5.7">
+<h3><span class="header-section-number">6.5.7</span> Pseudo-code:<a href="python-exercises.html#pseudo-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb563"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb563-1"><a href="python-exercises.html#cb563-1" tabindex="-1"></a><span class="kw">def</span> computeSortedArray(A, a, b, c):</span>
+<span id="cb563-2"><a href="python-exercises.html#cb563-2" tabindex="-1"></a>    <span class="co"># Function to compute f(x) = ax^2 + bx + c</span></span>
+<span id="cb563-3"><a href="python-exercises.html#cb563-3" tabindex="-1"></a>    <span class="kw">def</span> f(x):</span>
+<span id="cb563-4"><a href="python-exercises.html#cb563-4" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">*</span> x <span class="op">*</span> x <span class="op">+</span> b <span class="op">*</span> x <span class="op">+</span> c</span>
+<span id="cb563-5"><a href="python-exercises.html#cb563-5" tabindex="-1"></a>    </span>
+<span id="cb563-6"><a href="python-exercises.html#cb563-6" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(A)</span>
+<span id="cb563-7"><a href="python-exercises.html#cb563-7" tabindex="-1"></a>    B <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n  <span class="co"># Initialize array B</span></span>
+<span id="cb563-8"><a href="python-exercises.html#cb563-8" tabindex="-1"></a>    left, right <span class="op">=</span> <span class="dv">0</span>, n <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb563-9"><a href="python-exercises.html#cb563-9" tabindex="-1"></a>    index <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span>  <span class="co"># Start filling B from the end</span></span>
+<span id="cb563-10"><a href="python-exercises.html#cb563-10" tabindex="-1"></a>    </span>
+<span id="cb563-11"><a href="python-exercises.html#cb563-11" tabindex="-1"></a>    <span class="co"># Two-pointer technique to fill B</span></span>
+<span id="cb563-12"><a href="python-exercises.html#cb563-12" tabindex="-1"></a>    <span class="cf">while</span> left <span class="op">&lt;=</span> right:</span>
+<span id="cb563-13"><a href="python-exercises.html#cb563-13" tabindex="-1"></a>        left_val <span class="op">=</span> f(A[left])</span>
+<span id="cb563-14"><a href="python-exercises.html#cb563-14" tabindex="-1"></a>        right_val <span class="op">=</span> f(A[right])</span>
+<span id="cb563-15"><a href="python-exercises.html#cb563-15" tabindex="-1"></a>        </span>
+<span id="cb563-16"><a href="python-exercises.html#cb563-16" tabindex="-1"></a>        <span class="cf">if</span> left_val <span class="op">&gt;</span> right_val:</span>
+<span id="cb563-17"><a href="python-exercises.html#cb563-17" tabindex="-1"></a>            B[index] <span class="op">=</span> left_val</span>
+<span id="cb563-18"><a href="python-exercises.html#cb563-18" tabindex="-1"></a>            left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb563-19"><a href="python-exercises.html#cb563-19" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb563-20"><a href="python-exercises.html#cb563-20" tabindex="-1"></a>            B[index] <span class="op">=</span> right_val</span>
+<span id="cb563-21"><a href="python-exercises.html#cb563-21" tabindex="-1"></a>            right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb563-22"><a href="python-exercises.html#cb563-22" tabindex="-1"></a>        </span>
+<span id="cb563-23"><a href="python-exercises.html#cb563-23" tabindex="-1"></a>        index <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb563-24"><a href="python-exercises.html#cb563-24" tabindex="-1"></a>    </span>
+<span id="cb563-25"><a href="python-exercises.html#cb563-25" tabindex="-1"></a>    <span class="cf">return</span> B</span></code></pre></div>
+</div>
+<div id="example-6" class="section level3 hasAnchor" number="6.5.8">
+<h3><span class="header-section-number">6.5.8</span> Example:<a href="python-exercises.html#example-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given:</p>
+<ul>
+<li><p><span class="math inline">\(A = [-3, -1, 0, 1, 2]\)</span></p></li>
+<li><p><span class="math inline">\(a = 1, b = 0, c = 0\)</span></p></li>
+<li><p>Function: <span class="math inline">\(f(x) = x^2\)</span></p></li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Calculate <span class="math inline">\(f(x)\)</span> for each element in <span class="math inline">\(A\)</span>:
+<ul>
+<li><span class="math inline">\(f(-3) = 9\)</span></li>
+<li><span class="math inline">\(f(-1) = 1\)</span></li>
+<li><span class="math inline">\(f(0) = 0\)</span></li>
+<li><span class="math inline">\(f(1) = 1\)</span></li>
+<li><span class="math inline">\(f(2) = 4\)</span></li>
+</ul></li>
+<li>Resulting array in sorted order by filling from the highest index:
+<ul>
+<li><span class="math inline">\(B = [0, 1, 1, 4, 9]\)</span></li>
+</ul></li>
+</ol>
+</div>
+<div id="summary-4" class="section level3 hasAnchor" number="6.5.9">
+<h3><span class="header-section-number">6.5.9</span> Summary:<a href="python-exercises.html#summary-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>The approach efficiently computes the sorted transformed array <span class="math inline">\(B\)</span> in <span class="math inline">\(O(n)\)</span> time using the two-pointer technique.</p></li>
+<li><p>This approach takes advantage of the fact that the input array <span class="math inline">\(A\)</span> is sorted and that the parabola opens upwards, simplifying the sorting process of the transformed values.</p></li>
+</ul>
+
+</div>
 </div>
 </div>
             </section>
@@ -348,8 +559,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="object-oriented-programming-for-data-scientists.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="object-oriented-programming-for-data-scientists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="big-o-notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

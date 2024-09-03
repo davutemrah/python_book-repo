@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Python For Data Science</title>
+  <title>Chapter 7 Big O notation | Python For Data Science</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Python For Data Science" />
+  <meta property="og:title" content="Chapter 7 Big O notation | Python For Data Science" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="davutemrah/python_book-repo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Python For Data Science" />
+  <meta name="twitter:title" content="Chapter 7 Big O notation | Python For Data Science" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="python-exercises.html"/>
 
-<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -302,25 +302,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Python For Data Science</h1>
-<p class="author"><em>Davut Ayan</em></p>
-<p class="date"><em>2024-09-02</em></p>
+<div id="big-o-notation" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Big O notation<a href="big-o-notation.html#big-o-notation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In computer science, <strong>Big O notation</strong> is used to describe the <strong>time complexity</strong> (or <strong>space complexity</strong>) of an algorithm. It provides an upper bound on the time (or space) required by an algorithm relative to the size of the input data as the input size grows. It helps us understand the <strong>worst-case scenario</strong> performance and scalability of an algorithm.</p>
+<div id="common-big-o-notations" class="section level3 hasAnchor" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Common Big O Notations:<a href="big-o-notation.html#common-big-o-notations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>O(1) - Constant Time Complexity:</strong>
+<ul>
+<li>An algorithm is said to have <strong>constant time complexity</strong> when its running time does not depend on the size of the input data.</li>
+<li>This means that no matter how large the input is, the algorithm will always take the same amount of time to complete.</li>
+<li><strong>Example:</strong> Accessing an element in an array by index, such as <code>arr[5]</code>, is an <span class="math inline">\(O(1)\)</span> operation because it takes the same amount of time regardless of the array size.</li>
+</ul></li>
+<li><strong>O(log n) - Logarithmic Time Complexity:</strong>
+<ul>
+<li>An algorithm is said to have <strong>logarithmic time complexity</strong> if it reduces the problem size by half at each step.</li>
+<li>These algorithms are very efficient, especially for large datasets.</li>
+<li><strong>Example:</strong> Binary search on a sorted array is <span class="math inline">\(O(\log n)\)</span> because it divides the search space in half with each step.</li>
+</ul></li>
+<li><strong>O(n) - Linear Time Complexity:</strong>
+<ul>
+<li>An algorithm has <strong>linear time complexity</strong> when its running time increases linearly with the size of the input.</li>
+<li>In other words, if the input size doubles, the running time will also double.</li>
+<li><strong>Example:</strong> A simple loop that iterates through all elements in an array has <span class="math inline">\(O(n)\)</span> time complexity.</li>
+</ul></li>
+<li><strong>O(n n) - Linearithmic Time Complexity:</strong>
+<ul>
+<li>An algorithm has <strong>linearithmic time complexity</strong> when its running time is a combination of linear and logarithmic complexities.</li>
+<li>These are typical of algorithms that perform some kind of divide-and-conquer approach.</li>
+<li><strong>Example:</strong> Efficient sorting algorithms like Merge Sort and Quick Sort have <span class="math inline">\(O(n \log n)\)</span> time complexity.</li>
+</ul></li>
+<li><strong>O(n^2) - Quadratic Time Complexity:</strong>
+<ul>
+<li>An algorithm has <strong>quadratic time complexity</strong> when its running time is proportional to the square of the size of the input.</li>
+<li>If the input size doubles, the running time quadruples.</li>
+<li><strong>Example:</strong> A nested loop that iterates over all pairs of elements in an array has <span class="math inline">\(O(n^2)\)</span> time complexity. A classic example is the Bubble Sort algorithm.</li>
+</ul></li>
+<li><strong>O(n^3) - Cubic Time Complexity:</strong>
+<ul>
+<li>An algorithm with <strong>cubic time complexity</strong> involves three nested loops and grows even more quickly as input size increases.</li>
+<li><strong>Example:</strong> A triple nested loop iterating over three different dimensions, like calculating all combinations of three elements from a list.</li>
+</ul></li>
+<li><strong>O(2^n) - Exponential Time Complexity:</strong>
+<ul>
+<li>An algorithm has <strong>exponential time complexity</strong> when the growth rate doubles with each additional element in the input.</li>
+<li>These algorithms are generally very inefficient and not feasible for large input sizes.</li>
+<li><strong>Example:</strong> Solving the Traveling Salesman Problem using brute force or generating all subsets of a set (the power set).</li>
+</ul></li>
+<li><strong>O(n!) - Factorial Time Complexity:</strong>
+<ul>
+<li>An algorithm has <strong>factorial time complexity</strong> when it grows factorially with the input size.</li>
+<li>These algorithms are typically only used for very small input sizes due to their extreme inefficiency.</li>
+<li><strong>Example:</strong> Solving the Traveling Salesman Problem by checking all possible permutations.</li>
+</ul></li>
+</ol>
 </div>
-<div id="acknowledgement" class="section level1 unnumbered hasAnchor">
-<h1>Acknowledgement<a href="index.html#acknowledgement" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is a personal notebook open for public use. I have collected these notes, codes and best practices that I find useful to teach myself on python programming language.</p>
-<p>All these content are free to use and share.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">error =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="summary-table" class="section level3 hasAnchor" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> Summary Table:<a href="big-o-notation.html#summary-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="25%" />
+<col width="54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Big O Notation</th>
+<th>Name</th>
+<th>Example Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(O(1)\)</span></td>
+<td>Constant</td>
+<td>Array element access by index</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(O(\log n)\)</span></td>
+<td>Logarithmic</td>
+<td>Binary search</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(O(n)\)</span></td>
+<td>Linear</td>
+<td>Linear search, single loop over elements</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(O(n \log n)\)</span></td>
+<td>Linearithmic</td>
+<td>Merge Sort, Quick Sort</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td>Quadratic</td>
+<td>Bubble Sort, Selection Sort</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(O(n^3)\)</span></td>
+<td>Cubic</td>
+<td>Triple nested loops</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(O(2^n)\)</span></td>
+<td>Exponential</td>
+<td>Recursive solutions to combinatorial problems</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(O(n!)\)</span></td>
+<td>Factorial</td>
+<td>Permutations of a set</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="key-takeaways" class="section level3 hasAnchor" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Key Takeaways:<a href="big-o-notation.html#key-takeaways" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Lower-order terms</strong> and <strong>constants</strong> are generally omitted in Big O notation (e.g., <span class="math inline">\(O(2n)\)</span> is considered <span class="math inline">\(O(n)\)</span>).</li>
+<li><strong>Big O</strong> provides a <strong>high-level understanding</strong> of an algorithm’s performance.</li>
+<li>Understanding the <strong>time complexity</strong> helps in choosing the right algorithm for a given problem, especially when dealing with large datasets.</li>
+</ul>
+<p>By learning these common Big O notations, you can better analyze the efficiency of different algorithms and data structures!</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="python-exercises.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

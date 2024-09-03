@@ -23,7 +23,7 @@
 <meta name="author" content="Davut Ayan" />
 
 
-<meta name="date" content="2024-08-30" />
+<meta name="date" content="2024-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -263,6 +263,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="python-exercises.html"><a href="python-exercises.html#even-fibonacci-numbers"><i class="fa fa-check"></i><b>6.2</b> Even Fibonacci numbers</a></li>
 <li class="chapter" data-level="6.3" data-path="python-exercises.html"><a href="python-exercises.html#largest-prime-factor"><i class="fa fa-check"></i><b>6.3</b> Largest prime factor</a></li>
 <li class="chapter" data-level="6.4" data-path="python-exercises.html"><a href="python-exercises.html#greatest-common-diviser"><i class="fa fa-check"></i><b>6.4</b> Greatest Common Diviser</a></li>
+<li class="chapter" data-level="6.5" data-path="python-exercises.html"><a href="python-exercises.html#linkedin-sorting"><i class="fa fa-check"></i><b>6.5</b> LinkedIN: sorting</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="python-exercises.html"><a href="python-exercises.html#key-observations"><i class="fa fa-check"></i><b>6.5.1</b> Key Observations:</a></li>
+<li class="chapter" data-level="6.5.2" data-path="python-exercises.html"><a href="python-exercises.html#approach"><i class="fa fa-check"></i><b>6.5.2</b> Approach:</a></li>
+<li class="chapter" data-level="6.5.3" data-path="python-exercises.html"><a href="python-exercises.html#python-code-implementation"><i class="fa fa-check"></i><b>6.5.3</b> Python Code Implementation:</a></li>
+<li class="chapter" data-level="6.5.4" data-path="python-exercises.html"><a href="python-exercises.html#explanation"><i class="fa fa-check"></i><b>6.5.4</b> Explanation:</a></li>
+<li class="chapter" data-level="6.5.5" data-path="python-exercises.html"><a href="python-exercises.html#question-3"><i class="fa fa-check"></i><b>6.5.5</b> Question</a></li>
+<li class="chapter" data-level="6.5.6" data-path="python-exercises.html"><a href="python-exercises.html#approach-1"><i class="fa fa-check"></i><b>6.5.6</b> Approach:</a></li>
+<li class="chapter" data-level="6.5.7" data-path="python-exercises.html"><a href="python-exercises.html#pseudo-code"><i class="fa fa-check"></i><b>6.5.7</b> Pseudo-code:</a></li>
+<li class="chapter" data-level="6.5.8" data-path="python-exercises.html"><a href="python-exercises.html#example-6"><i class="fa fa-check"></i><b>6.5.8</b> Example:</a></li>
+<li class="chapter" data-level="6.5.9" data-path="python-exercises.html"><a href="python-exercises.html#summary-4"><i class="fa fa-check"></i><b>6.5.9</b> Summary:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="big-o-notation.html"><a href="big-o-notation.html"><i class="fa fa-check"></i><b>7</b> Big O notation</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="big-o-notation.html"><a href="big-o-notation.html#common-big-o-notations"><i class="fa fa-check"></i><b>7.0.1</b> Common Big O Notations:</a></li>
+<li class="chapter" data-level="7.0.2" data-path="big-o-notation.html"><a href="big-o-notation.html#summary-table"><i class="fa fa-check"></i><b>7.0.2</b> Summary Table:</a></li>
+<li class="chapter" data-level="7.0.3" data-path="big-o-notation.html"><a href="big-o-notation.html#key-takeaways"><i class="fa fa-check"></i><b>7.0.3</b> Key Takeaways:</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://davutemrah.github.io/notebooks/" target="blank">Collections Home</a></li>
@@ -1031,17 +1049,22 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 ## 5         IT    Frank   85000        175000
 ## 6    Finance    Grace   95000        160000
 ## 7    Finance   Hannah   65000        160000</code></pre>
+<div class="sourceCode" id="cb482"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb482-1"><a href="object-oriented-programming-for-data-scientists.html#cb482-1" tabindex="-1"></a>df[df[<span class="st">&#39;salary&#39;</span>]<span class="op">&gt;</span><span class="dv">80000</span>]</span></code></pre></div>
+<pre><code>##   department employee  salary  total_salary
+## 4         IT      Eve   90000        175000
+## 5         IT    Frank   85000        175000
+## 6    Finance    Grace   95000        160000</code></pre>
 </div>
 <div id="example-5" class="section level4 hasAnchor" number="5.4.2.6">
 <h4><span class="header-section-number">5.4.2.6</span> Example<a href="object-oriented-programming-for-data-scientists.html#example-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Lets perform a standardization operation on the salary column within each group defined by the department column</p>
-<div class="sourceCode" id="cb482"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb482-1"><a href="object-oriented-programming-for-data-scientists.html#cb482-1" tabindex="-1"></a><span class="co"># Group by &#39;department&#39; and calculate sum of &#39;salary&#39; with transform</span></span>
-<span id="cb482-2"><a href="object-oriented-programming-for-data-scientists.html#cb482-2" tabindex="-1"></a></span>
-<span id="cb482-3"><a href="object-oriented-programming-for-data-scientists.html#cb482-3" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
-<span id="cb482-4"><a href="object-oriented-programming-for-data-scientists.html#cb482-4" tabindex="-1"></a></span>
-<span id="cb482-5"><a href="object-oriented-programming-for-data-scientists.html#cb482-5" tabindex="-1"></a>df2[<span class="st">&#39;demeaned_salary&#39;</span>] <span class="op">=</span> df2.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].transform(<span class="kw">lambda</span> x: (x <span class="op">-</span> x.mean()))</span>
-<span id="cb482-6"><a href="object-oriented-programming-for-data-scientists.html#cb482-6" tabindex="-1"></a></span>
-<span id="cb482-7"><a href="object-oriented-programming-for-data-scientists.html#cb482-7" tabindex="-1"></a><span class="bu">print</span>(df2)</span></code></pre></div>
+<div class="sourceCode" id="cb484"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb484-1"><a href="object-oriented-programming-for-data-scientists.html#cb484-1" tabindex="-1"></a><span class="co"># Group by &#39;department&#39; and calculate sum of &#39;salary&#39; with transform</span></span>
+<span id="cb484-2"><a href="object-oriented-programming-for-data-scientists.html#cb484-2" tabindex="-1"></a></span>
+<span id="cb484-3"><a href="object-oriented-programming-for-data-scientists.html#cb484-3" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
+<span id="cb484-4"><a href="object-oriented-programming-for-data-scientists.html#cb484-4" tabindex="-1"></a></span>
+<span id="cb484-5"><a href="object-oriented-programming-for-data-scientists.html#cb484-5" tabindex="-1"></a>df2[<span class="st">&#39;demeaned_salary&#39;</span>] <span class="op">=</span> df2.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].transform(<span class="kw">lambda</span> x: (x <span class="op">-</span> x.mean()))</span>
+<span id="cb484-6"><a href="object-oriented-programming-for-data-scientists.html#cb484-6" tabindex="-1"></a></span>
+<span id="cb484-7"><a href="object-oriented-programming-for-data-scientists.html#cb484-7" tabindex="-1"></a><span class="bu">print</span>(df2)</span></code></pre></div>
 <pre><code>##   department employee  salary  total_salary  demeaned_salary
 ## 0      Sales    Alice   70000        150000          -5000.0
 ## 1      Sales      Bob   80000        150000           5000.0
@@ -1056,21 +1079,21 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 <h4><span class="header-section-number">5.4.2.7</span> Filtering Groups:<a href="object-oriented-programming-for-data-scientists.html#filtering-groups" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You can filter out groups that meet a specific condition.</p>
 <p>For example, keep only departments with a total salary of more than $150,000.</p>
-<div class="sourceCode" id="cb484"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb484-1"><a href="object-oriented-programming-for-data-scientists.html#cb484-1" tabindex="-1"></a><span class="co"># Group by &#39;department&#39; and filter departments with total salary &gt; 150,000</span></span>
-<span id="cb484-2"><a href="object-oriented-programming-for-data-scientists.html#cb484-2" tabindex="-1"></a></span>
-<span id="cb484-3"><a href="object-oriented-programming-for-data-scientists.html#cb484-3" tabindex="-1"></a>filtered_df <span class="op">=</span> df.groupby(<span class="st">&#39;department&#39;</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">&#39;salary&#39;</span>].<span class="bu">sum</span>() <span class="op">&gt;</span> <span class="dv">150000</span>)</span>
-<span id="cb484-4"><a href="object-oriented-programming-for-data-scientists.html#cb484-4" tabindex="-1"></a></span>
-<span id="cb484-5"><a href="object-oriented-programming-for-data-scientists.html#cb484-5" tabindex="-1"></a><span class="bu">print</span>(filtered_df)</span></code></pre></div>
+<div class="sourceCode" id="cb486"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb486-1"><a href="object-oriented-programming-for-data-scientists.html#cb486-1" tabindex="-1"></a><span class="co"># Group by &#39;department&#39; and filter departments with total salary &gt; 150,000</span></span>
+<span id="cb486-2"><a href="object-oriented-programming-for-data-scientists.html#cb486-2" tabindex="-1"></a></span>
+<span id="cb486-3"><a href="object-oriented-programming-for-data-scientists.html#cb486-3" tabindex="-1"></a>filtered_df <span class="op">=</span> df.groupby(<span class="st">&#39;department&#39;</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">&#39;salary&#39;</span>].<span class="bu">sum</span>() <span class="op">&gt;</span> <span class="dv">150000</span>)</span>
+<span id="cb486-4"><a href="object-oriented-programming-for-data-scientists.html#cb486-4" tabindex="-1"></a></span>
+<span id="cb486-5"><a href="object-oriented-programming-for-data-scientists.html#cb486-5" tabindex="-1"></a><span class="bu">print</span>(filtered_df)</span></code></pre></div>
 <pre><code>##   department employee  salary  total_salary
 ## 4         IT      Eve   90000        175000
 ## 5         IT    Frank   85000        175000
 ## 6    Finance    Grace   95000        160000
 ## 7    Finance   Hannah   65000        160000</code></pre>
-<div class="sourceCode" id="cb486"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb486-1"><a href="object-oriented-programming-for-data-scientists.html#cb486-1" tabindex="-1"></a>df2[<span class="st">&#39;total_salary&#39;</span>] <span class="op">=</span> df.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].transform(<span class="st">&#39;sum&#39;</span>)</span>
-<span id="cb486-2"><a href="object-oriented-programming-for-data-scientists.html#cb486-2" tabindex="-1"></a></span>
-<span id="cb486-3"><a href="object-oriented-programming-for-data-scientists.html#cb486-3" tabindex="-1"></a>df2 <span class="op">=</span> df2[df2[<span class="st">&#39;total_salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">150000</span>]  </span>
-<span id="cb486-4"><a href="object-oriented-programming-for-data-scientists.html#cb486-4" tabindex="-1"></a></span>
-<span id="cb486-5"><a href="object-oriented-programming-for-data-scientists.html#cb486-5" tabindex="-1"></a>df2</span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb488-1"><a href="object-oriented-programming-for-data-scientists.html#cb488-1" tabindex="-1"></a>df2[<span class="st">&#39;total_salary&#39;</span>] <span class="op">=</span> df.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].transform(<span class="st">&#39;sum&#39;</span>)</span>
+<span id="cb488-2"><a href="object-oriented-programming-for-data-scientists.html#cb488-2" tabindex="-1"></a></span>
+<span id="cb488-3"><a href="object-oriented-programming-for-data-scientists.html#cb488-3" tabindex="-1"></a>df2 <span class="op">=</span> df2[df2[<span class="st">&#39;total_salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">150000</span>]  </span>
+<span id="cb488-4"><a href="object-oriented-programming-for-data-scientists.html#cb488-4" tabindex="-1"></a></span>
+<span id="cb488-5"><a href="object-oriented-programming-for-data-scientists.html#cb488-5" tabindex="-1"></a>df2</span></code></pre></div>
 <pre><code>##   department employee  salary  total_salary  demeaned_salary
 ## 4         IT      Eve   90000        175000           2500.0
 ## 5         IT    Frank   85000        175000          -2500.0
@@ -1079,10 +1102,10 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="examples-1" class="section level4 hasAnchor" number="5.4.2.8">
 <h4><span class="header-section-number">5.4.2.8</span> Examples<a href="object-oriented-programming-for-data-scientists.html#examples-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb488"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb488-1"><a href="object-oriented-programming-for-data-scientists.html#cb488-1" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
-<span id="cb488-2"><a href="object-oriented-programming-for-data-scientists.html#cb488-2" tabindex="-1"></a>df2 <span class="op">=</span> df2.groupby(<span class="st">&#39;department&#39;</span>).agg({<span class="st">&#39;salary&#39;</span>: [<span class="st">&#39;sum&#39;</span>, <span class="st">&#39;mean&#39;</span>, <span class="st">&#39;count&#39;</span>, <span class="st">&#39;min&#39;</span>, <span class="st">&#39;max&#39;</span>]})</span>
-<span id="cb488-3"><a href="object-oriented-programming-for-data-scientists.html#cb488-3" tabindex="-1"></a></span>
-<span id="cb488-4"><a href="object-oriented-programming-for-data-scientists.html#cb488-4" tabindex="-1"></a>df2</span></code></pre></div>
+<div class="sourceCode" id="cb490"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb490-1"><a href="object-oriented-programming-for-data-scientists.html#cb490-1" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
+<span id="cb490-2"><a href="object-oriented-programming-for-data-scientists.html#cb490-2" tabindex="-1"></a>df2 <span class="op">=</span> df2.groupby(<span class="st">&#39;department&#39;</span>).agg({<span class="st">&#39;salary&#39;</span>: [<span class="st">&#39;sum&#39;</span>, <span class="st">&#39;mean&#39;</span>, <span class="st">&#39;count&#39;</span>, <span class="st">&#39;min&#39;</span>, <span class="st">&#39;max&#39;</span>]})</span>
+<span id="cb490-3"><a href="object-oriented-programming-for-data-scientists.html#cb490-3" tabindex="-1"></a></span>
+<span id="cb490-4"><a href="object-oriented-programming-for-data-scientists.html#cb490-4" tabindex="-1"></a>df2</span></code></pre></div>
 <pre><code>##             salary                             
 ##                sum     mean count    min    max
 ## department                                     
@@ -1099,22 +1122,22 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 <p>these are from <a href="https://www.interviewquery.com/">interviewquery</a></p>
 <div id="question" class="section level4 hasAnchor" number="5.4.3.1">
 <h4><span class="header-section-number">5.4.3.1</span> Question<a href="object-oriented-programming-for-data-scientists.html#question" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb490"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb490-1"><a href="object-oriented-programming-for-data-scientists.html#cb490-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb490-2"><a href="object-oriented-programming-for-data-scientists.html#cb490-2" tabindex="-1"></a></span>
-<span id="cb490-3"><a href="object-oriented-programming-for-data-scientists.html#cb490-3" tabindex="-1"></a>name_list <span class="op">=</span> [<span class="st">&quot;Tim Voss&quot;</span>, <span class="st">&quot;Nicole Johnson&quot;</span>, <span class="st">&quot;Elsa Williams&quot;</span>, <span class="st">&quot;John James&quot;</span>, <span class="st">&quot;Catherine Jones&quot;</span>]</span>
-<span id="cb490-4"><a href="object-oriented-programming-for-data-scientists.html#cb490-4" tabindex="-1"></a>age_list <span class="op">=</span> [<span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">21</span>, <span class="dv">20</span>, <span class="dv">23</span>]</span>
-<span id="cb490-5"><a href="object-oriented-programming-for-data-scientists.html#cb490-5" tabindex="-1"></a>color_list <span class="op">=</span> [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>]</span>
-<span id="cb490-6"><a href="object-oriented-programming-for-data-scientists.html#cb490-6" tabindex="-1"></a>grades <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">95</span>, <span class="dv">82</span>, <span class="dv">75</span>, <span class="dv">93</span>]</span>
-<span id="cb490-7"><a href="object-oriented-programming-for-data-scientists.html#cb490-7" tabindex="-1"></a></span>
-<span id="cb490-8"><a href="object-oriented-programming-for-data-scientists.html#cb490-8" tabindex="-1"></a></span>
-<span id="cb490-9"><a href="object-oriented-programming-for-data-scientists.html#cb490-9" tabindex="-1"></a>students <span class="op">=</span> {<span class="st">&quot;name&quot;</span> : name_list,</span>
-<span id="cb490-10"><a href="object-oriented-programming-for-data-scientists.html#cb490-10" tabindex="-1"></a>            <span class="st">&quot;age&quot;</span> : age_list,</span>
-<span id="cb490-11"><a href="object-oriented-programming-for-data-scientists.html#cb490-11" tabindex="-1"></a>            <span class="st">&quot;favorite_color&quot;</span> : color_list,</span>
-<span id="cb490-12"><a href="object-oriented-programming-for-data-scientists.html#cb490-12" tabindex="-1"></a>            <span class="st">&quot;grade&quot;</span> : grades}</span>
-<span id="cb490-13"><a href="object-oriented-programming-for-data-scientists.html#cb490-13" tabindex="-1"></a></span>
-<span id="cb490-14"><a href="object-oriented-programming-for-data-scientists.html#cb490-14" tabindex="-1"></a>students_df <span class="op">=</span> pd.DataFrame(students)</span>
-<span id="cb490-15"><a href="object-oriented-programming-for-data-scientists.html#cb490-15" tabindex="-1"></a></span>
-<span id="cb490-16"><a href="object-oriented-programming-for-data-scientists.html#cb490-16" tabindex="-1"></a>students_df</span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb492-1"><a href="object-oriented-programming-for-data-scientists.html#cb492-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb492-2"><a href="object-oriented-programming-for-data-scientists.html#cb492-2" tabindex="-1"></a></span>
+<span id="cb492-3"><a href="object-oriented-programming-for-data-scientists.html#cb492-3" tabindex="-1"></a>name_list <span class="op">=</span> [<span class="st">&quot;Tim Voss&quot;</span>, <span class="st">&quot;Nicole Johnson&quot;</span>, <span class="st">&quot;Elsa Williams&quot;</span>, <span class="st">&quot;John James&quot;</span>, <span class="st">&quot;Catherine Jones&quot;</span>]</span>
+<span id="cb492-4"><a href="object-oriented-programming-for-data-scientists.html#cb492-4" tabindex="-1"></a>age_list <span class="op">=</span> [<span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">21</span>, <span class="dv">20</span>, <span class="dv">23</span>]</span>
+<span id="cb492-5"><a href="object-oriented-programming-for-data-scientists.html#cb492-5" tabindex="-1"></a>color_list <span class="op">=</span> [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>]</span>
+<span id="cb492-6"><a href="object-oriented-programming-for-data-scientists.html#cb492-6" tabindex="-1"></a>grades <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">95</span>, <span class="dv">82</span>, <span class="dv">75</span>, <span class="dv">93</span>]</span>
+<span id="cb492-7"><a href="object-oriented-programming-for-data-scientists.html#cb492-7" tabindex="-1"></a></span>
+<span id="cb492-8"><a href="object-oriented-programming-for-data-scientists.html#cb492-8" tabindex="-1"></a></span>
+<span id="cb492-9"><a href="object-oriented-programming-for-data-scientists.html#cb492-9" tabindex="-1"></a>students <span class="op">=</span> {<span class="st">&quot;name&quot;</span> : name_list,</span>
+<span id="cb492-10"><a href="object-oriented-programming-for-data-scientists.html#cb492-10" tabindex="-1"></a>            <span class="st">&quot;age&quot;</span> : age_list,</span>
+<span id="cb492-11"><a href="object-oriented-programming-for-data-scientists.html#cb492-11" tabindex="-1"></a>            <span class="st">&quot;favorite_color&quot;</span> : color_list,</span>
+<span id="cb492-12"><a href="object-oriented-programming-for-data-scientists.html#cb492-12" tabindex="-1"></a>            <span class="st">&quot;grade&quot;</span> : grades}</span>
+<span id="cb492-13"><a href="object-oriented-programming-for-data-scientists.html#cb492-13" tabindex="-1"></a></span>
+<span id="cb492-14"><a href="object-oriented-programming-for-data-scientists.html#cb492-14" tabindex="-1"></a>students_df <span class="op">=</span> pd.DataFrame(students)</span>
+<span id="cb492-15"><a href="object-oriented-programming-for-data-scientists.html#cb492-15" tabindex="-1"></a></span>
+<span id="cb492-16"><a href="object-oriented-programming-for-data-scientists.html#cb492-16" tabindex="-1"></a>students_df</span></code></pre></div>
 <pre><code>##               name  age favorite_color  grade
 ## 0         Tim Voss   19            red     91
 ## 1   Nicole Johnson   20         yellow     95
@@ -1122,65 +1145,65 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 ## 3       John James   20           blue     75
 ## 4  Catherine Jones   23          green     93</code></pre>
 <p>Write a function named <code>grades_colors</code> to select only the rows where the student’s favorite color is green or red and their grade is above 90.</p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb492-1"><a href="object-oriented-programming-for-data-scientists.html#cb492-1" tabindex="-1"></a><span class="kw">def</span> grades_colors(df):</span>
-<span id="cb492-2"><a href="object-oriented-programming-for-data-scientists.html#cb492-2" tabindex="-1"></a>  </span>
-<span id="cb492-3"><a href="object-oriented-programming-for-data-scientists.html#cb492-3" tabindex="-1"></a>    df <span class="op">=</span> df[(df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])) <span class="op">&amp;</span> (df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span>)]</span>
-<span id="cb492-4"><a href="object-oriented-programming-for-data-scientists.html#cb492-4" tabindex="-1"></a>  </span>
-<span id="cb492-5"><a href="object-oriented-programming-for-data-scientists.html#cb492-5" tabindex="-1"></a>    <span class="cf">return</span> df</span>
-<span id="cb492-6"><a href="object-oriented-programming-for-data-scientists.html#cb492-6" tabindex="-1"></a></span>
-<span id="cb492-7"><a href="object-oriented-programming-for-data-scientists.html#cb492-7" tabindex="-1"></a>grades_colors(students_df)</span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb494-1"><a href="object-oriented-programming-for-data-scientists.html#cb494-1" tabindex="-1"></a><span class="kw">def</span> grades_colors(df):</span>
+<span id="cb494-2"><a href="object-oriented-programming-for-data-scientists.html#cb494-2" tabindex="-1"></a>  </span>
+<span id="cb494-3"><a href="object-oriented-programming-for-data-scientists.html#cb494-3" tabindex="-1"></a>    df <span class="op">=</span> df[(df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])) <span class="op">&amp;</span> (df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span>)]</span>
+<span id="cb494-4"><a href="object-oriented-programming-for-data-scientists.html#cb494-4" tabindex="-1"></a>  </span>
+<span id="cb494-5"><a href="object-oriented-programming-for-data-scientists.html#cb494-5" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb494-6"><a href="object-oriented-programming-for-data-scientists.html#cb494-6" tabindex="-1"></a></span>
+<span id="cb494-7"><a href="object-oriented-programming-for-data-scientists.html#cb494-7" tabindex="-1"></a>grades_colors(students_df)</span></code></pre></div>
 <pre><code>##               name  age favorite_color  grade
 ## 0         Tim Voss   19            red     91
 ## 4  Catherine Jones   23          green     93</code></pre>
 <p><strong>Alternative</strong></p>
-<div class="sourceCode" id="cb494"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb494-1"><a href="object-oriented-programming-for-data-scientists.html#cb494-1" tabindex="-1"></a>students_df.query(<span class="st">&quot;favorite_color.isin((&#39;green&#39;, &#39;red&#39;)) and grade &gt; 90&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb496-1"><a href="object-oriented-programming-for-data-scientists.html#cb496-1" tabindex="-1"></a>students_df.query(<span class="st">&quot;favorite_color.isin((&#39;green&#39;, &#39;red&#39;)) and grade &gt; 90&quot;</span>)</span></code></pre></div>
 <pre><code>##               name  age favorite_color  grade
 ## 0         Tim Voss   19            red     91
 ## 4  Catherine Jones   23          green     93</code></pre>
 <p><strong>Using query method</strong></p>
-<div class="sourceCode" id="cb496"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb496-1"><a href="object-oriented-programming-for-data-scientists.html#cb496-1" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>]</span>
-<span id="cb496-2"><a href="object-oriented-programming-for-data-scientists.html#cb496-2" tabindex="-1"></a></span>
-<span id="cb496-3"><a href="object-oriented-programming-for-data-scientists.html#cb496-3" tabindex="-1"></a>students_df.query(<span class="st">&quot;favorite_color in @colors&quot;</span>).query(<span class="st">&quot;grade &gt; 90&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb498-1"><a href="object-oriented-programming-for-data-scientists.html#cb498-1" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>]</span>
+<span id="cb498-2"><a href="object-oriented-programming-for-data-scientists.html#cb498-2" tabindex="-1"></a></span>
+<span id="cb498-3"><a href="object-oriented-programming-for-data-scientists.html#cb498-3" tabindex="-1"></a>students_df.query(<span class="st">&quot;favorite_color in @colors&quot;</span>).query(<span class="st">&quot;grade &gt; 90&quot;</span>)</span></code></pre></div>
 <pre><code>##               name  age favorite_color  grade
 ## 0         Tim Voss   19            red     91
 ## 4  Catherine Jones   23          green     93</code></pre>
 <p><strong>Using loc</strong></p>
-<div class="sourceCode" id="cb498"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb498-1"><a href="object-oriented-programming-for-data-scientists.html#cb498-1" tabindex="-1"></a>students_df.loc[(students_df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])) <span class="op">&amp;</span>      </span>
-<span id="cb498-2"><a href="object-oriented-programming-for-data-scientists.html#cb498-2" tabindex="-1"></a>                (students_df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span>)</span>
-<span id="cb498-3"><a href="object-oriented-programming-for-data-scientists.html#cb498-3" tabindex="-1"></a>                ]</span></code></pre></div>
+<div class="sourceCode" id="cb500"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb500-1"><a href="object-oriented-programming-for-data-scientists.html#cb500-1" tabindex="-1"></a>students_df.loc[(students_df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])) <span class="op">&amp;</span>      </span>
+<span id="cb500-2"><a href="object-oriented-programming-for-data-scientists.html#cb500-2" tabindex="-1"></a>                (students_df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span>)</span>
+<span id="cb500-3"><a href="object-oriented-programming-for-data-scientists.html#cb500-3" tabindex="-1"></a>                ]</span></code></pre></div>
 <pre><code>##               name  age favorite_color  grade
 ## 0         Tim Voss   19            red     91
 ## 4  Catherine Jones   23          green     93</code></pre>
 <p><strong>Alternative</strong></p>
-<div class="sourceCode" id="cb500"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb500-1"><a href="object-oriented-programming-for-data-scientists.html#cb500-1" tabindex="-1"></a>color <span class="op">=</span> students_df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])</span>
-<span id="cb500-2"><a href="object-oriented-programming-for-data-scientists.html#cb500-2" tabindex="-1"></a>grade <span class="op">=</span> students_df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span></span>
-<span id="cb500-3"><a href="object-oriented-programming-for-data-scientists.html#cb500-3" tabindex="-1"></a></span>
-<span id="cb500-4"><a href="object-oriented-programming-for-data-scientists.html#cb500-4" tabindex="-1"></a>students_df.loc[(grade) <span class="op">&amp;</span> (color)]</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb502-1"><a href="object-oriented-programming-for-data-scientists.html#cb502-1" tabindex="-1"></a>color <span class="op">=</span> students_df[<span class="st">&#39;favorite_color&#39;</span>].isin([<span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>])</span>
+<span id="cb502-2"><a href="object-oriented-programming-for-data-scientists.html#cb502-2" tabindex="-1"></a>grade <span class="op">=</span> students_df[<span class="st">&#39;grade&#39;</span>] <span class="op">&gt;</span> <span class="dv">90</span></span>
+<span id="cb502-3"><a href="object-oriented-programming-for-data-scientists.html#cb502-3" tabindex="-1"></a></span>
+<span id="cb502-4"><a href="object-oriented-programming-for-data-scientists.html#cb502-4" tabindex="-1"></a>students_df.loc[(grade) <span class="op">&amp;</span> (color)]</span></code></pre></div>
 </div>
 <div id="question-1" class="section level4 hasAnchor" number="5.4.3.2">
 <h4><span class="header-section-number">5.4.3.2</span> Question<a href="object-oriented-programming-for-data-scientists.html#question-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You are given a dataframe with a single column, ‘var’.</p>
 <p>Calculated the t-value for the mean of ‘var’ against a null hypothesis that <span class="math inline">\(\mu = \mu_0\)</span></p>
 <p>Note: You do not have to calculate the p-value of the test or run the test.</p>
-<div class="sourceCode" id="cb501"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb501-1"><a href="object-oriented-programming-for-data-scientists.html#cb501-1" tabindex="-1"></a>var_data <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">10</span>]</span>
-<span id="cb501-2"><a href="object-oriented-programming-for-data-scientists.html#cb501-2" tabindex="-1"></a></span>
-<span id="cb501-3"><a href="object-oriented-programming-for-data-scientists.html#cb501-3" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;var&quot;</span>: var_data})</span>
-<span id="cb501-4"><a href="object-oriented-programming-for-data-scientists.html#cb501-4" tabindex="-1"></a></span>
-<span id="cb501-5"><a href="object-oriented-programming-for-data-scientists.html#cb501-5" tabindex="-1"></a>mu_0 <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb501-6"><a href="object-oriented-programming-for-data-scientists.html#cb501-6" tabindex="-1"></a></span>
-<span id="cb501-7"><a href="object-oriented-programming-for-data-scientists.html#cb501-7" tabindex="-1"></a><span class="kw">def</span> t_score(mu_0, df):</span>
-<span id="cb501-8"><a href="object-oriented-programming-for-data-scientists.html#cb501-8" tabindex="-1"></a>  </span>
-<span id="cb501-9"><a href="object-oriented-programming-for-data-scientists.html#cb501-9" tabindex="-1"></a>    n <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].count()</span>
-<span id="cb501-10"><a href="object-oriented-programming-for-data-scientists.html#cb501-10" tabindex="-1"></a>    </span>
-<span id="cb501-11"><a href="object-oriented-programming-for-data-scientists.html#cb501-11" tabindex="-1"></a>    sample_mean <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].mean()</span>
-<span id="cb501-12"><a href="object-oriented-programming-for-data-scientists.html#cb501-12" tabindex="-1"></a>    </span>
-<span id="cb501-13"><a href="object-oriented-programming-for-data-scientists.html#cb501-13" tabindex="-1"></a>    sample_std <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].std()</span>
-<span id="cb501-14"><a href="object-oriented-programming-for-data-scientists.html#cb501-14" tabindex="-1"></a>    </span>
-<span id="cb501-15"><a href="object-oriented-programming-for-data-scientists.html#cb501-15" tabindex="-1"></a>    t <span class="op">=</span> (sample_mean <span class="op">-</span> mu_0) <span class="op">/</span> (sample_std <span class="op">/</span> <span class="bu">pow</span>(n, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))</span>
-<span id="cb501-16"><a href="object-oriented-programming-for-data-scientists.html#cb501-16" tabindex="-1"></a>    </span>
-<span id="cb501-17"><a href="object-oriented-programming-for-data-scientists.html#cb501-17" tabindex="-1"></a>    <span class="cf">return</span> t</span>
-<span id="cb501-18"><a href="object-oriented-programming-for-data-scientists.html#cb501-18" tabindex="-1"></a></span>
-<span id="cb501-19"><a href="object-oriented-programming-for-data-scientists.html#cb501-19" tabindex="-1"></a>t_score(mu_0, df)</span></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb503-1"><a href="object-oriented-programming-for-data-scientists.html#cb503-1" tabindex="-1"></a>var_data <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">10</span>]</span>
+<span id="cb503-2"><a href="object-oriented-programming-for-data-scientists.html#cb503-2" tabindex="-1"></a></span>
+<span id="cb503-3"><a href="object-oriented-programming-for-data-scientists.html#cb503-3" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;var&quot;</span>: var_data})</span>
+<span id="cb503-4"><a href="object-oriented-programming-for-data-scientists.html#cb503-4" tabindex="-1"></a></span>
+<span id="cb503-5"><a href="object-oriented-programming-for-data-scientists.html#cb503-5" tabindex="-1"></a>mu_0 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb503-6"><a href="object-oriented-programming-for-data-scientists.html#cb503-6" tabindex="-1"></a></span>
+<span id="cb503-7"><a href="object-oriented-programming-for-data-scientists.html#cb503-7" tabindex="-1"></a><span class="kw">def</span> t_score(mu_0, df):</span>
+<span id="cb503-8"><a href="object-oriented-programming-for-data-scientists.html#cb503-8" tabindex="-1"></a>  </span>
+<span id="cb503-9"><a href="object-oriented-programming-for-data-scientists.html#cb503-9" tabindex="-1"></a>    n <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].count()</span>
+<span id="cb503-10"><a href="object-oriented-programming-for-data-scientists.html#cb503-10" tabindex="-1"></a>    </span>
+<span id="cb503-11"><a href="object-oriented-programming-for-data-scientists.html#cb503-11" tabindex="-1"></a>    sample_mean <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].mean()</span>
+<span id="cb503-12"><a href="object-oriented-programming-for-data-scientists.html#cb503-12" tabindex="-1"></a>    </span>
+<span id="cb503-13"><a href="object-oriented-programming-for-data-scientists.html#cb503-13" tabindex="-1"></a>    sample_std <span class="op">=</span> df[<span class="st">&#39;var&#39;</span>].std()</span>
+<span id="cb503-14"><a href="object-oriented-programming-for-data-scientists.html#cb503-14" tabindex="-1"></a>    </span>
+<span id="cb503-15"><a href="object-oriented-programming-for-data-scientists.html#cb503-15" tabindex="-1"></a>    t <span class="op">=</span> (sample_mean <span class="op">-</span> mu_0) <span class="op">/</span> (sample_std <span class="op">/</span> <span class="bu">pow</span>(n, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))</span>
+<span id="cb503-16"><a href="object-oriented-programming-for-data-scientists.html#cb503-16" tabindex="-1"></a>    </span>
+<span id="cb503-17"><a href="object-oriented-programming-for-data-scientists.html#cb503-17" tabindex="-1"></a>    <span class="cf">return</span> t</span>
+<span id="cb503-18"><a href="object-oriented-programming-for-data-scientists.html#cb503-18" tabindex="-1"></a></span>
+<span id="cb503-19"><a href="object-oriented-programming-for-data-scientists.html#cb503-19" tabindex="-1"></a>t_score(mu_0, df)</span></code></pre></div>
 <pre><code>## 1.018055620761245</code></pre>
 </div>
 </div>
@@ -1189,26 +1212,26 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 <p>Given a dataframe with three columns: client_id, ranking, value</p>
 <p>Write a function to fill the NaN values in the value column with the previous non-NaN value from the same client_id ranked in ascending order.</p>
 <p>If there doesn’t exist a previous client_id then return the previous value.</p>
-<div class="sourceCode" id="cb503"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb503-1"><a href="object-oriented-programming-for-data-scientists.html#cb503-1" tabindex="-1"></a>client_id <span class="op">=</span> [<span class="dv">1001</span>, <span class="dv">1001</span>, <span class="dv">1001</span>, <span class="dv">1002</span>, <span class="dv">1002</span>, <span class="dv">1002</span>, <span class="dv">1003</span>, <span class="dv">1003</span>]</span>
-<span id="cb503-2"><a href="object-oriented-programming-for-data-scientists.html#cb503-2" tabindex="-1"></a>ranking <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
-<span id="cb503-3"><a href="object-oriented-programming-for-data-scientists.html#cb503-3" tabindex="-1"></a>value <span class="op">=</span> [<span class="dv">1000</span>, pd.NA, <span class="dv">1200</span>, <span class="dv">1500</span>, <span class="dv">1250</span>, pd.NA, <span class="dv">1100</span>, pd.NA]</span>
-<span id="cb503-4"><a href="object-oriented-programming-for-data-scientists.html#cb503-4" tabindex="-1"></a></span>
-<span id="cb503-5"><a href="object-oriented-programming-for-data-scientists.html#cb503-5" tabindex="-1"></a>clients_df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb503-6"><a href="object-oriented-programming-for-data-scientists.html#cb503-6" tabindex="-1"></a>                  <span class="st">&#39;client_id&#39;</span>: client_id,</span>
-<span id="cb503-7"><a href="object-oriented-programming-for-data-scientists.html#cb503-7" tabindex="-1"></a>                  <span class="st">&#39;ranking&#39;</span>: ranking,</span>
-<span id="cb503-8"><a href="object-oriented-programming-for-data-scientists.html#cb503-8" tabindex="-1"></a>                  <span class="st">&#39;value&#39;</span>: value</span>
-<span id="cb503-9"><a href="object-oriented-programming-for-data-scientists.html#cb503-9" tabindex="-1"></a>})</span>
-<span id="cb503-10"><a href="object-oriented-programming-for-data-scientists.html#cb503-10" tabindex="-1"></a></span>
-<span id="cb503-11"><a href="object-oriented-programming-for-data-scientists.html#cb503-11" tabindex="-1"></a></span>
-<span id="cb503-12"><a href="object-oriented-programming-for-data-scientists.html#cb503-12" tabindex="-1"></a><span class="kw">def</span> previous_nan_values(clients_df):</span>
-<span id="cb503-13"><a href="object-oriented-programming-for-data-scientists.html#cb503-13" tabindex="-1"></a>  </span>
-<span id="cb503-14"><a href="object-oriented-programming-for-data-scientists.html#cb503-14" tabindex="-1"></a>  clients_df <span class="op">=</span> clients_df.sort_values(by<span class="op">=</span>[<span class="st">&#39;client_id&#39;</span>, <span class="st">&#39;ranking&#39;</span>])</span>
-<span id="cb503-15"><a href="object-oriented-programming-for-data-scientists.html#cb503-15" tabindex="-1"></a>  </span>
-<span id="cb503-16"><a href="object-oriented-programming-for-data-scientists.html#cb503-16" tabindex="-1"></a>  clients_df[<span class="st">&#39;value2&#39;</span>] <span class="op">=</span> clients_df.groupby(<span class="st">&#39;client_id&#39;</span>)[<span class="st">&#39;value&#39;</span>].ffill()</span>
-<span id="cb503-17"><a href="object-oriented-programming-for-data-scientists.html#cb503-17" tabindex="-1"></a>  </span>
-<span id="cb503-18"><a href="object-oriented-programming-for-data-scientists.html#cb503-18" tabindex="-1"></a>  <span class="cf">return</span> clients_df</span>
-<span id="cb503-19"><a href="object-oriented-programming-for-data-scientists.html#cb503-19" tabindex="-1"></a>  </span>
-<span id="cb503-20"><a href="object-oriented-programming-for-data-scientists.html#cb503-20" tabindex="-1"></a>previous_nan_values(clients_df)</span></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb505-1"><a href="object-oriented-programming-for-data-scientists.html#cb505-1" tabindex="-1"></a>client_id <span class="op">=</span> [<span class="dv">1001</span>, <span class="dv">1001</span>, <span class="dv">1001</span>, <span class="dv">1002</span>, <span class="dv">1002</span>, <span class="dv">1002</span>, <span class="dv">1003</span>, <span class="dv">1003</span>]</span>
+<span id="cb505-2"><a href="object-oriented-programming-for-data-scientists.html#cb505-2" tabindex="-1"></a>ranking <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb505-3"><a href="object-oriented-programming-for-data-scientists.html#cb505-3" tabindex="-1"></a>value <span class="op">=</span> [<span class="dv">1000</span>, pd.NA, <span class="dv">1200</span>, <span class="dv">1500</span>, <span class="dv">1250</span>, pd.NA, <span class="dv">1100</span>, pd.NA]</span>
+<span id="cb505-4"><a href="object-oriented-programming-for-data-scientists.html#cb505-4" tabindex="-1"></a></span>
+<span id="cb505-5"><a href="object-oriented-programming-for-data-scientists.html#cb505-5" tabindex="-1"></a>clients_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb505-6"><a href="object-oriented-programming-for-data-scientists.html#cb505-6" tabindex="-1"></a>                  <span class="st">&#39;client_id&#39;</span>: client_id,</span>
+<span id="cb505-7"><a href="object-oriented-programming-for-data-scientists.html#cb505-7" tabindex="-1"></a>                  <span class="st">&#39;ranking&#39;</span>: ranking,</span>
+<span id="cb505-8"><a href="object-oriented-programming-for-data-scientists.html#cb505-8" tabindex="-1"></a>                  <span class="st">&#39;value&#39;</span>: value</span>
+<span id="cb505-9"><a href="object-oriented-programming-for-data-scientists.html#cb505-9" tabindex="-1"></a>})</span>
+<span id="cb505-10"><a href="object-oriented-programming-for-data-scientists.html#cb505-10" tabindex="-1"></a></span>
+<span id="cb505-11"><a href="object-oriented-programming-for-data-scientists.html#cb505-11" tabindex="-1"></a></span>
+<span id="cb505-12"><a href="object-oriented-programming-for-data-scientists.html#cb505-12" tabindex="-1"></a><span class="kw">def</span> previous_nan_values(clients_df):</span>
+<span id="cb505-13"><a href="object-oriented-programming-for-data-scientists.html#cb505-13" tabindex="-1"></a>  </span>
+<span id="cb505-14"><a href="object-oriented-programming-for-data-scientists.html#cb505-14" tabindex="-1"></a>  clients_df <span class="op">=</span> clients_df.sort_values(by<span class="op">=</span>[<span class="st">&#39;client_id&#39;</span>, <span class="st">&#39;ranking&#39;</span>])</span>
+<span id="cb505-15"><a href="object-oriented-programming-for-data-scientists.html#cb505-15" tabindex="-1"></a>  </span>
+<span id="cb505-16"><a href="object-oriented-programming-for-data-scientists.html#cb505-16" tabindex="-1"></a>  clients_df[<span class="st">&#39;value2&#39;</span>] <span class="op">=</span> clients_df.groupby(<span class="st">&#39;client_id&#39;</span>)[<span class="st">&#39;value&#39;</span>].ffill()</span>
+<span id="cb505-17"><a href="object-oriented-programming-for-data-scientists.html#cb505-17" tabindex="-1"></a>  </span>
+<span id="cb505-18"><a href="object-oriented-programming-for-data-scientists.html#cb505-18" tabindex="-1"></a>  <span class="cf">return</span> clients_df</span>
+<span id="cb505-19"><a href="object-oriented-programming-for-data-scientists.html#cb505-19" tabindex="-1"></a>  </span>
+<span id="cb505-20"><a href="object-oriented-programming-for-data-scientists.html#cb505-20" tabindex="-1"></a>previous_nan_values(clients_df)</span></code></pre></div>
 <pre><code>##    client_id  ranking value value2
 ## 0       1001        1  1000   1000
 ## 1       1001        2  &lt;NA&gt;   1000
@@ -1223,13 +1246,13 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 <div id="data-filtering-and-selection" class="section level3 hasAnchor" number="5.4.5">
 <h3><span class="header-section-number">5.4.5</span> Data Filtering and Selection:<a href="object-oriented-programming-for-data-scientists.html#data-filtering-and-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>sample data</p>
-<div class="sourceCode" id="cb505"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb505-1"><a href="object-oriented-programming-for-data-scientists.html#cb505-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb505-2"><a href="object-oriented-programming-for-data-scientists.html#cb505-2" tabindex="-1"></a>    <span class="st">&#39;department&#39;</span>: [<span class="st">&#39;Sales&#39;</span>, <span class="st">&#39;Sales&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;Finance&#39;</span>, <span class="st">&#39;Finance&#39;</span>],</span>
-<span id="cb505-3"><a href="object-oriented-programming-for-data-scientists.html#cb505-3" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
-<span id="cb505-4"><a href="object-oriented-programming-for-data-scientists.html#cb505-4" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">95000</span>, <span class="dv">65000</span>],</span>
-<span id="cb505-5"><a href="object-oriented-programming-for-data-scientists.html#cb505-5" tabindex="-1"></a>}</span>
-<span id="cb505-6"><a href="object-oriented-programming-for-data-scientists.html#cb505-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb505-7"><a href="object-oriented-programming-for-data-scientists.html#cb505-7" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb507-1"><a href="object-oriented-programming-for-data-scientists.html#cb507-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb507-2"><a href="object-oriented-programming-for-data-scientists.html#cb507-2" tabindex="-1"></a>    <span class="st">&#39;department&#39;</span>: [<span class="st">&#39;Sales&#39;</span>, <span class="st">&#39;Sales&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;Finance&#39;</span>, <span class="st">&#39;Finance&#39;</span>],</span>
+<span id="cb507-3"><a href="object-oriented-programming-for-data-scientists.html#cb507-3" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
+<span id="cb507-4"><a href="object-oriented-programming-for-data-scientists.html#cb507-4" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">95000</span>, <span class="dv">65000</span>],</span>
+<span id="cb507-5"><a href="object-oriented-programming-for-data-scientists.html#cb507-5" tabindex="-1"></a>}</span>
+<span id="cb507-6"><a href="object-oriented-programming-for-data-scientists.html#cb507-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb507-7"><a href="object-oriented-programming-for-data-scientists.html#cb507-7" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 0      Sales    Alice   70000
 ## 1      Sales      Bob   80000
@@ -1241,37 +1264,37 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 ## 7    Finance   Hannah   65000</code></pre>
 <div id="filtering-rows" class="section level4 hasAnchor" number="5.4.5.1">
 <h4><span class="header-section-number">5.4.5.1</span> filtering rows<a href="object-oriented-programming-for-data-scientists.html#filtering-rows" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb507"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb507-1"><a href="object-oriented-programming-for-data-scientists.html#cb507-1" tabindex="-1"></a>df[df[<span class="st">&#39;employee&#39;</span>] <span class="op">==</span> <span class="st">&#39;Eve&#39;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb509"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb509-1"><a href="object-oriented-programming-for-data-scientists.html#cb509-1" tabindex="-1"></a>df[df[<span class="st">&#39;employee&#39;</span>] <span class="op">==</span> <span class="st">&#39;Eve&#39;</span>]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 4         IT      Eve   90000</code></pre>
-<div class="sourceCode" id="cb509"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb509-1"><a href="object-oriented-programming-for-data-scientists.html#cb509-1" tabindex="-1"></a>df[df[<span class="st">&#39;department&#39;</span>].isin([<span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>])]</span></code></pre></div>
+<div class="sourceCode" id="cb511"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb511-1"><a href="object-oriented-programming-for-data-scientists.html#cb511-1" tabindex="-1"></a>df[df[<span class="st">&#39;department&#39;</span>].isin([<span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>])]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 2         HR  Charlie   50000
 ## 3         HR    David   60000
 ## 4         IT      Eve   90000
 ## 5         IT    Frank   85000</code></pre>
-<div class="sourceCode" id="cb511"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb511-1"><a href="object-oriented-programming-for-data-scientists.html#cb511-1" tabindex="-1"></a>df[df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">80000</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb513"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb513-1"><a href="object-oriented-programming-for-data-scientists.html#cb513-1" tabindex="-1"></a>df[df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">80000</span>]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 4         IT      Eve   90000
 ## 5         IT    Frank   85000
 ## 6    Finance    Grace   95000</code></pre>
-<div class="sourceCode" id="cb513"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb513-1"><a href="object-oriented-programming-for-data-scientists.html#cb513-1" tabindex="-1"></a>df[(df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">70000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;</span> <span class="dv">90000</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb515"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb515-1"><a href="object-oriented-programming-for-data-scientists.html#cb515-1" tabindex="-1"></a>df[(df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">70000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;</span> <span class="dv">90000</span>)]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 1      Sales      Bob   80000
 ## 5         IT    Frank   85000</code></pre>
-<div class="sourceCode" id="cb515"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb515-1"><a href="object-oriented-programming-for-data-scientists.html#cb515-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;department&#39;</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">&#39;salary&#39;</span>].<span class="bu">sum</span>() <span class="op">&gt;</span> <span class="dv">150000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb517"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb517-1"><a href="object-oriented-programming-for-data-scientists.html#cb517-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;department&#39;</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">&#39;salary&#39;</span>].<span class="bu">sum</span>() <span class="op">&gt;</span> <span class="dv">150000</span>)</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 4         IT      Eve   90000
 ## 5         IT    Frank   85000
 ## 6    Finance    Grace   95000
 ## 7    Finance   Hannah   65000</code></pre>
-<div class="sourceCode" id="cb517"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb517-1"><a href="object-oriented-programming-for-data-scientists.html#cb517-1" tabindex="-1"></a>df.loc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb519-1"><a href="object-oriented-programming-for-data-scientists.html#cb519-1" tabindex="-1"></a>df.loc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 0      Sales    Alice   70000
 ## 1      Sales      Bob   80000
 ## 2         HR  Charlie   50000
 ## 3         HR    David   60000</code></pre>
-<div class="sourceCode" id="cb519"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb519-1"><a href="object-oriented-programming-for-data-scientists.html#cb519-1" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb521-1"><a href="object-oriented-programming-for-data-scientists.html#cb521-1" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 0      Sales    Alice   70000
 ## 1      Sales      Bob   80000
@@ -1279,9 +1302,9 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="filtering-columns" class="section level4 hasAnchor" number="5.4.5.2">
 <h4><span class="header-section-number">5.4.5.2</span> filtering columns<a href="object-oriented-programming-for-data-scientists.html#filtering-columns" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb521"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb521-1"><a href="object-oriented-programming-for-data-scientists.html#cb521-1" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">&#39;employee&#39;</span>, <span class="st">&#39;salary&#39;</span>]</span>
-<span id="cb521-2"><a href="object-oriented-programming-for-data-scientists.html#cb521-2" tabindex="-1"></a></span>
-<span id="cb521-3"><a href="object-oriented-programming-for-data-scientists.html#cb521-3" tabindex="-1"></a>df[cols]</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb523-1"><a href="object-oriented-programming-for-data-scientists.html#cb523-1" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">&#39;employee&#39;</span>, <span class="st">&#39;salary&#39;</span>]</span>
+<span id="cb523-2"><a href="object-oriented-programming-for-data-scientists.html#cb523-2" tabindex="-1"></a></span>
+<span id="cb523-3"><a href="object-oriented-programming-for-data-scientists.html#cb523-3" tabindex="-1"></a>df[cols]</span></code></pre></div>
 <pre><code>##   employee  salary
 ## 0    Alice   70000
 ## 1      Bob   80000
@@ -1291,13 +1314,13 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 ## 5    Frank   85000
 ## 6    Grace   95000
 ## 7   Hannah   65000</code></pre>
-<div class="sourceCode" id="cb523"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb523-1"><a href="object-oriented-programming-for-data-scientists.html#cb523-1" tabindex="-1"></a>df.loc[<span class="dv">0</span>:<span class="dv">3</span>, [<span class="st">&#39;employee&#39;</span>, <span class="st">&#39;salary&#39;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb525-1"><a href="object-oriented-programming-for-data-scientists.html#cb525-1" tabindex="-1"></a>df.loc[<span class="dv">0</span>:<span class="dv">3</span>, [<span class="st">&#39;employee&#39;</span>, <span class="st">&#39;salary&#39;</span>]]</span></code></pre></div>
 <pre><code>##   employee  salary
 ## 0    Alice   70000
 ## 1      Bob   80000
 ## 2  Charlie   50000
 ## 3    David   60000</code></pre>
-<div class="sourceCode" id="cb525"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb525-1"><a href="object-oriented-programming-for-data-scientists.html#cb525-1" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
+<div class="sourceCode" id="cb527"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb527-1"><a href="object-oriented-programming-for-data-scientists.html#cb527-1" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, :]</span></code></pre></div>
 <pre><code>##   department employee  salary
 ## 0      Sales    Alice   70000
 ## 1      Sales      Bob   80000
@@ -1306,7 +1329,7 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="aggregation-and-grouping" class="section level3 hasAnchor" number="5.4.6">
 <h3><span class="header-section-number">5.4.6</span> Aggregation and Grouping:<a href="object-oriented-programming-for-data-scientists.html#aggregation-and-grouping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb527"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb527-1"><a href="object-oriented-programming-for-data-scientists.html#cb527-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].mean()</span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb529-1"><a href="object-oriented-programming-for-data-scientists.html#cb529-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;department&#39;</span>)[<span class="st">&#39;salary&#39;</span>].mean()</span></code></pre></div>
 <pre><code>## department
 ## Finance    80000.0
 ## HR         55000.0
@@ -1316,19 +1339,19 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="joining-and-merging-data" class="section level3 hasAnchor" number="5.4.7">
 <h3><span class="header-section-number">5.4.7</span> Joining and Merging Data:<a href="object-oriented-programming-for-data-scientists.html#joining-and-merging-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb529"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb529-1"><a href="object-oriented-programming-for-data-scientists.html#cb529-1" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span><span class="st">&#39;key&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb531-1"><a href="object-oriented-programming-for-data-scientists.html#cb531-1" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span><span class="st">&#39;key&#39;</span>)</span></code></pre></div>
 </div>
 <div id="recoding" class="section level3 hasAnchor" number="5.4.8">
 <h3><span class="header-section-number">5.4.8</span> recoding<a href="object-oriented-programming-for-data-scientists.html#recoding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Sample Data</strong></p>
-<div class="sourceCode" id="cb530"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb530-1"><a href="object-oriented-programming-for-data-scientists.html#cb530-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb530-2"><a href="object-oriented-programming-for-data-scientists.html#cb530-2" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
-<span id="cb530-3"><a href="object-oriented-programming-for-data-scientists.html#cb530-3" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">75000</span>, <span class="dv">65000</span>]</span>
-<span id="cb530-4"><a href="object-oriented-programming-for-data-scientists.html#cb530-4" tabindex="-1"></a>}</span>
-<span id="cb530-5"><a href="object-oriented-programming-for-data-scientists.html#cb530-5" tabindex="-1"></a></span>
-<span id="cb530-6"><a href="object-oriented-programming-for-data-scientists.html#cb530-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb530-7"><a href="object-oriented-programming-for-data-scientists.html#cb530-7" tabindex="-1"></a></span>
-<span id="cb530-8"><a href="object-oriented-programming-for-data-scientists.html#cb530-8" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb532-1"><a href="object-oriented-programming-for-data-scientists.html#cb532-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb532-2"><a href="object-oriented-programming-for-data-scientists.html#cb532-2" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
+<span id="cb532-3"><a href="object-oriented-programming-for-data-scientists.html#cb532-3" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">75000</span>, <span class="dv">65000</span>]</span>
+<span id="cb532-4"><a href="object-oriented-programming-for-data-scientists.html#cb532-4" tabindex="-1"></a>}</span>
+<span id="cb532-5"><a href="object-oriented-programming-for-data-scientists.html#cb532-5" tabindex="-1"></a></span>
+<span id="cb532-6"><a href="object-oriented-programming-for-data-scientists.html#cb532-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb532-7"><a href="object-oriented-programming-for-data-scientists.html#cb532-7" tabindex="-1"></a></span>
+<span id="cb532-8"><a href="object-oriented-programming-for-data-scientists.html#cb532-8" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary
 ## 0    Alice   70000
 ## 1      Bob   80000
@@ -1337,23 +1360,23 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 ## 4      Eve   90000</code></pre>
 <div id="np.where-method" class="section level4 hasAnchor" number="5.4.8.1">
 <h4><span class="header-section-number">5.4.8.1</span> np.where() method<a href="object-oriented-programming-for-data-scientists.html#np.where-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb532"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb532-1"><a href="object-oriented-programming-for-data-scientists.html#cb532-1" tabindex="-1"></a><span class="co"># this condition creates a series of boolean</span></span>
-<span id="cb532-2"><a href="object-oriented-programming-for-data-scientists.html#cb532-2" tabindex="-1"></a>condition <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span></span>
-<span id="cb532-3"><a href="object-oriented-programming-for-data-scientists.html#cb532-3" tabindex="-1"></a></span>
-<span id="cb532-4"><a href="object-oriented-programming-for-data-scientists.html#cb532-4" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition, <span class="st">&#39;high&#39;</span>, <span class="st">&#39;low&#39;</span>)</span>
-<span id="cb532-5"><a href="object-oriented-programming-for-data-scientists.html#cb532-5" tabindex="-1"></a></span>
-<span id="cb532-6"><a href="object-oriented-programming-for-data-scientists.html#cb532-6" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb534-1"><a href="object-oriented-programming-for-data-scientists.html#cb534-1" tabindex="-1"></a><span class="co"># this condition creates a series of boolean</span></span>
+<span id="cb534-2"><a href="object-oriented-programming-for-data-scientists.html#cb534-2" tabindex="-1"></a>condition <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span></span>
+<span id="cb534-3"><a href="object-oriented-programming-for-data-scientists.html#cb534-3" tabindex="-1"></a></span>
+<span id="cb534-4"><a href="object-oriented-programming-for-data-scientists.html#cb534-4" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition, <span class="st">&#39;high&#39;</span>, <span class="st">&#39;low&#39;</span>)</span>
+<span id="cb534-5"><a href="object-oriented-programming-for-data-scientists.html#cb534-5" tabindex="-1"></a></span>
+<span id="cb534-6"><a href="object-oriented-programming-for-data-scientists.html#cb534-6" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary label
 ## 0    Alice   70000   low
 ## 1      Bob   80000   low
 ## 2  Charlie   50000   low
 ## 3    David   60000   low
 ## 4      Eve   90000  high</code></pre>
-<div class="sourceCode" id="cb534"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb534-1"><a href="object-oriented-programming-for-data-scientists.html#cb534-1" tabindex="-1"></a>condition <span class="op">=</span> df[<span class="st">&#39;employee&#39;</span>] <span class="op">==</span> <span class="st">&#39;David&#39;</span></span>
-<span id="cb534-2"><a href="object-oriented-programming-for-data-scientists.html#cb534-2" tabindex="-1"></a></span>
-<span id="cb534-3"><a href="object-oriented-programming-for-data-scientists.html#cb534-3" tabindex="-1"></a>df[<span class="st">&#39;employee&#39;</span>] <span class="op">=</span> np.where(condition, <span class="st">&#39;Davut&#39;</span>, df[<span class="st">&#39;employee&#39;</span>])</span>
-<span id="cb534-4"><a href="object-oriented-programming-for-data-scientists.html#cb534-4" tabindex="-1"></a></span>
-<span id="cb534-5"><a href="object-oriented-programming-for-data-scientists.html#cb534-5" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb536-1"><a href="object-oriented-programming-for-data-scientists.html#cb536-1" tabindex="-1"></a>condition <span class="op">=</span> df[<span class="st">&#39;employee&#39;</span>] <span class="op">==</span> <span class="st">&#39;David&#39;</span></span>
+<span id="cb536-2"><a href="object-oriented-programming-for-data-scientists.html#cb536-2" tabindex="-1"></a></span>
+<span id="cb536-3"><a href="object-oriented-programming-for-data-scientists.html#cb536-3" tabindex="-1"></a>df[<span class="st">&#39;employee&#39;</span>] <span class="op">=</span> np.where(condition, <span class="st">&#39;Davut&#39;</span>, df[<span class="st">&#39;employee&#39;</span>])</span>
+<span id="cb536-4"><a href="object-oriented-programming-for-data-scientists.html#cb536-4" tabindex="-1"></a></span>
+<span id="cb536-5"><a href="object-oriented-programming-for-data-scientists.html#cb536-5" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary label
 ## 0    Alice   70000   low
 ## 1      Bob   80000   low
@@ -1363,30 +1386,30 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="multiple-np.where" class="section level4 hasAnchor" number="5.4.8.2">
 <h4><span class="header-section-number">5.4.8.2</span> multiple <code>np.where()</code><a href="object-oriented-programming-for-data-scientists.html#multiple-np.where" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb536"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb536-1"><a href="object-oriented-programming-for-data-scientists.html#cb536-1" tabindex="-1"></a>condition1 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span> </span>
-<span id="cb536-2"><a href="object-oriented-programming-for-data-scientists.html#cb536-2" tabindex="-1"></a>condition2 <span class="op">=</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">60000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span>)</span>
-<span id="cb536-3"><a href="object-oriented-programming-for-data-scientists.html#cb536-3" tabindex="-1"></a></span>
-<span id="cb536-4"><a href="object-oriented-programming-for-data-scientists.html#cb536-4" tabindex="-1"></a></span>
-<span id="cb536-5"><a href="object-oriented-programming-for-data-scientists.html#cb536-5" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition1, <span class="st">&#39;Low&#39;</span>, <span class="st">&#39;High&#39;</span>)</span>
-<span id="cb536-6"><a href="object-oriented-programming-for-data-scientists.html#cb536-6" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition2, <span class="st">&#39;Medium&#39;</span>, df[<span class="st">&#39;label&#39;</span>])</span>
-<span id="cb536-7"><a href="object-oriented-programming-for-data-scientists.html#cb536-7" tabindex="-1"></a></span>
-<span id="cb536-8"><a href="object-oriented-programming-for-data-scientists.html#cb536-8" tabindex="-1"></a></span>
-<span id="cb536-9"><a href="object-oriented-programming-for-data-scientists.html#cb536-9" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb538-1"><a href="object-oriented-programming-for-data-scientists.html#cb538-1" tabindex="-1"></a>condition1 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span> </span>
+<span id="cb538-2"><a href="object-oriented-programming-for-data-scientists.html#cb538-2" tabindex="-1"></a>condition2 <span class="op">=</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">60000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span>)</span>
+<span id="cb538-3"><a href="object-oriented-programming-for-data-scientists.html#cb538-3" tabindex="-1"></a></span>
+<span id="cb538-4"><a href="object-oriented-programming-for-data-scientists.html#cb538-4" tabindex="-1"></a></span>
+<span id="cb538-5"><a href="object-oriented-programming-for-data-scientists.html#cb538-5" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition1, <span class="st">&#39;Low&#39;</span>, <span class="st">&#39;High&#39;</span>)</span>
+<span id="cb538-6"><a href="object-oriented-programming-for-data-scientists.html#cb538-6" tabindex="-1"></a>df[<span class="st">&#39;label&#39;</span>] <span class="op">=</span> np.where(condition2, <span class="st">&#39;Medium&#39;</span>, df[<span class="st">&#39;label&#39;</span>])</span>
+<span id="cb538-7"><a href="object-oriented-programming-for-data-scientists.html#cb538-7" tabindex="-1"></a></span>
+<span id="cb538-8"><a href="object-oriented-programming-for-data-scientists.html#cb538-8" tabindex="-1"></a></span>
+<span id="cb538-9"><a href="object-oriented-programming-for-data-scientists.html#cb538-9" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary   label
 ## 0    Alice   70000  Medium
 ## 1      Bob   80000  Medium
 ## 2  Charlie   50000     Low
 ## 3    Davut   60000     Low
 ## 4      Eve   90000    High</code></pre>
-<div class="sourceCode" id="cb538"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb538-1"><a href="object-oriented-programming-for-data-scientists.html#cb538-1" tabindex="-1"></a><span class="co"># Use np.where for multiple conditions</span></span>
-<span id="cb538-2"><a href="object-oriented-programming-for-data-scientists.html#cb538-2" tabindex="-1"></a></span>
-<span id="cb538-3"><a href="object-oriented-programming-for-data-scientists.html#cb538-3" tabindex="-1"></a>condition_1 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span></span>
-<span id="cb538-4"><a href="object-oriented-programming-for-data-scientists.html#cb538-4" tabindex="-1"></a>condition_2 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span></span>
-<span id="cb538-5"><a href="object-oriented-programming-for-data-scientists.html#cb538-5" tabindex="-1"></a></span>
-<span id="cb538-6"><a href="object-oriented-programming-for-data-scientists.html#cb538-6" tabindex="-1"></a>df[<span class="st">&#39;label2&#39;</span>] <span class="op">=</span> np.where(condition_1, <span class="st">&#39;Low&#39;</span>, </span>
-<span id="cb538-7"><a href="object-oriented-programming-for-data-scientists.html#cb538-7" tabindex="-1"></a>                                    np.where(condition_2, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>) )</span>
-<span id="cb538-8"><a href="object-oriented-programming-for-data-scientists.html#cb538-8" tabindex="-1"></a></span>
-<span id="cb538-9"><a href="object-oriented-programming-for-data-scientists.html#cb538-9" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb540"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb540-1"><a href="object-oriented-programming-for-data-scientists.html#cb540-1" tabindex="-1"></a><span class="co"># Use np.where for multiple conditions</span></span>
+<span id="cb540-2"><a href="object-oriented-programming-for-data-scientists.html#cb540-2" tabindex="-1"></a></span>
+<span id="cb540-3"><a href="object-oriented-programming-for-data-scientists.html#cb540-3" tabindex="-1"></a>condition_1 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span></span>
+<span id="cb540-4"><a href="object-oriented-programming-for-data-scientists.html#cb540-4" tabindex="-1"></a>condition_2 <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span></span>
+<span id="cb540-5"><a href="object-oriented-programming-for-data-scientists.html#cb540-5" tabindex="-1"></a></span>
+<span id="cb540-6"><a href="object-oriented-programming-for-data-scientists.html#cb540-6" tabindex="-1"></a>df[<span class="st">&#39;label2&#39;</span>] <span class="op">=</span> np.where(condition_1, <span class="st">&#39;Low&#39;</span>, </span>
+<span id="cb540-7"><a href="object-oriented-programming-for-data-scientists.html#cb540-7" tabindex="-1"></a>                                    np.where(condition_2, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>) )</span>
+<span id="cb540-8"><a href="object-oriented-programming-for-data-scientists.html#cb540-8" tabindex="-1"></a></span>
+<span id="cb540-9"><a href="object-oriented-programming-for-data-scientists.html#cb540-9" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
 <pre><code>##   employee  salary   label  label2
 ## 0    Alice   70000  Medium  Medium
 ## 1      Bob   80000  Medium  Medium
@@ -1399,15 +1422,15 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="pd.cut-method" class="section level4 hasAnchor" number="5.4.8.3">
 <h4><span class="header-section-number">5.4.8.3</span> pd.cut() method<a href="object-oriented-programming-for-data-scientists.html#pd.cut-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb540"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb540-1"><a href="object-oriented-programming-for-data-scientists.html#cb540-1" tabindex="-1"></a><span class="co"># Define thresholds for &#39;low&#39;, &#39;medium&#39;, and &#39;high&#39; earners</span></span>
-<span id="cb540-2"><a href="object-oriented-programming-for-data-scientists.html#cb540-2" tabindex="-1"></a></span>
-<span id="cb540-3"><a href="object-oriented-programming-for-data-scientists.html#cb540-3" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">60000</span>, <span class="dv">80000</span>, <span class="bu">float</span>(<span class="st">&#39;inf&#39;</span>)]</span>
-<span id="cb540-4"><a href="object-oriented-programming-for-data-scientists.html#cb540-4" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Low&#39;</span>, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>]</span>
-<span id="cb540-5"><a href="object-oriented-programming-for-data-scientists.html#cb540-5" tabindex="-1"></a></span>
-<span id="cb540-6"><a href="object-oriented-programming-for-data-scientists.html#cb540-6" tabindex="-1"></a><span class="co"># Use pd.cut to create a new column &#39;category&#39;</span></span>
-<span id="cb540-7"><a href="object-oriented-programming-for-data-scientists.html#cb540-7" tabindex="-1"></a>df[<span class="st">&#39;category&#39;</span>] <span class="op">=</span> pd.cut(df[<span class="st">&#39;salary&#39;</span>], bins<span class="op">=</span>bins, labels<span class="op">=</span>labels)</span>
-<span id="cb540-8"><a href="object-oriented-programming-for-data-scientists.html#cb540-8" tabindex="-1"></a></span>
-<span id="cb540-9"><a href="object-oriented-programming-for-data-scientists.html#cb540-9" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb542-1"><a href="object-oriented-programming-for-data-scientists.html#cb542-1" tabindex="-1"></a><span class="co"># Define thresholds for &#39;low&#39;, &#39;medium&#39;, and &#39;high&#39; earners</span></span>
+<span id="cb542-2"><a href="object-oriented-programming-for-data-scientists.html#cb542-2" tabindex="-1"></a></span>
+<span id="cb542-3"><a href="object-oriented-programming-for-data-scientists.html#cb542-3" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">60000</span>, <span class="dv">80000</span>, <span class="bu">float</span>(<span class="st">&#39;inf&#39;</span>)]</span>
+<span id="cb542-4"><a href="object-oriented-programming-for-data-scientists.html#cb542-4" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Low&#39;</span>, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>]</span>
+<span id="cb542-5"><a href="object-oriented-programming-for-data-scientists.html#cb542-5" tabindex="-1"></a></span>
+<span id="cb542-6"><a href="object-oriented-programming-for-data-scientists.html#cb542-6" tabindex="-1"></a><span class="co"># Use pd.cut to create a new column &#39;category&#39;</span></span>
+<span id="cb542-7"><a href="object-oriented-programming-for-data-scientists.html#cb542-7" tabindex="-1"></a>df[<span class="st">&#39;category&#39;</span>] <span class="op">=</span> pd.cut(df[<span class="st">&#39;salary&#39;</span>], bins<span class="op">=</span>bins, labels<span class="op">=</span>labels)</span>
+<span id="cb542-8"><a href="object-oriented-programming-for-data-scientists.html#cb542-8" tabindex="-1"></a></span>
+<span id="cb542-9"><a href="object-oriented-programming-for-data-scientists.html#cb542-9" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary   label  label2 category
 ## 0    Alice   70000  Medium  Medium   Medium
 ## 1      Bob   80000  Medium  Medium   Medium
@@ -1420,12 +1443,12 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 <div id="using-pd.series.apply-with-a-lambda-function" class="section level5 hasAnchor" number="5.4.8.4.1">
 <h5><span class="header-section-number">5.4.8.4.1</span> Using <code>pd.Series.apply</code> with a <code>Lambda</code> Function:<a href="object-oriented-programming-for-data-scientists.html#using-pd.series.apply-with-a-lambda-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>if else condition</p>
-<div class="sourceCode" id="cb542"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb542-1"><a href="object-oriented-programming-for-data-scientists.html#cb542-1" tabindex="-1"></a>df[<span class="st">&#39;high_low&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="st">&#39;high&#39;</span> <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">85000</span> <span class="cf">else</span> <span class="st">&#39;low&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb544-1"><a href="object-oriented-programming-for-data-scientists.html#cb544-1" tabindex="-1"></a>df[<span class="st">&#39;high_low&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="st">&#39;high&#39;</span> <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">85000</span> <span class="cf">else</span> <span class="st">&#39;low&#39;</span>)</span></code></pre></div>
 </div>
 <div id="using-dataframe.assign-with-np.where" class="section level5 hasAnchor" number="5.4.8.4.2">
 <h5><span class="header-section-number">5.4.8.4.2</span> Using <code>DataFrame.assign</code> with <code>np.where</code>:<a href="object-oriented-programming-for-data-scientists.html#using-dataframe.assign-with-np.where" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb543"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb543-1"><a href="object-oriented-programming-for-data-scientists.html#cb543-1" tabindex="-1"></a>df <span class="op">=</span> df.assign(high_low2 <span class="op">=</span> np.where(df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span>, <span class="st">&#39;high&#39;</span>, <span class="st">&#39;low&#39;</span>))</span>
-<span id="cb543-2"><a href="object-oriented-programming-for-data-scientists.html#cb543-2" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb545"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb545-1"><a href="object-oriented-programming-for-data-scientists.html#cb545-1" tabindex="-1"></a>df <span class="op">=</span> df.assign(high_low2 <span class="op">=</span> np.where(df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span>, <span class="st">&#39;high&#39;</span>, <span class="st">&#39;low&#39;</span>))</span>
+<span id="cb545-2"><a href="object-oriented-programming-for-data-scientists.html#cb545-2" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary   label  label2 category high_low high_low2
 ## 0    Alice   70000  Medium  Medium   Medium      low       low
 ## 1      Bob   80000  Medium  Medium   Medium      low       low
@@ -1435,33 +1458,33 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="using-dataframe.loc" class="section level5 hasAnchor" number="5.4.8.4.3">
 <h5><span class="header-section-number">5.4.8.4.3</span> Using DataFrame.loc:<a href="object-oriented-programming-for-data-scientists.html#using-dataframe.loc" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb545"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb545-1"><a href="object-oriented-programming-for-data-scientists.html#cb545-1" tabindex="-1"></a>df[<span class="st">&#39;new_label&#39;</span>] <span class="op">=</span> <span class="st">&#39;low&#39;</span></span>
-<span id="cb545-2"><a href="object-oriented-programming-for-data-scientists.html#cb545-2" tabindex="-1"></a></span>
-<span id="cb545-3"><a href="object-oriented-programming-for-data-scientists.html#cb545-3" tabindex="-1"></a>df.loc[df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span>, <span class="st">&#39;new_label&#39;</span>] <span class="op">=</span> <span class="st">&#39;high&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb547"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb547-1"><a href="object-oriented-programming-for-data-scientists.html#cb547-1" tabindex="-1"></a>df[<span class="st">&#39;new_label&#39;</span>] <span class="op">=</span> <span class="st">&#39;low&#39;</span></span>
+<span id="cb547-2"><a href="object-oriented-programming-for-data-scientists.html#cb547-2" tabindex="-1"></a></span>
+<span id="cb547-3"><a href="object-oriented-programming-for-data-scientists.html#cb547-3" tabindex="-1"></a>df.loc[df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">85000</span>, <span class="st">&#39;new_label&#39;</span>] <span class="op">=</span> <span class="st">&#39;high&#39;</span></span></code></pre></div>
 </div>
 </div>
 <div id="np.select-method" class="section level4 hasAnchor" number="5.4.8.5">
 <h4><span class="header-section-number">5.4.8.5</span> np.select() method<a href="object-oriented-programming-for-data-scientists.html#np.select-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb546"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb546-1"><a href="object-oriented-programming-for-data-scientists.html#cb546-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb546-2"><a href="object-oriented-programming-for-data-scientists.html#cb546-2" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
-<span id="cb546-3"><a href="object-oriented-programming-for-data-scientists.html#cb546-3" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">75000</span>, <span class="dv">65000</span>]</span>
-<span id="cb546-4"><a href="object-oriented-programming-for-data-scientists.html#cb546-4" tabindex="-1"></a>}</span>
-<span id="cb546-5"><a href="object-oriented-programming-for-data-scientists.html#cb546-5" tabindex="-1"></a></span>
-<span id="cb546-6"><a href="object-oriented-programming-for-data-scientists.html#cb546-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code></pre></div>
-<div class="sourceCode" id="cb547"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb547-1"><a href="object-oriented-programming-for-data-scientists.html#cb547-1" tabindex="-1"></a><span class="co"># Define conditions for categorizing salaries</span></span>
-<span id="cb547-2"><a href="object-oriented-programming-for-data-scientists.html#cb547-2" tabindex="-1"></a>conditions <span class="op">=</span> [</span>
-<span id="cb547-3"><a href="object-oriented-programming-for-data-scientists.html#cb547-3" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span>),</span>
-<span id="cb547-4"><a href="object-oriented-programming-for-data-scientists.html#cb547-4" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">60000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span>),</span>
-<span id="cb547-5"><a href="object-oriented-programming-for-data-scientists.html#cb547-5" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">80000</span>)</span>
-<span id="cb547-6"><a href="object-oriented-programming-for-data-scientists.html#cb547-6" tabindex="-1"></a>]</span>
-<span id="cb547-7"><a href="object-oriented-programming-for-data-scientists.html#cb547-7" tabindex="-1"></a></span>
-<span id="cb547-8"><a href="object-oriented-programming-for-data-scientists.html#cb547-8" tabindex="-1"></a><span class="co"># Corresponding choices for each condition</span></span>
-<span id="cb547-9"><a href="object-oriented-programming-for-data-scientists.html#cb547-9" tabindex="-1"></a>choices <span class="op">=</span> [<span class="st">&#39;Low&#39;</span>, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>]</span>
-<span id="cb547-10"><a href="object-oriented-programming-for-data-scientists.html#cb547-10" tabindex="-1"></a></span>
-<span id="cb547-11"><a href="object-oriented-programming-for-data-scientists.html#cb547-11" tabindex="-1"></a><span class="co"># Use np.select to create a new column &#39;earnings_category&#39;</span></span>
-<span id="cb547-12"><a href="object-oriented-programming-for-data-scientists.html#cb547-12" tabindex="-1"></a>df[<span class="st">&#39;category2&#39;</span>] <span class="op">=</span> np.select(conditions, choices)</span>
-<span id="cb547-13"><a href="object-oriented-programming-for-data-scientists.html#cb547-13" tabindex="-1"></a></span>
-<span id="cb547-14"><a href="object-oriented-programming-for-data-scientists.html#cb547-14" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb548"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb548-1"><a href="object-oriented-programming-for-data-scientists.html#cb548-1" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb548-2"><a href="object-oriented-programming-for-data-scientists.html#cb548-2" tabindex="-1"></a>    <span class="st">&#39;employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;David&#39;</span>, <span class="st">&#39;Eve&#39;</span>, <span class="st">&#39;Frank&#39;</span>, <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hannah&#39;</span>],</span>
+<span id="cb548-3"><a href="object-oriented-programming-for-data-scientists.html#cb548-3" tabindex="-1"></a>    <span class="st">&#39;salary&#39;</span>: [<span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">90000</span>, <span class="dv">85000</span>, <span class="dv">75000</span>, <span class="dv">65000</span>]</span>
+<span id="cb548-4"><a href="object-oriented-programming-for-data-scientists.html#cb548-4" tabindex="-1"></a>}</span>
+<span id="cb548-5"><a href="object-oriented-programming-for-data-scientists.html#cb548-5" tabindex="-1"></a></span>
+<span id="cb548-6"><a href="object-oriented-programming-for-data-scientists.html#cb548-6" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code></pre></div>
+<div class="sourceCode" id="cb549"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb549-1"><a href="object-oriented-programming-for-data-scientists.html#cb549-1" tabindex="-1"></a><span class="co"># Define conditions for categorizing salaries</span></span>
+<span id="cb549-2"><a href="object-oriented-programming-for-data-scientists.html#cb549-2" tabindex="-1"></a>conditions <span class="op">=</span> [</span>
+<span id="cb549-3"><a href="object-oriented-programming-for-data-scientists.html#cb549-3" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">60000</span>),</span>
+<span id="cb549-4"><a href="object-oriented-programming-for-data-scientists.html#cb549-4" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">60000</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&lt;=</span> <span class="dv">80000</span>),</span>
+<span id="cb549-5"><a href="object-oriented-programming-for-data-scientists.html#cb549-5" tabindex="-1"></a>    (df[<span class="st">&#39;salary&#39;</span>] <span class="op">&gt;</span> <span class="dv">80000</span>)</span>
+<span id="cb549-6"><a href="object-oriented-programming-for-data-scientists.html#cb549-6" tabindex="-1"></a>]</span>
+<span id="cb549-7"><a href="object-oriented-programming-for-data-scientists.html#cb549-7" tabindex="-1"></a></span>
+<span id="cb549-8"><a href="object-oriented-programming-for-data-scientists.html#cb549-8" tabindex="-1"></a><span class="co"># Corresponding choices for each condition</span></span>
+<span id="cb549-9"><a href="object-oriented-programming-for-data-scientists.html#cb549-9" tabindex="-1"></a>choices <span class="op">=</span> [<span class="st">&#39;Low&#39;</span>, <span class="st">&#39;Medium&#39;</span>, <span class="st">&#39;High&#39;</span>]</span>
+<span id="cb549-10"><a href="object-oriented-programming-for-data-scientists.html#cb549-10" tabindex="-1"></a></span>
+<span id="cb549-11"><a href="object-oriented-programming-for-data-scientists.html#cb549-11" tabindex="-1"></a><span class="co"># Use np.select to create a new column &#39;earnings_category&#39;</span></span>
+<span id="cb549-12"><a href="object-oriented-programming-for-data-scientists.html#cb549-12" tabindex="-1"></a>df[<span class="st">&#39;category2&#39;</span>] <span class="op">=</span> np.select(conditions, choices)</span>
+<span id="cb549-13"><a href="object-oriented-programming-for-data-scientists.html#cb549-13" tabindex="-1"></a></span>
+<span id="cb549-14"><a href="object-oriented-programming-for-data-scientists.html#cb549-14" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary category2
 ## 0    Alice   70000    Medium
 ## 1      Bob   80000    Medium
@@ -1471,19 +1494,19 @@ It allows you to split your DataFrame into groups based on one or more columns, 
 </div>
 <div id="apply-method" class="section level4 hasAnchor" number="5.4.8.6">
 <h4><span class="header-section-number">5.4.8.6</span> apply() method<a href="object-oriented-programming-for-data-scientists.html#apply-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb549"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb549-1"><a href="object-oriented-programming-for-data-scientists.html#cb549-1" tabindex="-1"></a><span class="co"># Custom function to categorize salary</span></span>
-<span id="cb549-2"><a href="object-oriented-programming-for-data-scientists.html#cb549-2" tabindex="-1"></a><span class="kw">def</span> categorize_salary(salary):</span>
-<span id="cb549-3"><a href="object-oriented-programming-for-data-scientists.html#cb549-3" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&lt;=</span> <span class="dv">60000</span>:</span>
-<span id="cb549-4"><a href="object-oriented-programming-for-data-scientists.html#cb549-4" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;Low&#39;</span></span>
-<span id="cb549-5"><a href="object-oriented-programming-for-data-scientists.html#cb549-5" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">60000</span> <span class="op">&lt;</span> salary <span class="op">&lt;=</span> <span class="dv">80000</span>:</span>
-<span id="cb549-6"><a href="object-oriented-programming-for-data-scientists.html#cb549-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;Medium&#39;</span></span>
-<span id="cb549-7"><a href="object-oriented-programming-for-data-scientists.html#cb549-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb549-8"><a href="object-oriented-programming-for-data-scientists.html#cb549-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;High&#39;</span></span>
-<span id="cb549-9"><a href="object-oriented-programming-for-data-scientists.html#cb549-9" tabindex="-1"></a></span>
-<span id="cb549-10"><a href="object-oriented-programming-for-data-scientists.html#cb549-10" tabindex="-1"></a><span class="co"># Apply the custom function to create a new column &#39;earnings_category&#39;</span></span>
-<span id="cb549-11"><a href="object-oriented-programming-for-data-scientists.html#cb549-11" tabindex="-1"></a>df[<span class="st">&#39;category3&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>].<span class="bu">apply</span>(categorize_salary)</span>
-<span id="cb549-12"><a href="object-oriented-programming-for-data-scientists.html#cb549-12" tabindex="-1"></a></span>
-<span id="cb549-13"><a href="object-oriented-programming-for-data-scientists.html#cb549-13" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb551"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb551-1"><a href="object-oriented-programming-for-data-scientists.html#cb551-1" tabindex="-1"></a><span class="co"># Custom function to categorize salary</span></span>
+<span id="cb551-2"><a href="object-oriented-programming-for-data-scientists.html#cb551-2" tabindex="-1"></a><span class="kw">def</span> categorize_salary(salary):</span>
+<span id="cb551-3"><a href="object-oriented-programming-for-data-scientists.html#cb551-3" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&lt;=</span> <span class="dv">60000</span>:</span>
+<span id="cb551-4"><a href="object-oriented-programming-for-data-scientists.html#cb551-4" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;Low&#39;</span></span>
+<span id="cb551-5"><a href="object-oriented-programming-for-data-scientists.html#cb551-5" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">60000</span> <span class="op">&lt;</span> salary <span class="op">&lt;=</span> <span class="dv">80000</span>:</span>
+<span id="cb551-6"><a href="object-oriented-programming-for-data-scientists.html#cb551-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;Medium&#39;</span></span>
+<span id="cb551-7"><a href="object-oriented-programming-for-data-scientists.html#cb551-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb551-8"><a href="object-oriented-programming-for-data-scientists.html#cb551-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;High&#39;</span></span>
+<span id="cb551-9"><a href="object-oriented-programming-for-data-scientists.html#cb551-9" tabindex="-1"></a></span>
+<span id="cb551-10"><a href="object-oriented-programming-for-data-scientists.html#cb551-10" tabindex="-1"></a><span class="co"># Apply the custom function to create a new column &#39;earnings_category&#39;</span></span>
+<span id="cb551-11"><a href="object-oriented-programming-for-data-scientists.html#cb551-11" tabindex="-1"></a>df[<span class="st">&#39;category3&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;salary&#39;</span>].<span class="bu">apply</span>(categorize_salary)</span>
+<span id="cb551-12"><a href="object-oriented-programming-for-data-scientists.html#cb551-12" tabindex="-1"></a></span>
+<span id="cb551-13"><a href="object-oriented-programming-for-data-scientists.html#cb551-13" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>##   employee  salary category2 category3
 ## 0    Alice   70000    Medium    Medium
 ## 1      Bob   80000    Medium    Medium

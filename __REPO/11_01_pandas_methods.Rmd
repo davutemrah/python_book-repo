@@ -217,6 +217,13 @@ print(df)
 ```
 
 
+```{python}
+df[df['salary']>80000]
+```
+
+
+
+
 #### Example
 
 Lets perform a standardization operation on the salary column within each group defined by the department column
