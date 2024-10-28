@@ -2,45 +2,68 @@
 
 In computer science, **Big O notation** is used to describe the **time complexity** (or **space complexity**) of an algorithm. It provides an upper bound on the time (or space) required by an algorithm relative to the size of the input data as the input size grows. It helps us understand the **worst-case scenario** performance and scalability of an algorithm.
 
-### Common Big O Notations:
+## Common Big O Notations:
 
 1. **O(1) - Constant Time Complexity:**
+  
    - An algorithm is said to have **constant time complexity** when its running time does not depend on the size of the input data. 
+  
    - This means that no matter how large the input is, the algorithm will always take the same amount of time to complete.
-   - **Example:** Accessing an element in an array by index, such as `arr[5]`, is an \( O(1) \) operation because it takes the same amount of time regardless of the array size.
+  
+   - **Example:** Accessing an element in an array by index, such as `arr[5]`, is an $O(1)$ operation because it takes the same amount of time regardless of the array size.
 
 2. **O(log n) - Logarithmic Time Complexity:**
+   
    - An algorithm is said to have **logarithmic time complexity** if it reduces the problem size by half at each step.
+   
    - These algorithms are very efficient, especially for large datasets.
-   - **Example:** Binary search on a sorted array is \( O(\log n) \) because it divides the search space in half with each step.
+   
+   - **Example:** Binary search on a sorted array is $O(\log n)$ because it divides the search space in half with each step.
 
 3. **O(n) - Linear Time Complexity:**
+   
    - An algorithm has **linear time complexity** when its running time increases linearly with the size of the input.
+   
    - In other words, if the input size doubles, the running time will also double.
-   - **Example:** A simple loop that iterates through all elements in an array has \( O(n) \) time complexity.
+   
+   - **Example:** A simple loop that iterates through all elements in an array has $O(n)$ time complexity.
 
 4. **O(n \log n) - Linearithmic Time Complexity:**
+   
    - An algorithm has **linearithmic time complexity** when its running time is a combination of linear and logarithmic complexities.
+   
    - These are typical of algorithms that perform some kind of divide-and-conquer approach.
-   - **Example:** Efficient sorting algorithms like Merge Sort and Quick Sort have \( O(n \log n) \) time complexity.
+   
+   - **Example:** Efficient sorting algorithms like Merge Sort and Quick Sort have $O(n \log n)$ time complexity.
 
 5. **O(n^2) - Quadratic Time Complexity:**
+   
    - An algorithm has **quadratic time complexity** when its running time is proportional to the square of the size of the input.
+   
    - If the input size doubles, the running time quadruples.
-   - **Example:** A nested loop that iterates over all pairs of elements in an array has \( O(n^2) \) time complexity. A classic example is the Bubble Sort algorithm.
+   
+   - **Example:** A nested loop that iterates over all pairs of elements in an array has $O(n^2)$ time complexity. A classic example is the Bubble Sort algorithm.
 
 6. **O(n^3) - Cubic Time Complexity:**
+   
    - An algorithm with **cubic time complexity** involves three nested loops and grows even more quickly as input size increases.
+   
    - **Example:** A triple nested loop iterating over three different dimensions, like calculating all combinations of three elements from a list.
 
 7. **O(2^n) - Exponential Time Complexity:**
+   
    - An algorithm has **exponential time complexity** when the growth rate doubles with each additional element in the input.
+   
    - These algorithms are generally very inefficient and not feasible for large input sizes.
+   
    - **Example:** Solving the Traveling Salesman Problem using brute force or generating all subsets of a set (the power set).
 
 8. **O(n!) - Factorial Time Complexity:**
+   
    - An algorithm has **factorial time complexity** when it grows factorially with the input size. 
+   
    - These algorithms are typically only used for very small input sizes due to their extreme inefficiency.
+   
    - **Example:** Solving the Traveling Salesman Problem by checking all possible permutations.
 
 ### Summary Table:
@@ -58,8 +81,10 @@ In computer science, **Big O notation** is used to describe the **time complexit
 
 ### Key Takeaways:
 
-- **Lower-order terms** and **constants** are generally omitted in Big O notation (e.g., \( O(2n) \) is considered \( O(n) \)).
+- **Lower-order terms** and **constants** are generally omitted in Big O notation (e.g., $O(2n)$ is considered $O(n)$).
+
 - **Big O** provides a **high-level understanding** of an algorithm's performance.
+
 - Understanding the **time complexity** helps in choosing the right algorithm for a given problem, especially when dealing with large datasets. 
 
 By learning these common Big O notations, you can better analyze the efficiency of different algorithms and data structures!

@@ -22,13 +22,14 @@ A numpy array is similar to a list. It's usually fixed in size and each element 
 [ speed and memory advantages]
 
 1. the basics and array creation
+
 2. Indexing and slicing
+
 3. Basic Operations
+
 4. Universal Functions
 
-```python
-pip install numpy
-```
+
 import before use
 
 ```{python}
@@ -75,7 +76,7 @@ print("size and dimension --->", x.shape)
  
 #### Indexing and Slicing
 
-**slicing:** array[start:stop:step]
+**slicing:** array[start : stop : step]
 
 
 ```{python}
@@ -123,10 +124,18 @@ print(np.power(a, b))
 #### Other Vector Operations
 
 **Sum:** `a.sum()` or `np.sum(a)` - Calculate the sum of all elements in the array.
+
 **Mean:** `a.mean()` or `np.mean(a)` - Calculate the mean of all elements in the array.
+
 **Median:** `np.median(a)` - Calculate the median of all elements in the array.
+
 **Standard Deviation:** `a.std()` or `np.std(a)` - Calculate the standard deviation of all elements in the array.
+
 **Dot Product:** `a.dot(b)` - Calculate the dot product of two arrays.
+
+
+
+**numpy pre-defined functions**
 
 ```{python}
 a = np.array([1, 2, 3, 4, 5])
@@ -137,21 +146,38 @@ print(np.median(a))  # Output: 3.0
 print(np.std(a))  # Output: 1.58113883046
 ```
 
+**python pre-defined functions**
+
 ```{python}
 a = np.array([1, 2, 3, 4, 5])
 
 print(a.sum())  # Output: 15
-print(np.mean(a))  # Output: 3.0
-print(np.median(a))  # Output: 3.0
-print(a.std())  # Output: 1.58113883046
+print(sum(a))
+
+print(a.std())  
+
 ```
 
+**User defined functions**
+
+```{python}
+a = np.array([1, 2, 3, 4, 5])
+
+# Define the function
+def my_func(x):
+  
+    return -2*x**2 + 5*x + 20
+  
+  
+my_func(a)
+```
 
 
 
 #### Matrix Multiplication
 
 **Dot Product:** `a @ b` or `np.dot(a, b)` - Matrix multiplication of two arrays.
+
 **Matrix Product:** `a.dot(b)` - Matrix multiplication of two arrays (alternative syntax).
 
 ```{python}

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Pandas Library | Python For Data Science</title>
+  <title>Chapter 3 Pandas Library | Python For Data Science</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Pandas Library | Python For Data Science" />
+  <meta property="og:title" content="Chapter 3 Pandas Library | Python For Data Science" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="davutemrah/python_book-repo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Pandas Library | Python For Data Science" />
+  <meta name="twitter:title" content="Chapter 3 Pandas Library | Python For Data Science" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -23,15 +23,15 @@
 <meta name="author" content="Davut Ayan" />
 
 
-<meta name="date" content="2024-09-02" />
+<meta name="date" content="2024-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html"/>
-<link rel="next" href="random.html"/>
+<link rel="prev" href="numpy-module.html"/>
+<link rel="next" href="pandas-library-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -176,111 +176,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#summary"><i class="fa fa-check"></i><b>1.5.1</b> Summary</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>2</b> Pandas Library</a>
+<li class="chapter" data-level="2" data-path="numpy-module.html"><a href="numpy-module.html"><i class="fa fa-check"></i><b>2</b> Numpy Module</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="pandas-library.html"><a href="pandas-library.html#data-frames"><i class="fa fa-check"></i><b>2.1</b> Data Frames</a>
+<li class="chapter" data-level="2.1" data-path="numpy-module.html"><a href="numpy-module.html#numpy-library"><i class="fa fa-check"></i><b>2.1</b> Numpy Library</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="pandas-library.html"><a href="pandas-library.html#data-frame-creation"><i class="fa fa-check"></i><b>2.1.1</b> Data frame creation</a></li>
-<li class="chapter" data-level="2.1.2" data-path="pandas-library.html"><a href="pandas-library.html#read-csv-files"><i class="fa fa-check"></i><b>2.1.2</b> Read csv files</a></li>
-<li class="chapter" data-level="2.1.3" data-path="pandas-library.html"><a href="pandas-library.html#data-attributes"><i class="fa fa-check"></i><b>2.1.3</b> Data attributes</a></li>
-<li class="chapter" data-level="2.1.4" data-path="pandas-library.html"><a href="pandas-library.html#create-or-add-a-new-column"><i class="fa fa-check"></i><b>2.1.4</b> Create or add a new column</a></li>
-<li class="chapter" data-level="2.1.5" data-path="pandas-library.html"><a href="pandas-library.html#explore-data"><i class="fa fa-check"></i><b>2.1.5</b> Explore Data</a></li>
-<li class="chapter" data-level="2.1.6" data-path="pandas-library.html"><a href="pandas-library.html#query-method"><i class="fa fa-check"></i><b>2.1.6</b> query method</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="pandas-library.html"><a href="pandas-library.html#read-data"><i class="fa fa-check"></i><b>2.2</b> read data</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="pandas-library.html"><a href="pandas-library.html#csv-file"><i class="fa fa-check"></i><b>2.2.1</b> csv file</a></li>
-<li class="chapter" data-level="2.2.2" data-path="pandas-library.html"><a href="pandas-library.html#xlsx-file"><i class="fa fa-check"></i><b>2.2.2</b> xlsx file</a></li>
-<li class="chapter" data-level="2.2.3" data-path="pandas-library.html"><a href="pandas-library.html#renameassign-new-column-names"><i class="fa fa-check"></i><b>2.2.3</b> rename/assign new column names</a></li>
-<li class="chapter" data-level="2.2.4" data-path="pandas-library.html"><a href="pandas-library.html#subsetting"><i class="fa fa-check"></i><b>2.2.4</b> Subsetting</a></li>
-<li class="chapter" data-level="2.2.5" data-path="pandas-library.html"><a href="pandas-library.html#copy"><i class="fa fa-check"></i><b>2.2.5</b> copy</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="pandas-library.html"><a href="pandas-library.html#recoding-columns-in-a-pandas-dataframe"><i class="fa fa-check"></i><b>2.3</b> Recoding Columns in a Pandas DataFrame</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="pandas-library.html"><a href="pandas-library.html#using-map-and-replace"><i class="fa fa-check"></i><b>2.3.1</b> Using <code>map</code> and <code>replace</code></a></li>
-<li class="chapter" data-level="2.3.2" data-path="pandas-library.html"><a href="pandas-library.html#summary-1"><i class="fa fa-check"></i><b>2.3.2</b> Summary</a></li>
-<li class="chapter" data-level="2.3.3" data-path="pandas-library.html"><a href="pandas-library.html#a.empty"><i class="fa fa-check"></i><b>2.3.3</b> <strong>1. <code>a.empty</code></strong></a></li>
-<li class="chapter" data-level="2.3.4" data-path="pandas-library.html"><a href="pandas-library.html#a.bool"><i class="fa fa-check"></i><b>2.3.4</b> <strong>2. <code>a.bool()</code></strong></a></li>
-<li class="chapter" data-level="2.3.5" data-path="pandas-library.html"><a href="pandas-library.html#a.item"><i class="fa fa-check"></i><b>2.3.5</b> <strong>3. <code>a.item()</code></strong></a></li>
-<li class="chapter" data-level="2.3.6" data-path="pandas-library.html"><a href="pandas-library.html#a.any"><i class="fa fa-check"></i><b>2.3.6</b> <strong>4. <code>a.any()</code></strong></a></li>
-<li class="chapter" data-level="2.3.7" data-path="pandas-library.html"><a href="pandas-library.html#a.all"><i class="fa fa-check"></i><b>2.3.7</b> <strong>5. <code>a.all()</code></strong></a></li>
-<li class="chapter" data-level="2.3.8" data-path="pandas-library.html"><a href="pandas-library.html#summary-2"><i class="fa fa-check"></i><b>2.3.8</b> <strong>Summary:</strong></a></li>
+<li class="chapter" data-level="2.1.1" data-path="numpy-module.html"><a href="numpy-module.html#a.-one-dimensional-array"><i class="fa fa-check"></i><b>2.1.1</b> A. One dimensional array</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>3</b> RANDOM</a>
+<li class="chapter" data-level="3" data-path="pandas-library.html"><a href="pandas-library.html"><i class="fa fa-check"></i><b>3</b> Pandas Library</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="random.html"><a href="random.html#some-functions"><i class="fa fa-check"></i><b>3.1</b> Some Functions</a>
+<li class="chapter" data-level="3.0.1" data-path="pandas-library.html"><a href="pandas-library.html#sorting"><i class="fa fa-check"></i><b>3.0.1</b> sorting</a></li>
+<li class="chapter" data-level="3.0.2" data-path="pandas-library.html"><a href="pandas-library.html#query-method"><i class="fa fa-check"></i><b>3.0.2</b> query method</a></li>
+<li class="chapter" data-level="3.1" data-path="pandas-library.html"><a href="pandas-library.html#read-data"><i class="fa fa-check"></i><b>3.1</b> read data</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="random.html"><a href="random.html#input-function"><i class="fa fa-check"></i><b>3.1.1</b> input function</a></li>
+<li class="chapter" data-level="3.1.1" data-path="pandas-library.html"><a href="pandas-library.html#csv-file"><i class="fa fa-check"></i><b>3.1.1</b> csv file</a></li>
+<li class="chapter" data-level="3.1.2" data-path="pandas-library.html"><a href="pandas-library.html#xlsx-file"><i class="fa fa-check"></i><b>3.1.2</b> xlsx file</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="numpy-module.html"><a href="numpy-module.html"><i class="fa fa-check"></i><b>4</b> Numpy Module</a>
+<li class="chapter" data-level="4" data-path="pandas-library-1.html"><a href="pandas-library-1.html"><i class="fa fa-check"></i><b>4</b> Pandas Library</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="numpy-module.html"><a href="numpy-module.html#numpy-library"><i class="fa fa-check"></i><b>4.1</b> Numpy Library</a>
+<li class="chapter" data-level="4.1" data-path="pandas-library-1.html"><a href="pandas-library-1.html#data-frames"><i class="fa fa-check"></i><b>4.1</b> Data Frames</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="numpy-module.html"><a href="numpy-module.html#a.-one-dimensional-array"><i class="fa fa-check"></i><b>4.1.1</b> A. One dimensional array</a></li>
+<li class="chapter" data-level="4.1.1" data-path="pandas-library-1.html"><a href="pandas-library-1.html#data-frame-creation"><i class="fa fa-check"></i><b>4.1.1</b> Data frame creation</a></li>
+<li class="chapter" data-level="4.1.2" data-path="pandas-library-1.html"><a href="pandas-library-1.html#read-csv-files"><i class="fa fa-check"></i><b>4.1.2</b> Read csv files</a></li>
+<li class="chapter" data-level="4.1.3" data-path="pandas-library-1.html"><a href="pandas-library-1.html#data-attributes"><i class="fa fa-check"></i><b>4.1.3</b> Data attributes</a></li>
+<li class="chapter" data-level="4.1.4" data-path="pandas-library-1.html"><a href="pandas-library-1.html#create-or-add-a-new-column"><i class="fa fa-check"></i><b>4.1.4</b> Create or add a new column</a></li>
+<li class="chapter" data-level="4.1.5" data-path="pandas-library-1.html"><a href="pandas-library-1.html#explore-data"><i class="fa fa-check"></i><b>4.1.5</b> Explore Data</a></li>
+<li class="chapter" data-level="4.1.6" data-path="pandas-library-1.html"><a href="pandas-library-1.html#renameassign-new-column-names"><i class="fa fa-check"></i><b>4.1.6</b> rename/assign new column names</a></li>
+<li class="chapter" data-level="4.1.7" data-path="pandas-library-1.html"><a href="pandas-library-1.html#subsetting"><i class="fa fa-check"></i><b>4.1.7</b> Subsetting</a></li>
+<li class="chapter" data-level="4.1.8" data-path="pandas-library-1.html"><a href="pandas-library-1.html#copy"><i class="fa fa-check"></i><b>4.1.8</b> copy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="pandas-library-1.html"><a href="pandas-library-1.html#recoding-columns-in-a-pandas-dataframe"><i class="fa fa-check"></i><b>4.2</b> Recoding Columns in a Pandas DataFrame</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="pandas-library-1.html"><a href="pandas-library-1.html#using-map-and-replace"><i class="fa fa-check"></i><b>4.2.1</b> Using <code>map</code> and <code>replace</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="pandas-library-1.html"><a href="pandas-library-1.html#summary-1"><i class="fa fa-check"></i><b>4.2.2</b> Summary</a></li>
+<li class="chapter" data-level="4.2.3" data-path="pandas-library-1.html"><a href="pandas-library-1.html#a.empty"><i class="fa fa-check"></i><b>4.2.3</b> <strong>1. <code>a.empty</code></strong></a></li>
+<li class="chapter" data-level="4.2.4" data-path="pandas-library-1.html"><a href="pandas-library-1.html#a.bool"><i class="fa fa-check"></i><b>4.2.4</b> <strong>2. <code>a.bool()</code></strong></a></li>
+<li class="chapter" data-level="4.2.5" data-path="pandas-library-1.html"><a href="pandas-library-1.html#a.item"><i class="fa fa-check"></i><b>4.2.5</b> <strong>3. <code>a.item()</code></strong></a></li>
+<li class="chapter" data-level="4.2.6" data-path="pandas-library-1.html"><a href="pandas-library-1.html#a.any"><i class="fa fa-check"></i><b>4.2.6</b> <strong>4. <code>a.any()</code></strong></a></li>
+<li class="chapter" data-level="4.2.7" data-path="pandas-library-1.html"><a href="pandas-library-1.html#a.all"><i class="fa fa-check"></i><b>4.2.7</b> <strong>5. <code>a.all()</code></strong></a></li>
+<li class="chapter" data-level="4.2.8" data-path="pandas-library-1.html"><a href="pandas-library-1.html#summary-2"><i class="fa fa-check"></i><b>4.2.8</b> <strong>Summary:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="pandas-library-1.html"><a href="pandas-library-1.html#apply-method"><i class="fa fa-check"></i><b>4.3</b> apply method</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pandas-library-1.html"><a href="pandas-library-1.html#using-apply-in-pandas"><i class="fa fa-check"></i><b>4.3.1</b> Using <code>apply</code> in Pandas:</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pandas-library-1.html"><a href="pandas-library-1.html#using-apply-in-numpy"><i class="fa fa-check"></i><b>4.3.2</b> Using <code>apply</code> in NumPy:</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pandas-library-1.html"><a href="pandas-library-1.html#key-points-to-mention-in-an-interview"><i class="fa fa-check"></i><b>4.3.3</b> Key Points to Mention in an Interview:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html"><i class="fa fa-check"></i><b>5</b> Object-Oriented Programming for Data Scientists</a>
+<li class="chapter" data-level="5" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>5</b> RANDOM</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#introduction-to-oop"><i class="fa fa-check"></i><b>5.1</b> Introduction to OOP</a>
+<li class="chapter" data-level="5.1" data-path="random.html"><a href="random.html#some-functions"><i class="fa fa-check"></i><b>5.1</b> Some Functions</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#what-is-object-oriented-programming"><i class="fa fa-check"></i><b>5.1.1</b> What is Object-Oriented Programming?</a></li>
-<li class="chapter" data-level="5.1.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#advantages-of-oop"><i class="fa fa-check"></i><b>5.1.2</b> Advantages of OOP</a></li>
-<li class="chapter" data-level="5.1.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#oop-vs.-procedural-programming"><i class="fa fa-check"></i><b>5.1.3</b> OOP vs. Procedural Programming</a></li>
-<li class="chapter" data-level="5.1.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#practical-example-in-data-science"><i class="fa fa-check"></i><b>5.1.4</b> Practical Example in Data Science</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#classes-and-objects"><i class="fa fa-check"></i><b>5.2</b> Classes and Objects</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#understanding-classes"><i class="fa fa-check"></i><b>5.2.1</b> Understanding Classes</a></li>
-<li class="chapter" data-level="5.2.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#creating-objects"><i class="fa fa-check"></i><b>5.2.2</b> Creating Objects</a></li>
-<li class="chapter" data-level="5.2.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#the-self-parameter"><i class="fa fa-check"></i><b>5.2.3</b> The <code>self</code> Parameter</a></li>
-<li class="chapter" data-level="5.2.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#real-world-examples-in-data-science"><i class="fa fa-check"></i><b>5.2.4</b> Real-world Examples in Data Science</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#attributes-and-methods"><i class="fa fa-check"></i><b>5.3</b> Attributes and Methods</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#instance-attributes"><i class="fa fa-check"></i><b>5.3.1</b> Instance Attributes</a></li>
-<li class="chapter" data-level="5.3.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#practical-examples-with-data-science-models"><i class="fa fa-check"></i><b>5.3.2</b> Practical Examples with Data Science Models</a></li>
-<li class="chapter" data-level="5.3.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#dynamic-variables"><i class="fa fa-check"></i><b>5.3.3</b> Dynamic Variables</a></li>
-<li class="chapter" data-level="5.3.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#static-variables"><i class="fa fa-check"></i><b>5.3.4</b> Static Variables</a></li>
-<li class="chapter" data-level="5.3.5" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#summary-3"><i class="fa fa-check"></i><b>5.3.5</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#pandas-exercises"><i class="fa fa-check"></i><b>5.4</b> Pandas Exercises</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#sorting"><i class="fa fa-check"></i><b>5.4.1</b> sorting</a></li>
-<li class="chapter" data-level="5.4.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#groupby-operation"><i class="fa fa-check"></i><b>5.4.2</b> groupby operation</a></li>
-<li class="chapter" data-level="5.4.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#sample-solutions"><i class="fa fa-check"></i><b>5.4.3</b> Sample Solutions</a></li>
-<li class="chapter" data-level="5.4.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-2"><i class="fa fa-check"></i><b>5.4.4</b> Question</a></li>
-<li class="chapter" data-level="5.4.5" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#data-filtering-and-selection"><i class="fa fa-check"></i><b>5.4.5</b> Data Filtering and Selection:</a></li>
-<li class="chapter" data-level="5.4.6" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>5.4.6</b> Aggregation and Grouping:</a></li>
-<li class="chapter" data-level="5.4.7" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#joining-and-merging-data"><i class="fa fa-check"></i><b>5.4.7</b> Joining and Merging Data:</a></li>
-<li class="chapter" data-level="5.4.8" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#recoding"><i class="fa fa-check"></i><b>5.4.8</b> recoding</a></li>
+<li class="chapter" data-level="5.1.1" data-path="random.html"><a href="random.html#input-function"><i class="fa fa-check"></i><b>5.1.1</b> input function</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="python-exercises.html"><a href="python-exercises.html"><i class="fa fa-check"></i><b>6</b> Python Exercises</a>
+<li class="chapter" data-level="6" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html"><i class="fa fa-check"></i><b>6</b> Object-Oriented Programming for Data Scientists</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="python-exercises.html"><a href="python-exercises.html#multiples-of-3---5"><i class="fa fa-check"></i><b>6.1</b> Multiples of 3 - 5</a></li>
-<li class="chapter" data-level="6.2" data-path="python-exercises.html"><a href="python-exercises.html#even-fibonacci-numbers"><i class="fa fa-check"></i><b>6.2</b> Even Fibonacci numbers</a></li>
-<li class="chapter" data-level="6.3" data-path="python-exercises.html"><a href="python-exercises.html#largest-prime-factor"><i class="fa fa-check"></i><b>6.3</b> Largest prime factor</a></li>
-<li class="chapter" data-level="6.4" data-path="python-exercises.html"><a href="python-exercises.html#greatest-common-diviser"><i class="fa fa-check"></i><b>6.4</b> Greatest Common Diviser</a></li>
-<li class="chapter" data-level="6.5" data-path="python-exercises.html"><a href="python-exercises.html#linkedin-sorting"><i class="fa fa-check"></i><b>6.5</b> LinkedIN: sorting</a>
+<li class="chapter" data-level="6.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#introduction-to-oop"><i class="fa fa-check"></i><b>6.1</b> Introduction to OOP</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="python-exercises.html"><a href="python-exercises.html#key-observations"><i class="fa fa-check"></i><b>6.5.1</b> Key Observations:</a></li>
-<li class="chapter" data-level="6.5.2" data-path="python-exercises.html"><a href="python-exercises.html#approach"><i class="fa fa-check"></i><b>6.5.2</b> Approach:</a></li>
-<li class="chapter" data-level="6.5.3" data-path="python-exercises.html"><a href="python-exercises.html#python-code-implementation"><i class="fa fa-check"></i><b>6.5.3</b> Python Code Implementation:</a></li>
-<li class="chapter" data-level="6.5.4" data-path="python-exercises.html"><a href="python-exercises.html#explanation"><i class="fa fa-check"></i><b>6.5.4</b> Explanation:</a></li>
-<li class="chapter" data-level="6.5.5" data-path="python-exercises.html"><a href="python-exercises.html#question-3"><i class="fa fa-check"></i><b>6.5.5</b> Question</a></li>
-<li class="chapter" data-level="6.5.6" data-path="python-exercises.html"><a href="python-exercises.html#approach-1"><i class="fa fa-check"></i><b>6.5.6</b> Approach:</a></li>
-<li class="chapter" data-level="6.5.7" data-path="python-exercises.html"><a href="python-exercises.html#pseudo-code"><i class="fa fa-check"></i><b>6.5.7</b> Pseudo-code:</a></li>
-<li class="chapter" data-level="6.5.8" data-path="python-exercises.html"><a href="python-exercises.html#example-6"><i class="fa fa-check"></i><b>6.5.8</b> Example:</a></li>
-<li class="chapter" data-level="6.5.9" data-path="python-exercises.html"><a href="python-exercises.html#summary-4"><i class="fa fa-check"></i><b>6.5.9</b> Summary:</a></li>
+<li class="chapter" data-level="6.1.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#what-is-object-oriented-programming"><i class="fa fa-check"></i><b>6.1.1</b> What is Object-Oriented Programming?</a></li>
+<li class="chapter" data-level="6.1.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#advantages-of-oop"><i class="fa fa-check"></i><b>6.1.2</b> Advantages of OOP</a></li>
+<li class="chapter" data-level="6.1.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#oop-vs.-procedural-programming"><i class="fa fa-check"></i><b>6.1.3</b> OOP vs. Procedural Programming</a></li>
+<li class="chapter" data-level="6.1.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#practical-example-in-data-science"><i class="fa fa-check"></i><b>6.1.4</b> Practical Example in Data Science</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#classes-and-objects"><i class="fa fa-check"></i><b>6.2</b> Classes and Objects</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#understanding-classes"><i class="fa fa-check"></i><b>6.2.1</b> Understanding Classes</a></li>
+<li class="chapter" data-level="6.2.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#creating-objects"><i class="fa fa-check"></i><b>6.2.2</b> Creating Objects</a></li>
+<li class="chapter" data-level="6.2.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#the-self-parameter"><i class="fa fa-check"></i><b>6.2.3</b> The <code>self</code> Parameter</a></li>
+<li class="chapter" data-level="6.2.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#real-world-examples-in-data-science"><i class="fa fa-check"></i><b>6.2.4</b> Real-world Examples in Data Science</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#attributes-and-methods"><i class="fa fa-check"></i><b>6.3</b> Attributes and Methods</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#instance-attributes"><i class="fa fa-check"></i><b>6.3.1</b> Instance Attributes</a></li>
+<li class="chapter" data-level="6.3.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#practical-examples-with-data-science-models"><i class="fa fa-check"></i><b>6.3.2</b> Practical Examples with Data Science Models</a></li>
+<li class="chapter" data-level="6.3.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#dynamic-variables"><i class="fa fa-check"></i><b>6.3.3</b> Dynamic Variables</a></li>
+<li class="chapter" data-level="6.3.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#static-variables"><i class="fa fa-check"></i><b>6.3.4</b> Static Variables</a></li>
+<li class="chapter" data-level="6.3.5" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#summary-3"><i class="fa fa-check"></i><b>6.3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#pandas-exercises"><i class="fa fa-check"></i><b>6.4</b> Pandas Exercises</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question"><i class="fa fa-check"></i><b>6.4.1</b> Question</a></li>
+<li class="chapter" data-level="6.4.2" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-1"><i class="fa fa-check"></i><b>6.4.2</b> Question</a></li>
+<li class="chapter" data-level="6.4.3" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-2"><i class="fa fa-check"></i><b>6.4.3</b> Question</a></li>
+<li class="chapter" data-level="6.4.4" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-3"><i class="fa fa-check"></i><b>6.4.4</b> Question</a></li>
+<li class="chapter" data-level="6.4.5" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-4"><i class="fa fa-check"></i><b>6.4.5</b> Question</a></li>
+<li class="chapter" data-level="6.4.6" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#sorting-1"><i class="fa fa-check"></i><b>6.4.6</b> sorting</a></li>
+<li class="chapter" data-level="6.4.7" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#groupby-operation"><i class="fa fa-check"></i><b>6.4.7</b> groupby operation</a></li>
+<li class="chapter" data-level="6.4.8" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#sample-solutions"><i class="fa fa-check"></i><b>6.4.8</b> Sample Solutions</a></li>
+<li class="chapter" data-level="6.4.9" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#question-7"><i class="fa fa-check"></i><b>6.4.9</b> Question</a></li>
+<li class="chapter" data-level="6.4.10" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#data-filtering-and-selection"><i class="fa fa-check"></i><b>6.4.10</b> Data Filtering and Selection:</a></li>
+<li class="chapter" data-level="6.4.11" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>6.4.11</b> Aggregation and Grouping:</a></li>
+<li class="chapter" data-level="6.4.12" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#joining-and-merging-data"><i class="fa fa-check"></i><b>6.4.12</b> Joining and Merging Data:</a></li>
+<li class="chapter" data-level="6.4.13" data-path="object-oriented-programming-for-data-scientists.html"><a href="object-oriented-programming-for-data-scientists.html#recoding"><i class="fa fa-check"></i><b>6.4.13</b> recoding</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="big-o-notation.html"><a href="big-o-notation.html"><i class="fa fa-check"></i><b>7</b> Big O notation</a>
+<li class="chapter" data-level="7" data-path="python-exercises.html"><a href="python-exercises.html"><i class="fa fa-check"></i><b>7</b> Python Exercises</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="big-o-notation.html"><a href="big-o-notation.html#common-big-o-notations"><i class="fa fa-check"></i><b>7.0.1</b> Common Big O Notations:</a></li>
-<li class="chapter" data-level="7.0.2" data-path="big-o-notation.html"><a href="big-o-notation.html#summary-table"><i class="fa fa-check"></i><b>7.0.2</b> Summary Table:</a></li>
-<li class="chapter" data-level="7.0.3" data-path="big-o-notation.html"><a href="big-o-notation.html#key-takeaways"><i class="fa fa-check"></i><b>7.0.3</b> Key Takeaways:</a></li>
+<li class="chapter" data-level="7.1" data-path="python-exercises.html"><a href="python-exercises.html#multiples-of-3---5"><i class="fa fa-check"></i><b>7.1</b> Multiples of 3 - 5</a></li>
+<li class="chapter" data-level="7.2" data-path="python-exercises.html"><a href="python-exercises.html#even-fibonacci-numbers"><i class="fa fa-check"></i><b>7.2</b> Even Fibonacci numbers</a></li>
+<li class="chapter" data-level="7.3" data-path="python-exercises.html"><a href="python-exercises.html#largest-prime-factor"><i class="fa fa-check"></i><b>7.3</b> Largest prime factor</a></li>
+<li class="chapter" data-level="7.4" data-path="python-exercises.html"><a href="python-exercises.html#greatest-common-diviser"><i class="fa fa-check"></i><b>7.4</b> Greatest Common Diviser</a></li>
+<li class="chapter" data-level="7.5" data-path="python-exercises.html"><a href="python-exercises.html#linkedin-sorting"><i class="fa fa-check"></i><b>7.5</b> LinkedIN: sorting</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="python-exercises.html"><a href="python-exercises.html#key-observations"><i class="fa fa-check"></i><b>7.5.1</b> Key Observations:</a></li>
+<li class="chapter" data-level="7.5.2" data-path="python-exercises.html"><a href="python-exercises.html#approach"><i class="fa fa-check"></i><b>7.5.2</b> Approach:</a></li>
+<li class="chapter" data-level="7.5.3" data-path="python-exercises.html"><a href="python-exercises.html#python-code-implementation"><i class="fa fa-check"></i><b>7.5.3</b> Python Code Implementation:</a></li>
+<li class="chapter" data-level="7.5.4" data-path="python-exercises.html"><a href="python-exercises.html#explanation"><i class="fa fa-check"></i><b>7.5.4</b> Explanation:</a></li>
+<li class="chapter" data-level="7.5.5" data-path="python-exercises.html"><a href="python-exercises.html#question-8"><i class="fa fa-check"></i><b>7.5.5</b> Question</a></li>
+<li class="chapter" data-level="7.5.6" data-path="python-exercises.html"><a href="python-exercises.html#approach-1"><i class="fa fa-check"></i><b>7.5.6</b> Approach:</a></li>
+<li class="chapter" data-level="7.5.7" data-path="python-exercises.html"><a href="python-exercises.html#pseudo-code"><i class="fa fa-check"></i><b>7.5.7</b> Pseudo-code:</a></li>
+<li class="chapter" data-level="7.5.8" data-path="python-exercises.html"><a href="python-exercises.html#example-6"><i class="fa fa-check"></i><b>7.5.8</b> Example:</a></li>
+<li class="chapter" data-level="7.5.9" data-path="python-exercises.html"><a href="python-exercises.html#summary-4"><i class="fa fa-check"></i><b>7.5.9</b> Summary:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="big-o-notation.html"><a href="big-o-notation.html"><i class="fa fa-check"></i><b>8</b> Big O notation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="big-o-notation.html"><a href="big-o-notation.html#common-big-o-notations"><i class="fa fa-check"></i><b>8.1</b> Common Big O Notations:</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="big-o-notation.html"><a href="big-o-notation.html#summary-table"><i class="fa fa-check"></i><b>8.1.1</b> Summary Table:</a></li>
+<li class="chapter" data-level="8.1.2" data-path="big-o-notation.html"><a href="big-o-notation.html#key-takeaways"><i class="fa fa-check"></i><b>8.1.2</b> Key Takeaways:</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://davutemrah.github.io/notebooks/" target="blank">Collections Home</a></li>
@@ -302,146 +319,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pandas-library" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Pandas Library<a href="pandas-library.html#pandas-library" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="pandas-library" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Pandas Library<a href="pandas-library.html#pandas-library" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>run <code>pip3 install pandas</code> or
 run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupyter notebook</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb187-1"><a href="pandas-library.html#cb187-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb187-2"><a href="pandas-library.html#cb187-2" tabindex="-1"></a></span>
-<span id="cb187-3"><a href="pandas-library.html#cb187-3" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
-<div id="data-frames" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Data Frames<a href="pandas-library.html#data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="data-frame-creation" class="section level3 hasAnchor" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Data frame creation<a href="pandas-library.html#data-frame-creation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sometimes you may need to create a data frame</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb188-1"><a href="pandas-library.html#cb188-1" tabindex="-1"></a><span class="co">## empty data frame</span></span>
-<span id="cb188-2"><a href="pandas-library.html#cb188-2" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame(dtype <span class="op">=</span> <span class="st">&#39;float64&#39;</span>)</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb190-1"><a href="pandas-library.html#cb190-1" tabindex="-1"></a>df1</span></code></pre></div>
-<pre><code>## name &#39;df1&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb192-1"><a href="pandas-library.html#cb192-1" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span> : []})</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb194-1"><a href="pandas-library.html#cb194-1" tabindex="-1"></a>df2</span></code></pre></div>
-<pre><code>## name &#39;df2&#39; is not defined</code></pre>
-<p>Is df2 empty?</p>
-<p>There is column name but it is still empty.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb196-1"><a href="pandas-library.html#cb196-1" tabindex="-1"></a>df2.empty</span></code></pre></div>
-<pre><code>## name &#39;df2&#39; is not defined</code></pre>
-<p>How to create a sample data frame?</p>
-<p>From a dictionary</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb198-1"><a href="pandas-library.html#cb198-1" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">&#39;Col_1&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], </span>
-<span id="cb198-2"><a href="pandas-library.html#cb198-2" tabindex="-1"></a>           <span class="st">&#39;Col_2&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>],</span>
-<span id="cb198-3"><a href="pandas-library.html#cb198-3" tabindex="-1"></a>           <span class="st">&#39;Col_3&#39;</span>: <span class="dv">1984</span>}</span>
-<span id="cb198-4"><a href="pandas-library.html#cb198-4" tabindex="-1"></a>           </span>
-<span id="cb198-5"><a href="pandas-library.html#cb198-5" tabindex="-1"></a>my_df <span class="op">=</span> pd.DataFrame(my_dict)</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb200-1"><a href="pandas-library.html#cb200-1" tabindex="-1"></a>my_df[:<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;my_df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb202-1"><a href="pandas-library.html#cb202-1" tabindex="-1"></a>a_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb202-2"><a href="pandas-library.html#cb202-2" tabindex="-1"></a>b_list <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]</span>
-<span id="cb202-3"><a href="pandas-library.html#cb202-3" tabindex="-1"></a><span class="co">##</span></span>
-<span id="cb202-4"><a href="pandas-library.html#cb202-4" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;var1&#39;</span>: a_list, </span>
-<span id="cb202-5"><a href="pandas-library.html#cb202-5" tabindex="-1"></a>                    <span class="st">&#39;var2&#39;</span>: b_list})</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb204-1"><a href="pandas-library.html#cb204-1" tabindex="-1"></a>df3</span></code></pre></div>
-<pre><code>## name &#39;df3&#39; is not defined</code></pre>
-</div>
-<div id="read-csv-files" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Read csv files<a href="pandas-library.html#read-csv-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb206"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb206-1"><a href="pandas-library.html#cb206-1" tabindex="-1"></a>df_csv <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/college.csv&#39;</span>).iloc[:<span class="dv">100</span>, :<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="pandas-library.html#cb208-1" tabindex="-1"></a>df_csv[:<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="data-attributes" class="section level3 hasAnchor" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Data attributes<a href="pandas-library.html#data-attributes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="shape-of-data-frame" class="section level4 hasAnchor" number="2.1.3.1">
-<h4><span class="header-section-number">2.1.3.1</span> shape of data frame<a href="pandas-library.html#shape-of-data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb210"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb210-1"><a href="pandas-library.html#cb210-1" tabindex="-1"></a>df_csv.shape</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb212-1"><a href="pandas-library.html#cb212-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;number of rows:&quot;</span>, df_csv.shape[<span class="dv">0</span>],</span>
-<span id="cb212-2"><a href="pandas-library.html#cb212-2" tabindex="-1"></a>      <span class="st">&quot;</span><span class="ch">\n</span><span class="st">number of columns:&quot;</span>, df_csv.shape[<span class="dv">1</span>])</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="columns" class="section level4 hasAnchor" number="2.1.3.2">
-<h4><span class="header-section-number">2.1.3.2</span> Columns<a href="pandas-library.html#columns" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>How to get the column names?</p>
-<p>–&gt; Column names are stored in <code>columns</code> attribute.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb214-1"><a href="pandas-library.html#cb214-1" tabindex="-1"></a>df_csv.columns</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb216-1"><a href="pandas-library.html#cb216-1" tabindex="-1"></a><span class="bu">list</span>(df_csv.columns)</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb218-1"><a href="pandas-library.html#cb218-1" tabindex="-1"></a>df_csv.columns.to_list()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb220-1"><a href="pandas-library.html#cb220-1" tabindex="-1"></a><span class="cf">for</span> cols <span class="kw">in</span> df_csv.columns:</span>
-<span id="cb220-2"><a href="pandas-library.html#cb220-2" tabindex="-1"></a>  <span class="bu">print</span>(cols)</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="data-types-in-dataframe" class="section level4 hasAnchor" number="2.1.3.3">
-<h4><span class="header-section-number">2.1.3.3</span> data types in dataframe<a href="pandas-library.html#data-types-in-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb222"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb222-1"><a href="pandas-library.html#cb222-1" tabindex="-1"></a>df_csv.dtypes</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb224-1"><a href="pandas-library.html#cb224-1" tabindex="-1"></a>[types <span class="cf">for</span> types <span class="kw">in</span> df_csv.dtypes]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="index-of-the-data-frame" class="section level4 hasAnchor" number="2.1.3.4">
-<h4><span class="header-section-number">2.1.3.4</span> index of the data frame<a href="pandas-library.html#index-of-the-data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb226"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb226-1"><a href="pandas-library.html#cb226-1" tabindex="-1"></a>df_csv[:<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb228"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb228-1"><a href="pandas-library.html#cb228-1" tabindex="-1"></a>df_csv.index</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb230"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb230-1"><a href="pandas-library.html#cb230-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> df_csv.index:</span>
-<span id="cb230-2"><a href="pandas-library.html#cb230-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb230-3"><a href="pandas-library.html#cb230-3" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="assign-a-new-index" class="section level4 hasAnchor" number="2.1.3.5">
-<h4><span class="header-section-number">2.1.3.5</span> assign a new index<a href="pandas-library.html#assign-a-new-index" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb232"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb232-1"><a href="pandas-library.html#cb232-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb234-1"><a href="pandas-library.html#cb234-1" tabindex="-1"></a>df.index <span class="op">=</span> df.state</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb236-1"><a href="pandas-library.html#cb236-1" tabindex="-1"></a>df[:<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="index-to-column" class="section level4 hasAnchor" number="2.1.3.6">
-<h4><span class="header-section-number">2.1.3.6</span> index to column<a href="pandas-library.html#index-to-column" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb238"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb238-1"><a href="pandas-library.html#cb238-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb240"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb240-1"><a href="pandas-library.html#cb240-1" tabindex="-1"></a>df[<span class="st">&#39;index_column&#39;</span>] <span class="op">=</span> df.index</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb242"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb242-1"><a href="pandas-library.html#cb242-1" tabindex="-1"></a>df[:<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<ul>
-<li>calling <code>keys()</code> function: output is similar to columns attributes</li>
-</ul>
-<div class="sourceCode" id="cb244"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb244-1"><a href="pandas-library.html#cb244-1" tabindex="-1"></a>df_csv.keys()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<ul>
-<li><code>column.values</code> method returns an array of index.</li>
-</ul>
-<div class="sourceCode" id="cb246"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb246-1"><a href="pandas-library.html#cb246-1" tabindex="-1"></a><span class="bu">list</span>(df_csv.columns.values)</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<p>Using <code>tolist()</code> method with values with given the list of columns.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb248-1"><a href="pandas-library.html#cb248-1" tabindex="-1"></a><span class="bu">list</span>(df_csv.columns.values.tolist())</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<p>Using <code>sorted()</code> method : <code>sorted()</code> method will return the list of columns sorted in alphabetical order.</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb250-1"><a href="pandas-library.html#cb250-1" tabindex="-1"></a><span class="bu">sorted</span>(df3)</span></code></pre></div>
-<pre><code>## name &#39;df3&#39; is not defined</code></pre>
-</div>
-</div>
-<div id="create-or-add-a-new-column" class="section level3 hasAnchor" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Create or add a new column<a href="pandas-library.html#create-or-add-a-new-column" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can create a new column in a pandas DataFrame based on the values of existing columns using various methods, such as assignment, the <code>apply()</code> function, or vectorized operations.</p>
-<p>Here are some examples:</p>
-</div>
-<div id="explore-data" class="section level3 hasAnchor" number="2.1.5">
-<h3><span class="header-section-number">2.1.5</span> Explore Data<a href="pandas-library.html#explore-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb252"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb252-1"><a href="pandas-library.html#cb252-1" tabindex="-1"></a><span class="co">#recipes.head()</span></span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb251-1"><a href="pandas-library.html#cb251-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb251-2"><a href="pandas-library.html#cb251-2" tabindex="-1"></a></span>
+<span id="cb251-3"><a href="pandas-library.html#cb251-3" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
+<div id="sorting" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> sorting<a href="pandas-library.html#sorting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb252"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb252-1"><a href="pandas-library.html#cb252-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb252-2"><a href="pandas-library.html#cb252-2" tabindex="-1"></a></span>
+<span id="cb252-3"><a href="pandas-library.html#cb252-3" tabindex="-1"></a><span class="co"># Create a Pandas Series</span></span>
+<span id="cb252-4"><a href="pandas-library.html#cb252-4" tabindex="-1"></a>series <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">2</span>])</span>
+<span id="cb252-5"><a href="pandas-library.html#cb252-5" tabindex="-1"></a></span>
+<span id="cb252-6"><a href="pandas-library.html#cb252-6" tabindex="-1"></a><span class="co"># Sort the Series by values</span></span>
+<span id="cb252-7"><a href="pandas-library.html#cb252-7" tabindex="-1"></a>sorted_series <span class="op">=</span> series.sort_values()</span></code></pre></div>
 
 </div>
-<div id="query-method" class="section level3 hasAnchor" number="2.1.6">
-<h3><span class="header-section-number">2.1.6</span> query method<a href="pandas-library.html#query-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="query-method" class="section level3 hasAnchor" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> query method<a href="pandas-library.html#query-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>query</code> method in Python, specifically in the pandas library, is a powerful tool for data scientists when it comes to filtering and selecting data from a DataFrame. Here’s an overview of the <code>query</code> method in the context of data science:</p>
 <p><strong>Purpose of the <code>query</code> Method:</strong></p>
 <ul>
@@ -484,8 +381,8 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 <li>In complex scenarios where multiple conditions need to be applied, boolean indexing can become cumbersome. The <code>query</code> method simplifies this by allowing conditions to be expressed in a single line.</li>
 </ul>
 <div class="sourceCode" id="cb257"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb257-1"><a href="pandas-library.html#cb257-1" tabindex="-1"></a>df.query(<span class="st">&quot;age &gt; 20 and score &lt; 80&quot;</span>)</span></code></pre></div>
-<div id="considerations" class="section level4 hasAnchor" number="2.1.6.1">
-<h4><span class="header-section-number">2.1.6.1</span> Considerations:<a href="pandas-library.html#considerations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="considerations" class="section level4 hasAnchor" number="3.0.2.1">
+<h4><span class="header-section-number">3.0.2.1</span> Considerations:<a href="pandas-library.html#considerations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><strong>Performance:</strong> While <code>query</code> is readable, it might be slightly slower than traditional indexing methods for very large DataFrames. However, the difference is often negligible in most data science applications.</p></li>
 <li><p><strong>Syntax Limitations:</strong> The <code>query</code> method only supports a subset of Python syntax, so certain complex operations may still require traditional methods.</p></li>
@@ -493,18 +390,17 @@ run <code>!pip install pandas</code> on rstudio terminal or mac terminal or jupy
 
 </div>
 </div>
-</div>
-<div id="read-data" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> read data<a href="pandas-library.html#read-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="csv-file" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> csv file<a href="pandas-library.html#csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="read-data" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> read data<a href="pandas-library.html#read-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="csv-file" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> csv file<a href="pandas-library.html#csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>IBM sample data:</strong> I could not run with “https” because I did not have a certificate installed. So, I go on with “http” and it worked.</p>
 <div class="sourceCode" id="cb258"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb258-1"><a href="pandas-library.html#cb258-1" tabindex="-1"></a>data_link <span class="op">=</span> <span class="st">&quot;http://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DS0103EN/labs/data/recipes.csv&quot;</span></span>
 <span id="cb258-2"><a href="pandas-library.html#cb258-2" tabindex="-1"></a></span>
 <span id="cb258-3"><a href="pandas-library.html#cb258-3" tabindex="-1"></a>recipes <span class="op">=</span> pd.read_csv(data_link)</span></code></pre></div>
 </div>
-<div id="xlsx-file" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> xlsx file<a href="pandas-library.html#xlsx-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="xlsx-file" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> xlsx file<a href="pandas-library.html#xlsx-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>pandas.read_excel(io = path,
 sheet_name = 0,
 header = 0,
@@ -514,482 +410,10 @@ usecols = None)</p>
 <p>This returns dataframe object.</p>
 <div class="sourceCode" id="cb259"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb259-1"><a href="pandas-library.html#cb259-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(io <span class="op">=</span> <span class="st">&quot;./data/segmentation.xlsx&quot;</span>,</span>
 <span id="cb259-2"><a href="pandas-library.html#cb259-2" tabindex="-1"></a>                  sheet_name <span class="op">=</span> <span class="st">&quot;sheet&quot;</span>)</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
+<pre><code>## [Errno 2] No such file or directory: &#39;./data/segmentation.xlsx&#39;</code></pre>
 <div class="sourceCode" id="cb261"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb261-1"><a href="pandas-library.html#cb261-1" tabindex="-1"></a>                  </span>
 <span id="cb261-2"><a href="pandas-library.html#cb261-2" tabindex="-1"></a>df.head(n<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## name &#39;df&#39; is not defined</code></pre>
-
-</div>
-<div id="renameassign-new-column-names" class="section level3 hasAnchor" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> rename/assign new column names<a href="pandas-library.html#renameassign-new-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Renaming or assigning new column names in pandas DataFrame is a common operation, and there are several ways to accomplish it. Here are some examples with explanations:</p>
-<div id="using-the-rename-method" class="section level4 hasAnchor" number="2.2.3.1">
-<h4><span class="header-section-number">2.2.3.1</span> Using the rename() method:<a href="pandas-library.html#using-the-rename-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The <code>rename()</code> method allows you to rename columns by specifying a dictionary where keys are the current column names and values are the new column names.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb263-1"><a href="pandas-library.html#cb263-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb265"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb265-1"><a href="pandas-library.html#cb265-1" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">&#39;id&#39;</span>: <span class="st">&#39;NEW_ID&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb267-1"><a href="pandas-library.html#cb267-1" tabindex="-1"></a>df.columns.to_list()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<p>Setting inplace=True will modify the DataFrame in place, otherwise a new DataFrame with the renamed columns will be returned.</p>
-</div>
-<div id="direct-assignment-with-dictionary" class="section level4 hasAnchor" number="2.2.3.2">
-<h4><span class="header-section-number">2.2.3.2</span> Direct assignment with dictionary:<a href="pandas-library.html#direct-assignment-with-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You can directly assign new column names to the columns attribute of the DataFrame using a dictionary.</p>
-<p>Note: you need to specify all the column names in the dictionary.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb269-1"><a href="pandas-library.html#cb269-1" tabindex="-1"></a>df <span class="op">=</span> df_csv[[<span class="st">&#39;name&#39;</span>, <span class="st">&#39;state&#39;</span>, <span class="st">&#39;id&#39;</span>]].copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb271"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb271-1"><a href="pandas-library.html#cb271-1" tabindex="-1"></a>df.columns <span class="op">=</span> {<span class="st">&#39;MY_NAME&#39;</span>: <span class="st">&#39;name&#39;</span>, <span class="st">&#39;MY_STATE&#39;</span>: <span class="st">&#39;state&#39;</span>, <span class="st">&#39;id&#39;</span>:<span class="st">&#39;id&#39;</span>}</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb273"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb273-1"><a href="pandas-library.html#cb273-1" tabindex="-1"></a>df.columns.to_list()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="using-list-assignment" class="section level4 hasAnchor" number="2.2.3.3">
-<h4><span class="header-section-number">2.2.3.3</span> Using list assignment:<a href="pandas-library.html#using-list-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You can directly assign a list of column names to the columns attribute of the DataFrame.</p>
-<p>Note: Make sure the length of the list matches the number of columns in the DataFrame.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb275-1"><a href="pandas-library.html#cb275-1" tabindex="-1"></a>df <span class="op">=</span> df_csv[[<span class="st">&#39;name&#39;</span>, <span class="st">&#39;state&#39;</span>]].copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb277"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb277-1"><a href="pandas-library.html#cb277-1" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">&#39;MY_NAME&#39;</span>, <span class="st">&#39;MY_STATE&#39;</span>]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb279"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb279-1"><a href="pandas-library.html#cb279-1" tabindex="-1"></a>df.columns.to_list()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="assigning-new-column-names-during-dataframe-creation" class="section level4 hasAnchor" number="2.2.3.4">
-<h4><span class="header-section-number">2.2.3.4</span> Assigning new column names during DataFrame creation:<a href="pandas-library.html#assigning-new-column-names-during-dataframe-creation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You can provide the columns parameter when creating a DataFrame to specify the column names.</p>
-<pre><code>df = pd.DataFrame(data, columns=[&#39;column1&#39;, &#39;column2&#39;, &#39;column3&#39;])</code></pre>
-</div>
-<div id="to-uppercase-all-column-names" class="section level4 hasAnchor" number="2.2.3.5">
-<h4><span class="header-section-number">2.2.3.5</span> to uppercase all column names<a href="pandas-library.html#to-uppercase-all-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb282"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb282-1"><a href="pandas-library.html#cb282-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb284"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb284-1"><a href="pandas-library.html#cb284-1" tabindex="-1"></a>df.columns <span class="op">=</span> [x.upper() <span class="cf">for</span> x <span class="kw">in</span> df.columns]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb286"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb286-1"><a href="pandas-library.html#cb286-1" tabindex="-1"></a>df.columns.to_list()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="rename" class="section level4 hasAnchor" number="2.2.3.6">
-<h4><span class="header-section-number">2.2.3.6</span> rename<a href="pandas-library.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Renaming column names is a standard procedure most of the time. We may need to standardize column names, mostly make them clean.</p>
-<p>There is a nice link <a href="https://www.statology.org/pandas-rename-columns/">here.</a></p>
-<p>Lets create a sample data frame</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb288-1"><a href="pandas-library.html#cb288-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A?la&#39;</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
-<span id="cb288-2"><a href="pandas-library.html#cb288-2" tabindex="-1"></a>                    <span class="st">&#39;PYTHON&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>],</span>
-<span id="cb288-3"><a href="pandas-library.html#cb288-3" tabindex="-1"></a>                    <span class="st">&#39;col 3&#39;</span>: [<span class="st">&#39;1&#39;</span>,<span class="st">&#39;1&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;b&#39;</span>]})</span></code></pre></div>
-<pre><code>## name &#39;pd&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb290"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb290-1"><a href="pandas-library.html#cb290-1" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<p><strong>Method 1: Rename Specific Columns</strong></p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb292-1"><a href="pandas-library.html#cb292-1" tabindex="-1"></a>df.rename(columns <span class="op">=</span> {<span class="st">&#39;PYTHON&#39;</span>:<span class="st">&#39;Python&#39;</span>}, inplace <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb294"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb294-1"><a href="pandas-library.html#cb294-1" tabindex="-1"></a><span class="co">### list column names</span></span>
-<span id="cb294-2"><a href="pandas-library.html#cb294-2" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<p><strong>Method 2: Rename All Columns</strong></p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb296-1"><a href="pandas-library.html#cb296-1" tabindex="-1"></a>new_names <span class="op">=</span> [<span class="st">&#39;new_name1&#39;</span>, <span class="st">&#39;new_name2&#39;</span>,<span class="st">&#39;new_name3&#39;</span>]</span>
-<span id="cb296-2"><a href="pandas-library.html#cb296-2" tabindex="-1"></a>df.columns <span class="op">=</span> new_names</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb298"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb298-1"><a href="pandas-library.html#cb298-1" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<p><strong>Method 3: Replace Specific Characters in Columns</strong></p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb300-1"><a href="pandas-library.html#cb300-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
-<span id="cb300-2"><a href="pandas-library.html#cb300-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR1$$$&#39;</span>, <span class="st">&#39;var2&#39;</span>,<span class="st">&#39;Var3###&#39;</span>]</span>
-<span id="cb300-3"><a href="pandas-library.html#cb300-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb302"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb302-1"><a href="pandas-library.html#cb302-1" tabindex="-1"></a><span class="co">### removing bad characters</span></span>
-<span id="cb302-2"><a href="pandas-library.html#cb302-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb304"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb304-1"><a href="pandas-library.html#cb304-1" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb306"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb306-1"><a href="pandas-library.html#cb306-1" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<p><strong>clean column names</strong></p>
-<p>Generally we expect clean columns to be:
-1. short
-2. meaningful
-3. no space
-4. no special character
-5. probably lowercase</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb308-1"><a href="pandas-library.html#cb308-1" tabindex="-1"></a><span class="co">### set problematic names</span></span>
-<span id="cb308-2"><a href="pandas-library.html#cb308-2" tabindex="-1"></a>problem_names <span class="op">=</span> [<span class="st">&#39;VAR  $1&#39;</span>, <span class="st">&#39;var #2&#39;</span>,<span class="st">&#39;Var ? 3 &#39;</span>]</span>
-<span id="cb308-3"><a href="pandas-library.html#cb308-3" tabindex="-1"></a>df.columns <span class="op">=</span> problem_names</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb310"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb310-1"><a href="pandas-library.html#cb310-1" tabindex="-1"></a><span class="co">## Column names: remove white spaces and convert to lower case</span></span>
-<span id="cb310-2"><a href="pandas-library.html#cb310-2" tabindex="-1"></a>df.columns<span class="op">=</span> df.columns.<span class="bu">str</span>.strip()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb312"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb312-1"><a href="pandas-library.html#cb312-1" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
-<span id="cb312-2"><a href="pandas-library.html#cb312-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.lower()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb314"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb314-1"><a href="pandas-library.html#cb314-1" tabindex="-1"></a><span class="co">## Column names: convert to lower case</span></span>
-<span id="cb314-2"><a href="pandas-library.html#cb314-2" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> <span class="bu">str</span>.lower)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb316"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb316-1"><a href="pandas-library.html#cb316-1" tabindex="-1"></a><span class="co">## removing bad characters</span></span>
-<span id="cb316-2"><a href="pandas-library.html#cb316-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;$&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb318"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb318-1"><a href="pandas-library.html#cb318-1" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;#&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb320"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb320-1"><a href="pandas-library.html#cb320-1" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39;?&#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb322"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb322-1"><a href="pandas-library.html#cb322-1" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;&#39;</span>, regex <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb324"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb324-1"><a href="pandas-library.html#cb324-1" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<ul>
-<li>sometimes we need them to be uppercase</li>
-</ul>
-<div class="sourceCode" id="cb326"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb326-1"><a href="pandas-library.html#cb326-1" tabindex="-1"></a><span class="co">## Column names: convert to upper case</span></span>
-<span id="cb326-2"><a href="pandas-library.html#cb326-2" tabindex="-1"></a>df.columns <span class="op">=</span> df.columns.<span class="bu">str</span>.upper()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb328"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb328-1"><a href="pandas-library.html#cb328-1" tabindex="-1"></a><span class="bu">list</span>(df)</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-
-</div>
-</div>
-<div id="subsetting" class="section level3 hasAnchor" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> Subsetting<a href="pandas-library.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="by-columns" class="section level4 hasAnchor" number="2.2.4.1">
-<h4><span class="header-section-number">2.2.4.1</span> by columns<a href="pandas-library.html#by-columns" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb330"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb330-1"><a href="pandas-library.html#cb330-1" tabindex="-1"></a>selected_cols <span class="op">=</span> [<span class="st">&#39;id&#39;</span>, <span class="st">&#39;name&#39;</span>, <span class="st">&#39;city&#39;</span>]</span>
-<span id="cb330-2"><a href="pandas-library.html#cb330-2" tabindex="-1"></a></span>
-<span id="cb330-3"><a href="pandas-library.html#cb330-3" tabindex="-1"></a>df_csv[selected_cols]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-</div>
-<div id="label-based-df.locrow_label-column_label" class="section level4 hasAnchor" number="2.2.4.2">
-<h4><span class="header-section-number">2.2.4.2</span> Label based: df.loc[row_label, column_label]<a href="pandas-library.html#label-based-df.locrow_label-column_label" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Selecting Rows and Columns by Labels:</p>
-<p>You can use df.loc[] to select rows and columns of a DataFrame using labels. The syntax is df.loc[row_label, column_label].</p>
-<p>You can specify a single label or a list of labels for both rows and columns.</p>
-<p>row label is the index.</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb332-1"><a href="pandas-library.html#cb332-1" tabindex="-1"></a><span class="co"># Select a single row and column</span></span>
-<span id="cb332-2"><a href="pandas-library.html#cb332-2" tabindex="-1"></a>df_csv.loc[<span class="dv">1</span>, <span class="st">&#39;name&#39;</span>]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb334"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb334-1"><a href="pandas-library.html#cb334-1" tabindex="-1"></a><span class="co"># Select multiple rows and columns</span></span>
-<span id="cb334-2"><a href="pandas-library.html#cb334-2" tabindex="-1"></a>df_csv.loc[[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>], [<span class="st">&#39;name&#39;</span>, <span class="st">&#39;state&#39;</span>]]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb336"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb336-1"><a href="pandas-library.html#cb336-1" tabindex="-1"></a><span class="co"># Select rows from &#39;row_label_start&#39; to &#39;row_label_end&#39;</span></span>
-<span id="cb336-2"><a href="pandas-library.html#cb336-2" tabindex="-1"></a>df_csv.loc[<span class="dv">0</span>:<span class="dv">4</span>]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb338"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb338-1"><a href="pandas-library.html#cb338-1" tabindex="-1"></a></span>
-<span id="cb338-2"><a href="pandas-library.html#cb338-2" tabindex="-1"></a><span class="co">## all same</span></span>
-<span id="cb338-3"><a href="pandas-library.html#cb338-3" tabindex="-1"></a><span class="co"># df_csv.loc[0:4, ]</span></span>
-<span id="cb338-4"><a href="pandas-library.html#cb338-4" tabindex="-1"></a><span class="co"># df_csv.loc[0:4, :]</span></span></code></pre></div>
-<div class="sourceCode" id="cb339"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb339-1"><a href="pandas-library.html#cb339-1" tabindex="-1"></a><span class="co"># Select rows where a condition is True</span></span>
-<span id="cb339-2"><a href="pandas-library.html#cb339-2" tabindex="-1"></a>df_csv.loc[df_csv[<span class="st">&#39;id&#39;</span>] <span class="op">&lt;</span> <span class="dv">101000</span>]</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb341"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb341-1"><a href="pandas-library.html#cb341-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb343"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb343-1"><a href="pandas-library.html#cb343-1" tabindex="-1"></a><span class="co"># Set a value for a specific row and column</span></span>
-<span id="cb343-2"><a href="pandas-library.html#cb343-2" tabindex="-1"></a>df.loc[<span class="dv">10</span>, <span class="st">&#39;name&#39;</span>] <span class="op">=</span> <span class="st">&#39;My University&#39;</span></span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="filtering-rows-based-on-a-single-condition" class="section level4 hasAnchor" number="2.2.4.3">
-<h4><span class="header-section-number">2.2.4.3</span> Filtering Rows Based on a Single Condition:<a href="pandas-library.html#filtering-rows-based-on-a-single-condition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb345"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb345-1"><a href="pandas-library.html#cb345-1" tabindex="-1"></a>df <span class="op">=</span> df_csv.copy()</span></code></pre></div>
-<pre><code>## name &#39;df_csv&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb347"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb347-1"><a href="pandas-library.html#cb347-1" tabindex="-1"></a><span class="co"># Select rows where the &#39;column_name&#39; equals a specific value</span></span>
-<span id="cb347-2"><a href="pandas-library.html#cb347-2" tabindex="-1"></a>df[df[<span class="st">&#39;name&#39;</span>] <span class="op">==</span> <span class="st">&#39;Auburn University&#39;</span>]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-<div class="sourceCode" id="cb349"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb349-1"><a href="pandas-library.html#cb349-1" tabindex="-1"></a>df[df.name <span class="op">==</span> <span class="st">&#39;Auburn University&#39;</span>]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-<div id="filtering-rows-based-on-multiple-conditions-and" class="section level4 hasAnchor" number="2.2.4.4">
-<h4><span class="header-section-number">2.2.4.4</span> Filtering Rows Based on Multiple Conditions (AND):<a href="pandas-library.html#filtering-rows-based-on-multiple-conditions-and" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb351"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb351-1"><a href="pandas-library.html#cb351-1" tabindex="-1"></a><span class="co"># Select rows where &#39;column1&#39; equals &#39;value1&#39; and &#39;column2&#39; equals &#39;value2&#39;</span></span>
-<span id="cb351-2"><a href="pandas-library.html#cb351-2" tabindex="-1"></a>df[(df.city <span class="op">==</span> <span class="st">&#39;Birmingham&#39;</span>) <span class="op">&amp;</span> (df.state <span class="op">==</span> <span class="st">&#39;AL&#39;</span>)]</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-</div>
-</div>
-<div id="copy" class="section level3 hasAnchor" number="2.2.5">
-<h3><span class="header-section-number">2.2.5</span> copy<a href="pandas-library.html#copy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When you use loc/iloc to create a subset of the DataFrame, you are also creating a view into the original DataFrame. Modifications to the subset will reflect in the original DataFrame, and vice versa.</p>
-<pre><code>subset = df.loc[&#39;row_label1&#39;:&#39;row_label5&#39;, &#39;column_labelA&#39;:&#39;column_labelB&#39;]
-
-subset = df.iloc[0:5, 1:3]  # Select rows 0 to 4 and columns 1 to 2
-</code></pre>
-<p>To create an independent copy of the DataFrame, you can use the copy() method. This ensures that modifications to the copied DataFrame do not affect the original DataFrame.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb354-1"><a href="pandas-library.html#cb354-1" tabindex="-1"></a>copy_df <span class="op">=</span> df.copy()</span></code></pre></div>
-<pre><code>## name &#39;df&#39; is not defined</code></pre>
-
-</div>
-</div>
-<div id="recoding-columns-in-a-pandas-dataframe" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Recoding Columns in a Pandas DataFrame<a href="pandas-library.html#recoding-columns-in-a-pandas-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Data manipulation is a crucial part of any data science project. One common task is recoding columns in a DataFrame, which involves transforming the values in a column based on certain rules or mapping schemes. This can be necessary for various reasons, such as preparing data for analysis, converting categorical variables, or cleaning data. In this section, we will explore different methods to recode columns in a Pandas DataFrame.</p>
-<div id="using-map-and-replace" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Using <code>map</code> and <code>replace</code><a href="pandas-library.html#using-map-and-replace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <code>map</code> and <code>replace</code> methods are convenient for simple value transformations and mappings.</p>
-<p><strong>Using <code>map</code> for Recoding:</strong></p>
-<p>The <code>map</code> method is useful for replacing values in a Series (a single column in a DataFrame) according to a mapping dictionary.</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb356-1"><a href="pandas-library.html#cb356-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb356-2"><a href="pandas-library.html#cb356-2" tabindex="-1"></a></span>
-<span id="cb356-3"><a href="pandas-library.html#cb356-3" tabindex="-1"></a><span class="co"># Sample DataFrame</span></span>
-<span id="cb356-4"><a href="pandas-library.html#cb356-4" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb356-5"><a href="pandas-library.html#cb356-5" tabindex="-1"></a>    <span class="st">&#39;Category&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>]</span>
-<span id="cb356-6"><a href="pandas-library.html#cb356-6" tabindex="-1"></a>}</span>
-<span id="cb356-7"><a href="pandas-library.html#cb356-7" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb356-8"><a href="pandas-library.html#cb356-8" tabindex="-1"></a></span>
-<span id="cb356-9"><a href="pandas-library.html#cb356-9" tabindex="-1"></a><span class="co"># Mapping dictionary</span></span>
-<span id="cb356-10"><a href="pandas-library.html#cb356-10" tabindex="-1"></a>category_map <span class="op">=</span> {</span>
-<span id="cb356-11"><a href="pandas-library.html#cb356-11" tabindex="-1"></a>    <span class="st">&#39;A&#39;</span>: <span class="st">&#39;Alpha&#39;</span>,</span>
-<span id="cb356-12"><a href="pandas-library.html#cb356-12" tabindex="-1"></a>    <span class="st">&#39;B&#39;</span>: <span class="st">&#39;Beta&#39;</span>,</span>
-<span id="cb356-13"><a href="pandas-library.html#cb356-13" tabindex="-1"></a>    <span class="st">&#39;C&#39;</span>: <span class="st">&#39;Gamma&#39;</span></span>
-<span id="cb356-14"><a href="pandas-library.html#cb356-14" tabindex="-1"></a>}</span>
-<span id="cb356-15"><a href="pandas-library.html#cb356-15" tabindex="-1"></a></span>
-<span id="cb356-16"><a href="pandas-library.html#cb356-16" tabindex="-1"></a><span class="co"># Recoding using map</span></span>
-<span id="cb356-17"><a href="pandas-library.html#cb356-17" tabindex="-1"></a>df[<span class="st">&#39;Category_Recoded&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Category&#39;</span>].<span class="bu">map</span>(category_map)</span>
-<span id="cb356-18"><a href="pandas-library.html#cb356-18" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
-<p>Output:</p>
-<pre><code>  Category Category_Recoded
-0        A            Alpha
-1        B             Beta
-2        C            Gamma
-3        A            Alpha
-4        B             Beta
-5        C            Gamma</code></pre>
-<p>In this example, we created a mapping dictionary <code>category_map</code> and used the <code>map</code> method to create a new column <code>Category_Recoded</code> with the recoded values.</p>
-<p><strong>Using <code>replace</code> for Recoding:</strong></p>
-<p>The <code>replace</code> method can be used for more flexible replacements, including partial string replacements and handling missing values.</p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb358-1"><a href="pandas-library.html#cb358-1" tabindex="-1"></a><span class="co"># Sample DataFrame with NaN values</span></span>
-<span id="cb358-2"><a href="pandas-library.html#cb358-2" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb358-3"><a href="pandas-library.html#cb358-3" tabindex="-1"></a>    <span class="st">&#39;Category&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="va">None</span>]</span>
-<span id="cb358-4"><a href="pandas-library.html#cb358-4" tabindex="-1"></a>}</span>
-<span id="cb358-5"><a href="pandas-library.html#cb358-5" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb358-6"><a href="pandas-library.html#cb358-6" tabindex="-1"></a></span>
-<span id="cb358-7"><a href="pandas-library.html#cb358-7" tabindex="-1"></a><span class="co"># Recoding using replace</span></span>
-<span id="cb358-8"><a href="pandas-library.html#cb358-8" tabindex="-1"></a>df[<span class="st">&#39;Category_Recoded&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Category&#39;</span>].replace({</span>
-<span id="cb358-9"><a href="pandas-library.html#cb358-9" tabindex="-1"></a>    <span class="st">&#39;A&#39;</span>: <span class="st">&#39;Alpha&#39;</span>,</span>
-<span id="cb358-10"><a href="pandas-library.html#cb358-10" tabindex="-1"></a>    <span class="st">&#39;B&#39;</span>: <span class="st">&#39;Beta&#39;</span>,</span>
-<span id="cb358-11"><a href="pandas-library.html#cb358-11" tabindex="-1"></a>    <span class="st">&#39;C&#39;</span>: <span class="st">&#39;Gamma&#39;</span>,</span>
-<span id="cb358-12"><a href="pandas-library.html#cb358-12" tabindex="-1"></a>    <span class="va">None</span>: <span class="st">&#39;Unknown&#39;</span></span>
-<span id="cb358-13"><a href="pandas-library.html#cb358-13" tabindex="-1"></a>})</span>
-<span id="cb358-14"><a href="pandas-library.html#cb358-14" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
-<p>Output:</p>
-<pre><code>  Category Category_Recoded
-0        A            Alpha
-1        B             Beta
-2        C            Gamma
-3        A            Alpha
-4        B             Beta
-5        C            Gamma
-6     None          Unknown</code></pre>
-<p>In this example, we used the <code>replace</code> method to handle missing values (<code>None</code>) and recode the <code>Category</code> column.</p>
-<div id="using-apply-for-custom-functions" class="section level4 hasAnchor" number="2.3.1.1">
-<h4><span class="header-section-number">2.3.1.1</span> 2. Using <code>apply</code> for Custom Functions<a href="pandas-library.html#using-apply-for-custom-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>For more complex recoding logic, you can use the <code>apply</code> method with a custom function.</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb360-1"><a href="pandas-library.html#cb360-1" tabindex="-1"></a><span class="co"># Sample DataFrame</span></span>
-<span id="cb360-2"><a href="pandas-library.html#cb360-2" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb360-3"><a href="pandas-library.html#cb360-3" tabindex="-1"></a>    <span class="st">&#39;Score&#39;</span>: [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">88</span>, <span class="dv">95</span>, <span class="dv">70</span>]</span>
-<span id="cb360-4"><a href="pandas-library.html#cb360-4" tabindex="-1"></a>}</span>
-<span id="cb360-5"><a href="pandas-library.html#cb360-5" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb360-6"><a href="pandas-library.html#cb360-6" tabindex="-1"></a></span>
-<span id="cb360-7"><a href="pandas-library.html#cb360-7" tabindex="-1"></a><span class="co"># Custom function to recode scores</span></span>
-<span id="cb360-8"><a href="pandas-library.html#cb360-8" tabindex="-1"></a><span class="kw">def</span> recode_score(score):</span>
-<span id="cb360-9"><a href="pandas-library.html#cb360-9" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
-<span id="cb360-10"><a href="pandas-library.html#cb360-10" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;A&#39;</span></span>
-<span id="cb360-11"><a href="pandas-library.html#cb360-11" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
-<span id="cb360-12"><a href="pandas-library.html#cb360-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;B&#39;</span></span>
-<span id="cb360-13"><a href="pandas-library.html#cb360-13" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
-<span id="cb360-14"><a href="pandas-library.html#cb360-14" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;C&#39;</span></span>
-<span id="cb360-15"><a href="pandas-library.html#cb360-15" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb360-16"><a href="pandas-library.html#cb360-16" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&#39;D&#39;</span></span>
-<span id="cb360-17"><a href="pandas-library.html#cb360-17" tabindex="-1"></a></span>
-<span id="cb360-18"><a href="pandas-library.html#cb360-18" tabindex="-1"></a><span class="co"># Recoding using apply</span></span>
-<span id="cb360-19"><a href="pandas-library.html#cb360-19" tabindex="-1"></a>df[<span class="st">&#39;Grade&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Score&#39;</span>].<span class="bu">apply</span>(recode_score)</span>
-<span id="cb360-20"><a href="pandas-library.html#cb360-20" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
-<p>Output:</p>
-<pre><code>   Score Grade
-0     85     B
-1     92     A
-2     78     C
-3     88     B
-4     95     A
-5     70     C</code></pre>
-<p>In this example, we defined a custom function <code>recode_score</code> that assigns letter grades based on numerical scores. We then used the <code>apply</code> method to apply this function to the <code>Score</code> column and create a new <code>Grade</code> column.</p>
-</div>
-<div id="using-conditional-logic-with-np.where" class="section level4 hasAnchor" number="2.3.1.2">
-<h4><span class="header-section-number">2.3.1.2</span> 3. Using Conditional Logic with <code>np.where</code><a href="pandas-library.html#using-conditional-logic-with-np.where" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The <code>np.where</code> function from the NumPy library allows for vectorized conditional operations, which can be very efficient for large DataFrames.</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb362-1"><a href="pandas-library.html#cb362-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb362-2"><a href="pandas-library.html#cb362-2" tabindex="-1"></a></span>
-<span id="cb362-3"><a href="pandas-library.html#cb362-3" tabindex="-1"></a><span class="co"># Sample DataFrame</span></span>
-<span id="cb362-4"><a href="pandas-library.html#cb362-4" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb362-5"><a href="pandas-library.html#cb362-5" tabindex="-1"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">63</span>, <span class="dv">25</span>]</span>
-<span id="cb362-6"><a href="pandas-library.html#cb362-6" tabindex="-1"></a>}</span>
-<span id="cb362-7"><a href="pandas-library.html#cb362-7" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb362-8"><a href="pandas-library.html#cb362-8" tabindex="-1"></a></span>
-<span id="cb362-9"><a href="pandas-library.html#cb362-9" tabindex="-1"></a><span class="co"># Recoding using np.where</span></span>
-<span id="cb362-10"><a href="pandas-library.html#cb362-10" tabindex="-1"></a>df[<span class="st">&#39;Age_Group&#39;</span>] <span class="op">=</span> np.where(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&lt;</span> <span class="dv">18</span>, <span class="st">&#39;Child&#39;</span>,</span>
-<span id="cb362-11"><a href="pandas-library.html#cb362-11" tabindex="-1"></a>                           np.where(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&lt;</span> <span class="dv">65</span>, <span class="st">&#39;Adult&#39;</span>, <span class="st">&#39;Senior&#39;</span>))</span>
-<span id="cb362-12"><a href="pandas-library.html#cb362-12" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
-<p>Output:</p>
-<pre><code>   Age Age_Group
-0   15     Child
-1   22     Adult
-2   45     Adult
-3   35     Adult
-4   63     Adult
-5   25     Adult</code></pre>
-<p>In this example, we used <code>np.where</code> to classify individuals into age groups based on their age. The first condition checks if the age is less than 18, classifying the individual as a “Child”. If not, the second condition checks if the age is less than 65, classifying the individual as an “Adult”. Otherwise, the individual is classified as a “Senior”.</p>
-</div>
-</div>
-<div id="summary-1" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Summary<a href="pandas-library.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Recoding columns in a Pandas DataFrame is a common task in data preparation and transformation. This section covered various methods for recoding:
-- Using the <code>map</code> method for straightforward value replacements.
-- Using the <code>replace</code> method for flexible value replacements.
-- Using the <code>apply</code> method with custom functions for complex recoding logic.
-- Using <code>np.where</code> for efficient conditional recoding.</p>
-<p>By mastering these techniques, you can effectively clean and transform your data to prepare it for analysis and modeling.</p>
-
-<p>Let’s explore what <code>a.empty</code>, <code>a.bool()</code>, <code>a.item()</code>, <code>a.any()</code>, and <code>a.all()</code> do in Python, particularly when used with pandas Series or DataFrames.</p>
-</div>
-<div id="a.empty" class="section level3 hasAnchor" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> <strong>1. <code>a.empty</code></strong><a href="pandas-library.html#a.empty" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Purpose</strong>: Checks if a DataFrame or Series is empty.</li>
-<li><strong>Usage</strong>:
-<ul>
-<li>Returns <code>True</code> if the DataFrame or Series has <strong>no elements</strong> (i.e., zero rows or zero columns).</li>
-<li>Otherwise, it returns <code>False</code>.</li>
-</ul></li>
-</ul>
-<div id="example" class="section level4 hasAnchor" number="2.3.3.1">
-<h4><span class="header-section-number">2.3.3.1</span> <strong>Example:</strong><a href="pandas-library.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb364"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb364-1"><a href="pandas-library.html#cb364-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb364-2"><a href="pandas-library.html#cb364-2" tabindex="-1"></a></span>
-<span id="cb364-3"><a href="pandas-library.html#cb364-3" tabindex="-1"></a><span class="co"># Empty DataFrame</span></span>
-<span id="cb364-4"><a href="pandas-library.html#cb364-4" tabindex="-1"></a>df_empty <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb364-5"><a href="pandas-library.html#cb364-5" tabindex="-1"></a><span class="bu">print</span>(df_empty.empty)  <span class="co"># Output: True</span></span>
-<span id="cb364-6"><a href="pandas-library.html#cb364-6" tabindex="-1"></a></span>
-<span id="cb364-7"><a href="pandas-library.html#cb364-7" tabindex="-1"></a><span class="co"># Non-empty DataFrame</span></span>
-<span id="cb364-8"><a href="pandas-library.html#cb364-8" tabindex="-1"></a>df_non_empty <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>]})</span>
-<span id="cb364-9"><a href="pandas-library.html#cb364-9" tabindex="-1"></a><span class="bu">print</span>(df_non_empty.empty)  <span class="co"># Output: False</span></span>
-<span id="cb364-10"><a href="pandas-library.html#cb364-10" tabindex="-1"></a></span>
-<span id="cb364-11"><a href="pandas-library.html#cb364-11" tabindex="-1"></a><span class="co"># Empty Series</span></span>
-<span id="cb364-12"><a href="pandas-library.html#cb364-12" tabindex="-1"></a>s_empty <span class="op">=</span> pd.Series([])</span>
-<span id="cb364-13"><a href="pandas-library.html#cb364-13" tabindex="-1"></a><span class="bu">print</span>(s_empty.empty)  <span class="co"># Output: True</span></span>
-<span id="cb364-14"><a href="pandas-library.html#cb364-14" tabindex="-1"></a></span>
-<span id="cb364-15"><a href="pandas-library.html#cb364-15" tabindex="-1"></a><span class="co"># Non-empty Series</span></span>
-<span id="cb364-16"><a href="pandas-library.html#cb364-16" tabindex="-1"></a>s_non_empty <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb364-17"><a href="pandas-library.html#cb364-17" tabindex="-1"></a><span class="bu">print</span>(s_non_empty.empty)  <span class="co"># Output: False</span></span></code></pre></div>
-</div>
-</div>
-<div id="a.bool" class="section level3 hasAnchor" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> <strong>2. <code>a.bool()</code></strong><a href="pandas-library.html#a.bool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Purpose</strong>: Returns the boolean value of a Series or DataFrame.</li>
-<li><strong>Usage</strong>:
-<ul>
-<li>Can be used only if the Series or DataFrame contains exactly <strong>one element</strong>.</li>
-<li>If there is more than one element, it raises a <code>ValueError</code>.</li>
-</ul></li>
-</ul>
-<div id="example-1" class="section level4 hasAnchor" number="2.3.4.1">
-<h4><span class="header-section-number">2.3.4.1</span> <strong>Example:</strong><a href="pandas-library.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb365"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb365-1"><a href="pandas-library.html#cb365-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb365-2"><a href="pandas-library.html#cb365-2" tabindex="-1"></a></span>
-<span id="cb365-3"><a href="pandas-library.html#cb365-3" tabindex="-1"></a><span class="co"># Single-element Series</span></span>
-<span id="cb365-4"><a href="pandas-library.html#cb365-4" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="va">True</span>])</span>
-<span id="cb365-5"><a href="pandas-library.html#cb365-5" tabindex="-1"></a><span class="bu">print</span>(s.<span class="bu">bool</span>())  <span class="co"># Output: True</span></span>
-<span id="cb365-6"><a href="pandas-library.html#cb365-6" tabindex="-1"></a></span>
-<span id="cb365-7"><a href="pandas-library.html#cb365-7" tabindex="-1"></a><span class="co"># Multi-element Series</span></span>
-<span id="cb365-8"><a href="pandas-library.html#cb365-8" tabindex="-1"></a>s_multi <span class="op">=</span> pd.Series([<span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb365-9"><a href="pandas-library.html#cb365-9" tabindex="-1"></a><span class="co"># print(s_multi.bool())  # Raises ValueError: The truth value of a Series is ambiguous. </span></span></code></pre></div>
-</div>
-</div>
-<div id="a.item" class="section level3 hasAnchor" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> <strong>3. <code>a.item()</code></strong><a href="pandas-library.html#a.item" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Purpose</strong>: Returns the single item from a Series.</li>
-<li><strong>Usage</strong>:
-<ul>
-<li>Can be used only if the Series has exactly <strong>one element</strong>.</li>
-<li>Raises a <code>ValueError</code> if there are multiple elements.</li>
-</ul></li>
-</ul>
-<div id="example-2" class="section level4 hasAnchor" number="2.3.5.1">
-<h4><span class="header-section-number">2.3.5.1</span> <strong>Example:</strong><a href="pandas-library.html#example-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb366"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb366-1"><a href="pandas-library.html#cb366-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb366-2"><a href="pandas-library.html#cb366-2" tabindex="-1"></a></span>
-<span id="cb366-3"><a href="pandas-library.html#cb366-3" tabindex="-1"></a><span class="co"># Single-element Series</span></span>
-<span id="cb366-4"><a href="pandas-library.html#cb366-4" tabindex="-1"></a>s_single <span class="op">=</span> pd.Series([<span class="dv">42</span>])</span>
-<span id="cb366-5"><a href="pandas-library.html#cb366-5" tabindex="-1"></a><span class="bu">print</span>(s_single.item())  <span class="co"># Output: 42</span></span>
-<span id="cb366-6"><a href="pandas-library.html#cb366-6" tabindex="-1"></a></span>
-<span id="cb366-7"><a href="pandas-library.html#cb366-7" tabindex="-1"></a><span class="co"># Multi-element Series</span></span>
-<span id="cb366-8"><a href="pandas-library.html#cb366-8" tabindex="-1"></a>s_multi <span class="op">=</span> pd.Series([<span class="dv">42</span>, <span class="dv">43</span>])</span>
-<span id="cb366-9"><a href="pandas-library.html#cb366-9" tabindex="-1"></a><span class="co"># print(s_multi.item())  # Raises ValueError: can only convert an array of size 1 to a Python scalar</span></span></code></pre></div>
-</div>
-</div>
-<div id="a.any" class="section level3 hasAnchor" number="2.3.6">
-<h3><span class="header-section-number">2.3.6</span> <strong>4. <code>a.any()</code></strong><a href="pandas-library.html#a.any" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Purpose</strong>: Checks if <strong>any</strong> element in a Series or DataFrame is <code>True</code>.</li>
-<li><strong>Usage</strong>:
-<ul>
-<li>Returns <code>True</code> if at least one element is <code>True</code>; otherwise, returns <code>False</code>.</li>
-<li>Can be applied to both Series and DataFrames.</li>
-</ul></li>
-</ul>
-<div id="example-3" class="section level4 hasAnchor" number="2.3.6.1">
-<h4><span class="header-section-number">2.3.6.1</span> <strong>Example:</strong><a href="pandas-library.html#example-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb367"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb367-1"><a href="pandas-library.html#cb367-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb367-2"><a href="pandas-library.html#cb367-2" tabindex="-1"></a></span>
-<span id="cb367-3"><a href="pandas-library.html#cb367-3" tabindex="-1"></a><span class="co"># Example Series</span></span>
-<span id="cb367-4"><a href="pandas-library.html#cb367-4" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb367-5"><a href="pandas-library.html#cb367-5" tabindex="-1"></a><span class="bu">print</span>(s.<span class="bu">any</span>())  <span class="co"># Output: True</span></span>
-<span id="cb367-6"><a href="pandas-library.html#cb367-6" tabindex="-1"></a></span>
-<span id="cb367-7"><a href="pandas-library.html#cb367-7" tabindex="-1"></a><span class="co"># Example DataFrame</span></span>
-<span id="cb367-8"><a href="pandas-library.html#cb367-8" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>], <span class="st">&#39;B&#39;</span>: [<span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>]})</span>
-<span id="cb367-9"><a href="pandas-library.html#cb367-9" tabindex="-1"></a><span class="bu">print</span>(df.<span class="bu">any</span>())  <span class="co"># Output: </span></span>
-<span id="cb367-10"><a href="pandas-library.html#cb367-10" tabindex="-1"></a><span class="co"># A    True</span></span>
-<span id="cb367-11"><a href="pandas-library.html#cb367-11" tabindex="-1"></a><span class="co"># B    False</span></span>
-<span id="cb367-12"><a href="pandas-library.html#cb367-12" tabindex="-1"></a><span class="co"># dtype: bool</span></span>
-<span id="cb367-13"><a href="pandas-library.html#cb367-13" tabindex="-1"></a></span>
-<span id="cb367-14"><a href="pandas-library.html#cb367-14" tabindex="-1"></a><span class="co"># To check if any value is True in the entire DataFrame</span></span>
-<span id="cb367-15"><a href="pandas-library.html#cb367-15" tabindex="-1"></a><span class="bu">print</span>(df.<span class="bu">any</span>().<span class="bu">any</span>())  <span class="co"># Output: True</span></span></code></pre></div>
-</div>
-</div>
-<div id="a.all" class="section level3 hasAnchor" number="2.3.7">
-<h3><span class="header-section-number">2.3.7</span> <strong>5. <code>a.all()</code></strong><a href="pandas-library.html#a.all" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Purpose</strong>: Checks if <strong>all</strong> elements in a Series or DataFrame are <code>True</code>.</li>
-<li><strong>Usage</strong>:
-<ul>
-<li>Returns <code>True</code> if all elements are <code>True</code>; otherwise, returns <code>False</code>.</li>
-<li>Can be applied to both Series and DataFrames.</li>
-</ul></li>
-</ul>
-<div id="example-4" class="section level4 hasAnchor" number="2.3.7.1">
-<h4><span class="header-section-number">2.3.7.1</span> <strong>Example:</strong><a href="pandas-library.html#example-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb368"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb368-1"><a href="pandas-library.html#cb368-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb368-2"><a href="pandas-library.html#cb368-2" tabindex="-1"></a></span>
-<span id="cb368-3"><a href="pandas-library.html#cb368-3" tabindex="-1"></a><span class="co"># Example Series</span></span>
-<span id="cb368-4"><a href="pandas-library.html#cb368-4" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>])</span>
-<span id="cb368-5"><a href="pandas-library.html#cb368-5" tabindex="-1"></a><span class="bu">print</span>(s.<span class="bu">all</span>())  <span class="co"># Output: True</span></span>
-<span id="cb368-6"><a href="pandas-library.html#cb368-6" tabindex="-1"></a></span>
-<span id="cb368-7"><a href="pandas-library.html#cb368-7" tabindex="-1"></a><span class="co"># Example DataFrame</span></span>
-<span id="cb368-8"><a href="pandas-library.html#cb368-8" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], <span class="st">&#39;B&#39;</span>: [<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>]})</span>
-<span id="cb368-9"><a href="pandas-library.html#cb368-9" tabindex="-1"></a><span class="bu">print</span>(df.<span class="bu">all</span>())  <span class="co"># Output:</span></span>
-<span id="cb368-10"><a href="pandas-library.html#cb368-10" tabindex="-1"></a><span class="co"># A    True</span></span>
-<span id="cb368-11"><a href="pandas-library.html#cb368-11" tabindex="-1"></a><span class="co"># B    True</span></span>
-<span id="cb368-12"><a href="pandas-library.html#cb368-12" tabindex="-1"></a><span class="co"># dtype: bool</span></span>
-<span id="cb368-13"><a href="pandas-library.html#cb368-13" tabindex="-1"></a></span>
-<span id="cb368-14"><a href="pandas-library.html#cb368-14" tabindex="-1"></a><span class="co"># Checking if all values are True in the entire DataFrame</span></span>
-<span id="cb368-15"><a href="pandas-library.html#cb368-15" tabindex="-1"></a><span class="bu">print</span>(df.<span class="bu">all</span>().<span class="bu">all</span>())  <span class="co"># Output: True</span></span></code></pre></div>
-</div>
-</div>
-<div id="summary-2" class="section level3 hasAnchor" number="2.3.8">
-<h3><span class="header-section-number">2.3.8</span> <strong>Summary:</strong><a href="pandas-library.html#summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong><code>a.empty</code></strong>: Checks if the DataFrame or Series is empty.</li>
-<li><strong><code>a.bool()</code></strong>: Converts a Series or DataFrame with one element to a boolean.</li>
-<li><strong><code>a.item()</code></strong>: Retrieves a single element from a Series (if it has only one element).</li>
-<li><strong><code>a.any()</code></strong>: Checks if any element is <code>True</code>.</li>
-<li><strong><code>a.all()</code></strong>: Checks if all elements are <code>True</code>.</li>
-</ul>
-<p>These functions help in checking conditions or accessing data in pandas objects and are useful in various data analysis tasks.</p>
 
 </div>
 </div>
@@ -999,8 +423,8 @@ subset = df.iloc[0:5, 1:3]  # Select rows 0 to 4 and columns 1 to 2
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="random.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="numpy-module.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandas-library-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

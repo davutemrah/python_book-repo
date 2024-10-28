@@ -209,3 +209,18 @@ Given:
 
 - This approach takes advantage of the fact that the input array $A$ is sorted and that the parabola opens upwards, simplifying the sorting process of the transformed values.
 
+
+
+
+
+```{python}
+import numpy as np
+
+x = np.array([1, 2, 3, 4, 5])
+ 
+def my_func(x):
+  return 2*x
+ 
+my_func(x)
+```
+

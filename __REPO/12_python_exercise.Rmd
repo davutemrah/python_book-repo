@@ -74,6 +74,86 @@ print(gcd(55, 60))  # Output: 12
 ```
 
 
+### Question: triangle
+
+given a list of integers (with at least 3 elements) representing triangle sides, count all combinations that you might be able to build a triangle with (if side3 is the longest, then it should satisfy side1+side2 > side3).
+
+To solve this problem, we need to count all combinations of three sides from a given list of integers that can form a valid triangle. A valid triangle must satisfy the **triangle inequality theorem**, which states that for any three sides, if the longest side is `side3`, then it should hold that:
+
+$$\text{side1} + \text{side2} > \text{side3}$$
+
+### Steps to Solve
+
+1. **Sort the List**: First, sort the list of integers in ascending order. This makes it easier to find valid combinations since once the list is sorted, we can safely assume that any triplet (i, j, k) with `i < j < k` will have `side3` as the longest side.
+   
+2. **Use a Triplet Combination Check**: For each potential triplet `(side1, side2, side3)`, check if it satisfies the triangle inequality.
+
+3. **Count Valid Combinations**: Keep a counter to track the number of valid combinations.
+
+### Python Code Implementation
+
+```python
+def count_valid_triangles(sides):
+    # Step 1: Sort the list of sides
+    sides.sort()
+    n = len(sides)
+    count = 0
+
+    # Step 2: Use a triplet combination check
+    # Iterate through all possible triplets
+    for i in range(n - 2):  # i is the index for side1
+        k = i + 2  # Initialize k for the triplet (side3)
+        for j in range(i + 1, n - 1):  # j is the index for side2
+            # Step 3: Find the rightmost side3 that satisfies the triangle inequality
+            while k < n and sides[i] + sides[j] > sides[k]:
+                k += 1
+            # All combinations from j+1 to k-1 will satisfy the triangle condition
+            count += k - j - 1
+
+    return count
+
+# Example usage
+sides = [2, 3, 4, 5, 6]
+print(count_valid_triangles(sides))  # Output: 7
+```
+
+### Explanation of the Code
+
+1. **Sorting the Sides**: The list `sides` is sorted in ascending order.
+   
+2. **Two Nested Loops**:
+   - The outer loop (indexed by `i`) selects `side1`.
+   - The middle loop (indexed by `j`) selects `side2` (such that `j > i`).
+   - The innermost loop uses a `while` loop to find the rightmost `side3` (indexed by `k`) that satisfies the condition `side1 + side2 > side3`.
+
+3. **Counting Valid Triangles**:
+   - For each `side1` and `side2`, we find the number of valid `side3` values that satisfy the triangle inequality.
+   - We increment the `count` by `k - j - 1`, which is the number of valid combinations for that particular `(i, j)`.
+
+### Time Complexity
+
+- **Sorting**: \(O(n \log n)\)
+- **Two Loops**: The nested loops run in \(O(n^2)\) time.
+- **Overall Time Complexity**: \(O(n^2)\)
+
+### Example
+
+Given a list `sides = [2, 3, 4, 5, 6]`:
+
+- The valid triangles are `(2, 3, 4)`, `(2, 4, 5)`, `(2, 5, 6)`, `(3, 4, 5)`, `(3, 4, 6)`, `(3, 5, 6)`, and `(4, 5, 6)`.
+- The output is `7`.
+
+This approach ensures all valid triangles are counted efficiently.
 
 
+
+```{python}
+def countPossibleTriangles(sides): 
+  count = 0 
+  for i in range(len(sides)): 
+    for j in range(i+1, len(sides)): 
+      for k in range(j+1, len(sides)): 
+        potentialSides = [sides[i], sides[j], sides[k]] 
+        side3 = max(potentialSides) if sum(potentialSides) - side3 > side3: count += 1
+```
 

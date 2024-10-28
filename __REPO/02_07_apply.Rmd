@@ -1,0 +1,121 @@
+## apply method
+
+Using `apply` in **NumPy** and **Pandas** is a common practice to perform element-wise operations or to apply custom functions across data structures. 
+
+Here are some examples:
+
+
+
+### Using `apply` in Pandas:
+
+Pandas' `apply` function is very powerful for applying custom functions along either axis (rows or columns) of a DataFrame or across a Series.
+
+
+
+#### Applying a Function to a DataFrame Column
+
+Imagine you have a DataFrame `df` with a column `salary`, and you want to calculate a 10% increase for all salaries.
+
+```python
+import pandas as pd
+
+# Sample DataFrame
+data = {'employee': ['Alice', 'Bob', 'Charlie'],
+        'salary': [50000, 60000, 70000]}
+df = pd.DataFrame(data)
+
+# Apply a function to increase salary by 10%
+df['new_salary'] = df['salary'].apply(lambda x: x * 1.10)
+print(df)
+```
+
+
+
+
+#### Applying a Function Across Rows
+
+You have a DataFrame with columns `x` and `y`, and you want to create a new column `z` which is the sum of `x` and `y`.
+
+```python
+# Sample DataFrame
+df = pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})
+
+# Apply a function row-wise
+df['z'] = df.apply(lambda row: row['x'] + row['y'], axis=1)
+print(df)
+```
+
+
+
+
+#### Using `apply` with a Custom Function
+
+You can also use `apply` to apply a custom function defined outside the `apply` call.
+
+```python
+# Custom function to categorize salary
+def categorize_salary(salary):
+    if salary > 60000:
+        return 'High'
+    else:
+        return 'Low'
+
+# Apply the custom function to the 'salary' column
+df['salary_category'] = df['salary'].apply(categorize_salary)
+print(df)
+```
+
+
+
+
+
+### Using `apply` in NumPy:
+
+NumPy's `apply_along_axis` function is used to apply a function along a particular axis of a NumPy array.
+
+#### Applying a Function to Each Row of a 2D NumPy Array
+
+Suppose you have a 2D array and want to calculate the sum of each row.
+
+```python
+import numpy as np
+
+# Sample 2D array
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Function to calculate sum of an array
+def row_sum(row):
+    return np.sum(row)
+
+# Apply the function along the axis 1 (rows)
+result = np.apply_along_axis(row_sum, axis=1, arr=arr)
+print(result)  # Output: [ 6 15 24]
+```
+
+
+
+#### Applying a Function to Each Column of a 2D NumPy Array
+
+Similar to the previous example, but applied along the columns.
+
+```python
+# Function to calculate the mean of an array
+def column_mean(column):
+    return np.mean(column)
+
+# Apply the function along the axis 0 (columns)
+result = np.apply_along_axis(column_mean, axis=0, arr=arr)
+print(result)  # Output: [4. 5. 6.]
+```
+
+### Key Points to Mention in an Interview:
+
+- **Pandas' `apply` function** is very versatile and is generally used to apply custom functions row-wise or column-wise in a DataFrame or to a Series.
+
+- **NumPy's `apply_along_axis`** is more specific and used for applying a function along a specific axis (rows or columns) of an array.
+
+- These functions are particularly useful when built-in functions are not sufficient or when custom operations are needed.
+
+- While `apply` can be convenient, it's worth mentioning that it can be slower than vectorized operations in Pandas and NumPy, so it should be used judiciously.
+
+These examples should provide you with a solid foundation to demonstrate your understanding of `apply` in NumPy and Pandas during a data science interview.
