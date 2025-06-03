@@ -1,0 +1,87 @@
+
+### Simple Exercises
+
+#### DataFrame Creation: 
+
+Create a Pandas DataFrame with two columns, "Name" and "Age", with three rows of data: names of your choice and corresponding ages.
+
+```{python}
+import pandas as pd
+
+data = {"Name": ["alice", "betty", "adam"],
+        "Age": [22, 24, 21]}
+        
+df = pd.DataFrame(data)
+df
+```
+
+
+
+#### Selecting Data: 
+
+Given a DataFrame df with columns "Product", "Price", and "Quantity", how would you select only the "Price" column?
+
+```{python}
+data = {"Product": ["x", "y", "z"],
+        "Price": [10, 15, 13],
+        "Quantity": [20, 50, 100]}
+        
+df = pd.DataFrame(data)
+
+## selecting a column and return data frame
+df[["Price"]]
+```
+
+
+#### Filtering Rows: 
+
+Using the DataFrame df from question 2, write a command to filter for rows where "Price" is greater than $10.
+
+```{python}
+df[df.Price > 10]
+```
+
+```{python}
+ df.query("Price > 10")
+```
+
+#### Adding a New Column: 
+
+In a DataFrame with columns "Length" and "Width", how would you create a new column called "Area" that multiplies "Length" and "Width" for each row?
+
+```{python}
+data = {"width": [2, 3, 4], "height": [10, 12, 10]}
+df = pd.DataFrame(data)
+
+## area column
+df['area'] = df['width']*df['height']
+
+df.head()
+```
+
+#### GroupBy Operation:
+
+Suppose you have a DataFrame with columns "Category" and "Sales". How would you group the data by "Category" and calculate the total "Sales" for each category?
+
+
+```{python}
+categories = ["luxury", "medium", "premium", "medium", "premium","luxury", "medium"]
+sales = [5, 3, 10, 30, 2, 5, 10]
+data = {"category": categories, "sales": sales}
+df = pd.DataFrame(data)
+
+## group-by
+df.groupby('category')['sales'].sum()
+```
+
+```{python}
+## group-by and new column
+
+```
+
+
+
+
+
+Handling Missing Data: If a DataFrame df has some missing values, what command would you use to fill these with a default value, such as 0?
+Sorting Data: In a DataFrame df with columns "Date" and "Sales", how would you sort the rows by "Sales" in descending order?
