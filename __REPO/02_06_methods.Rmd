@@ -1,3 +1,5 @@
+## series methods
+
 Let's explore what `a.empty`, `a.bool()`, `a.item()`, `a.any()`, and `a.all()` do in Python, particularly when used with pandas Series or DataFrames.
 
 ### **1. `a.empty`**

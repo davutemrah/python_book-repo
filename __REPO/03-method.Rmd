@@ -7,12 +7,12 @@
 
 Example: Multiplication Chart
 
-```{python, eval=F}
-
-
-
+```{python}
 i = int(input("Enter a number = "))
+```
 
+
+```{python, eval=T}
 for x in range(i+1) :
   y = x*5
   print(x,"x",5,"=",y)
